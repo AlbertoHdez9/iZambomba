@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
+		84C67E1021A742950008864D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ViewController.swift */; };
+		84C67E1321A742950008864D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1121A742950008864D /* Main.storyboard */; };
+		84C67E1521A742980008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1421A742980008864D /* Assets.xcassets */; };
+		84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1621A742980008864D /* LaunchScreen.storyboard */; };
+		84C67E1D21A742990008864D /* iZambomba WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84C67E1C21A742990008864D /* iZambomba WatchKit App.app */; };
+		84C67E2321A742990008864D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E2121A742990008864D /* Interface.storyboard */; };
+		84C67E2521A742990008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E2421A742990008864D /* Assets.xcassets */; };
+		84C67E2C21A742990008864D /* iZambomba WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84C67E3121A742990008864D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3021A742990008864D /* InterfaceController.swift */; };
+		84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3221A742990008864D /* ExtensionDelegate.swift */; };
+		84C67E3521A742990008864D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3421A742990008864D /* NotificationController.swift */; };
+		84C67E3721A7429A0008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E3621A7429A0008864D /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84C67E1E21A742990008864D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C67E0221A742950008864D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C67E1B21A742990008864D;
+			remoteInfo = "iZambomba WatchKit App";
+		};
+		84C67E2D21A742990008864D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C67E0221A742950008864D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C67E2A21A742990008864D;
+			remoteInfo = "iZambomba WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84C67E3F21A7429A0008864D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84C67E2C21A742990008864D /* iZambomba WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C67E4321A7429A0008864D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				84C67E1D21A742990008864D /* iZambomba WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		84C67E0A21A742950008864D /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C67E0D21A742950008864D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84C67E0F21A742950008864D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84C67E1221A742950008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84C67E1421A742980008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C67E1721A742980008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84C67E1921A742980008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C67E1C21A742990008864D /* iZambomba WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iZambomba WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C67E2221A742990008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		84C67E2421A742990008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C67E2621A742990008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C67E3021A742990008864D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		84C67E3221A742990008864D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		84C67E3421A742990008864D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		84C67E3621A7429A0008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C67E3821A7429A0008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C67E3921A7429A0008864D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84C67E0721A742950008864D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C67E2821A742990008864D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84C67E0121A742950008864D = {
+			isa = PBXGroup;
+			children = (
+				84C67E0C21A742950008864D /* iZambomba */,
+				84C67E2021A742990008864D /* iZambomba WatchKit App */,
+				84C67E2F21A742990008864D /* iZambomba WatchKit Extension */,
+				84C67E0B21A742950008864D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84C67E0B21A742950008864D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84C67E0A21A742950008864D /* iZambomba.app */,
+				84C67E1C21A742990008864D /* iZambomba WatchKit App.app */,
+				84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84C67E0C21A742950008864D /* iZambomba */ = {
+			isa = PBXGroup;
+			children = (
+				84C67E0D21A742950008864D /* AppDelegate.swift */,
+				84C67E0F21A742950008864D /* ViewController.swift */,
+				84C67E1121A742950008864D /* Main.storyboard */,
+				84C67E1421A742980008864D /* Assets.xcassets */,
+				84C67E1621A742980008864D /* LaunchScreen.storyboard */,
+				84C67E1921A742980008864D /* Info.plist */,
+			);
+			path = iZambomba;
+			sourceTree = "<group>";
+		};
+		84C67E2021A742990008864D /* iZambomba WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				84C67E2121A742990008864D /* Interface.storyboard */,
+				84C67E2421A742990008864D /* Assets.xcassets */,
+				84C67E2621A742990008864D /* Info.plist */,
+			);
+			path = "iZambomba WatchKit App";
+			sourceTree = "<group>";
+		};
+		84C67E2F21A742990008864D /* iZambomba WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84C67E3021A742990008864D /* InterfaceController.swift */,
+				84C67E3221A742990008864D /* ExtensionDelegate.swift */,
+				84C67E3421A742990008864D /* NotificationController.swift */,
+				84C67E3621A7429A0008864D /* Assets.xcassets */,
+				84C67E3821A7429A0008864D /* Info.plist */,
+				84C67E3921A7429A0008864D /* PushNotificationPayload.apns */,
+			);
+			path = "iZambomba WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84C67E0921A742950008864D /* iZambomba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C67E4421A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba" */;
+			buildPhases = (
+				84C67E0621A742950008864D /* Sources */,
+				84C67E0721A742950008864D /* Frameworks */,
+				84C67E0821A742950008864D /* Resources */,
+				84C67E4321A7429A0008864D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C67E1F21A742990008864D /* PBXTargetDependency */,
+			);
+			name = iZambomba;
+			productName = iZambomba;
+			productReference = 84C67E0A21A742950008864D /* iZambomba.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84C67E1B21A742990008864D /* iZambomba WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C67E4021A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */;
+			buildPhases = (
+				84C67E1A21A742990008864D /* Resources */,
+				84C67E3F21A7429A0008864D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C67E2E21A742990008864D /* PBXTargetDependency */,
+			);
+			name = "iZambomba WatchKit App";
+			productName = "iZambomba WatchKit App";
+			productReference = 84C67E1C21A742990008864D /* iZambomba WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		84C67E2A21A742990008864D /* iZambomba WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C67E3C21A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */;
+			buildPhases = (
+				84C67E2721A742990008864D /* Sources */,
+				84C67E2821A742990008864D /* Frameworks */,
+				84C67E2921A742990008864D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iZambomba WatchKit Extension";
+			productName = "iZambomba WatchKit Extension";
+			productReference = 84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C67E0221A742950008864D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = singularfactory;
+				TargetAttributes = {
+					84C67E0921A742950008864D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					84C67E1B21A742990008864D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					84C67E2A21A742990008864D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 84C67E0521A742950008864D /* Build configuration list for PBXProject "iZambomba" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84C67E0121A742950008864D;
+			productRefGroup = 84C67E0B21A742950008864D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84C67E0921A742950008864D /* iZambomba */,
+				84C67E1B21A742990008864D /* iZambomba WatchKit App */,
+				84C67E2A21A742990008864D /* iZambomba WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84C67E0821A742950008864D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */,
+				84C67E1521A742980008864D /* Assets.xcassets in Resources */,
+				84C67E1321A742950008864D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C67E1A21A742990008864D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C67E2521A742990008864D /* Assets.xcassets in Resources */,
+				84C67E2321A742990008864D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C67E2921A742990008864D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C67E3721A7429A0008864D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84C67E0621A742950008864D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C67E1021A742950008864D /* ViewController.swift in Sources */,
+				84C67E0E21A742950008864D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C67E2721A742990008864D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
+				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,
+				84C67E3121A742990008864D /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84C67E1F21A742990008864D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C67E1B21A742990008864D /* iZambomba WatchKit App */;
+			targetProxy = 84C67E1E21A742990008864D /* PBXContainerItemProxy */;
+		};
+		84C67E2E21A742990008864D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C67E2A21A742990008864D /* iZambomba WatchKit Extension */;
+			targetProxy = 84C67E2D21A742990008864D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84C67E1121A742950008864D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C67E1221A742950008864D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84C67E1621A742980008864D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C67E1721A742980008864D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84C67E2121A742990008864D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C67E2221A742990008864D /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84C67E3A21A7429A0008864D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84C67E3B21A7429A0008864D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84C67E3D21A7429A0008864D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		84C67E3E21A7429A0008864D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		84C67E4121A7429A0008864D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iZambomba_WatchKit_Extension;
+				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		84C67E4221A7429A0008864D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iZambomba_WatchKit_Extension;
+				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		84C67E4521A7429A0008864D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iZambomba/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84C67E4621A7429A0008864D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iZambomba/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84C67E0521A742950008864D /* Build configuration list for PBXProject "iZambomba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C67E3A21A7429A0008864D /* Debug */,
+				84C67E3B21A7429A0008864D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C67E3C21A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C67E3D21A7429A0008864D /* Debug */,
+				84C67E3E21A7429A0008864D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C67E4021A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C67E4121A7429A0008864D /* Debug */,
+				84C67E4221A7429A0008864D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C67E4421A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C67E4521A7429A0008864D /* Debug */,
+				84C67E4621A7429A0008864D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84C67E0221A742950008864D /* Project object */;
+}
