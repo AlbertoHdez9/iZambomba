@@ -64,8 +64,6 @@ class Zamb: NSObject/*, NSCoding */{
         
         //TODO - check if this shit works (the as! shit)
         
-        
-        
         //Must call designated initializer
         self.init(amount: amount, hand: hand, location: location, date: date)
     }
