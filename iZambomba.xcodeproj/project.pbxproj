@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
-		84C67E1021A742950008864D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ViewController.swift */; };
+		84C67E1021A742950008864D /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ZambViewController.swift */; };
 		84C67E1321A742950008864D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1121A742950008864D /* Main.storyboard */; };
 		84C67E1521A742980008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1421A742980008864D /* Assets.xcassets */; };
 		84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1621A742980008864D /* LaunchScreen.storyboard */; };
@@ -20,6 +20,10 @@
 		84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3221A742990008864D /* ExtensionDelegate.swift */; };
 		84C67E3521A742990008864D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3421A742990008864D /* NotificationController.swift */; };
 		84C67E3721A7429A0008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E3621A7429A0008864D /* Assets.xcassets */; };
+		84C67E4C21A771970008864D /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4B21A771970008864D /* Zamb.swift */; };
+		84C67E4E21A771CB0008864D /* ZambTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */; };
+		84C67E5021A778B50008864D /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4F21A778B50008864D /* ZambTableViewController.swift */; };
+		84C8942E21A8229E000ED015 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4B21A771970008864D /* Zamb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +71,7 @@
 /* Begin PBXFileReference section */
 		84C67E0A21A742950008864D /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C67E0D21A742950008864D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C67E0F21A742950008864D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84C67E0F21A742950008864D /* ZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambViewController.swift; sourceTree = "<group>"; };
 		84C67E1221A742950008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C67E1421A742980008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C67E1721A742980008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +87,9 @@
 		84C67E3621A7429A0008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C67E3821A7429A0008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C67E3921A7429A0008864D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		84C67E4B21A771970008864D /* Zamb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zamb.swift; sourceTree = "<group>"; };
+		84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambTableViewCell.swift; sourceTree = "<group>"; };
+		84C67E4F21A778B50008864D /* ZambTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				84C67E0D21A742950008864D /* AppDelegate.swift */,
-				84C67E0F21A742950008864D /* ViewController.swift */,
+				84C67E0F21A742950008864D /* ZambViewController.swift */,
+				84C67E4B21A771970008864D /* Zamb.swift */,
+				84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */,
+				84C67E4F21A778B50008864D /* ZambTableViewController.swift */,
 				84C67E1121A742950008864D /* Main.storyboard */,
 				84C67E1421A742980008864D /* Assets.xcassets */,
 				84C67E1621A742980008864D /* LaunchScreen.storyboard */,
@@ -237,7 +247,7 @@
 				};
 			};
 			buildConfigurationList = 84C67E0521A742950008864D /* Build configuration list for PBXProject "iZambomba" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -291,8 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C67E1021A742950008864D /* ViewController.swift in Sources */,
+				84C67E4C21A771970008864D /* Zamb.swift in Sources */,
+				84C67E1021A742950008864D /* ZambViewController.swift in Sources */,
 				84C67E0E21A742950008864D /* AppDelegate.swift in Sources */,
+				84C67E4E21A771CB0008864D /* ZambTableViewCell.swift in Sources */,
+				84C67E5021A778B50008864D /* ZambTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +316,7 @@
 				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
 				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,
 				84C67E3121A742990008864D /* InterfaceController.swift in Sources */,
+				84C8942E21A8229E000ED015 /* Zamb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,6 +529,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp;
@@ -531,6 +548,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.iZambomba.watchkitapp;
@@ -548,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = iZambomba/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,6 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = iZambomba/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
