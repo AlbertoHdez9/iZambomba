@@ -22,6 +22,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var acceptButton: UIButton!
     
     var zamb: Zamb?
+    var locationChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         
         locationTextField.delegate = self
         
-        //Set up views if editing an existing meal
+        //Set up views if editing an existing ZAMB
         if let zamb = zamb {
             amountLabel.text = "\(zamb.amount) ZAMBS!"
             //botones de los switches = zamb.hand
@@ -82,10 +83,12 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         locationLabel.text = textField.text
+        locationChanged = true
     }
     
     //MARK: Actions
     @IBAction func dismissAction(_ sender: UIButton) {
+        locationChanged = false
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -93,10 +96,19 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     //MARK: Navigation
     override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard let button = sender as? UIButton, (button === dismissButton || button === acceptButton) else {
-            os_log("The dismiss button was not pressed, aborting", log: OSLog.default, type: .debug)
+        guard let button = sender as? UIButton, button === acceptButton else {
+            os_log("The accept button was not pressed, aborting", log: OSLog.default, type: .debug)
             return
         }
+        
+        let amount = zamb!.amount
+        let hand = zamb!.hand
+        let location = locationChanged ? locationTextField.text : zamb!.location
+        let date = zamb!.date
+        
+        zamb = Zamb(amount: amount, hand: hand, location: location, date: date)
+        
+        locationChanged = false
     }
 }
 

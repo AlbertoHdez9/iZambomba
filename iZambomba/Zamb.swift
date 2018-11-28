@@ -8,7 +8,7 @@
 import UIKit
 import os.log
 
-class Zamb: NSObject/*, NSCoding */{
+class Zamb: NSObject, Codable {
     
     //MARK: Properties
     var amount: Int
@@ -58,13 +58,17 @@ class Zamb: NSObject/*, NSCoding */{
         }
         let hand = aDecoder.decodeObject(forKey: PropertyKey.hand) as? String
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
-        let date = aDecoder.decodeObject(forKey: PropertyKey.date) as! Date
         
+        let dateString = aDecoder.decodeObject(forKey: PropertyKey.date) as! String
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM dd, yyyy HH:mm a"
+        formatter.locale = Locale(identifier: "en_US")
         
+        let date = formatter.date(from: dateString)
         
         //TODO - check if this shit works (the as! shit)
         
         //Must call designated initializer
-        self.init(amount: amount, hand: hand, location: location, date: date)
+        self.init(amount: amount, hand: hand, location: location, date: date!)
     }
 }

@@ -110,7 +110,7 @@
                                 <rect key="frame" x="75" y="612" width="225" height="30"/>
                                 <state key="normal" title="Accept"/>
                                 <connections>
-                                    <action selector="dismissAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvi-IZ-IJ8"/>
+                                    <segue destination="xQS-SF-Zbq" kind="unwind" unwindAction="unwindToZambListWithSender:" id="Ecr-Gh-5Kg"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ino-Lu-4qX">
@@ -188,8 +188,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="xQS-SF-Zbq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="32.833583208395808"/>
+            <point key="canvasLocation" x="878" y="33"/>
         </scene>
         <!--Your activity-->
         <scene sceneID="7kY-xK-zTC">

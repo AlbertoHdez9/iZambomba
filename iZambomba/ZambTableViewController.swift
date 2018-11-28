@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ZambTableViewController: UITableViewController {
     
@@ -17,7 +18,15 @@ class ZambTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadSampleZambs()
+
+        //If there are saved zambs, load'em, if not, load sample data
+//        if let savedZambs = loadZambs() {
+//            zambs += savedZambs
+//            print(zambs.count)
+//        } else {
+            loadSampleZambs()
+        //}
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,15 +40,24 @@ class ZambTableViewController: UITableViewController {
         guard let zamb1 = Zamb(amount: 275, hand: "Other", location: "Home", date: Date()) else {
             fatalError("Unable to instantiate zamb1")
         }
-        
+
         guard let zamb2 = Zamb(amount: 350, hand: "Left", location: "Office", date: Date()) else {
             fatalError("Unable to instantiate zamb2")
         }
-        
+
         guard let zamb3 = Zamb(amount: 250, hand: "Right", location: "Space", date: Date()) else {
             fatalError("Unable to instantiate zamb3")
         }
         zambs += [zamb1, zamb2, zamb3]
+        //saveZambs()
+    }
+    
+    private func saveZambs() {
+        NSKeyedArchiver.archiveRootObject(zambs, toFile: Zamb.ArchiveURL.path)
+    }
+    
+    private func loadZambs() -> [Zamb]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Zamb.ArchiveURL.path) as? [Zamb]
     }
 
     // MARK: - Table view data source
@@ -133,6 +151,18 @@ class ZambTableViewController: UITableViewController {
             default:
                 fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
             }
+    }
+    
+    @IBAction func unwindToZambList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ZambViewController, let zamb = sourceViewController.zamb {
+            //Checks if a row is selected
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                //Update selected Meal
+                zambs[selectedIndexPath.row] = zamb
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            //saveZambs()
+        }
     }
     
 
