@@ -148,9 +148,13 @@ class ZambTableViewController: UITableViewController {
                     
                 let selectedZamb = zambs[indexPath.row]
                 zambDetailViewController.zamb = selectedZamb
-            default:
-                fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-            }
+            
+        case "addZamb":
+            os_log("Adding a new zamb", log: OSLog.default, type: .debug)
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
     }
     
     @IBAction func unwindToZambList(sender: UIStoryboardSegue) {
@@ -161,6 +165,19 @@ class ZambTableViewController: UITableViewController {
                 zambs[selectedIndexPath.row] = zamb
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
+            //saveZambs()
+        }
+        
+        
+    }
+    
+    @IBAction func unwindFromNewZamb(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? NewZambViewController, let zamb = sourceViewController.zamb {
+            print("hola234")
+            //Add a new zamb
+            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            zambs.append(zamb)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
             //saveZambs()
         }
     }

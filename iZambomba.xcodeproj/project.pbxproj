@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04721AFFE50009E450B /* NewZambViewController.swift */; };
+		3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
+		3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
 		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
 		84C67E1021A742950008864D /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ZambViewController.swift */; };
 		84C67E1321A742950008864D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1121A742950008864D /* Main.storyboard */; };
@@ -69,6 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A9EC04721AFFE50009E450B /* NewZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
+		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		3A9EC04B21B028B9009E450B /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8424D53621AD780700BBFDA3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
 		8424D53721AD780D00BBFDA3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
@@ -138,10 +144,13 @@
 			children = (
 				8424D53721AD780D00BBFDA3 /* iZambomba.entitlements */,
 				84C67E0D21A742950008864D /* AppDelegate.swift */,
+				3A9EC04721AFFE50009E450B /* NewZambViewController.swift */,
 				84C67E0F21A742950008864D /* ZambViewController.swift */,
 				84C67E4B21A771970008864D /* Zamb.swift */,
 				84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */,
 				84C67E4F21A778B50008864D /* ZambTableViewController.swift */,
+				3A9EC04B21B028B9009E450B /* MotionManager.swift */,
+				3A9EC04921B027E5009E450B /* WorkoutManager.swift */,
 				84C67E1121A742950008864D /* Main.storyboard */,
 				84C67E1421A742980008864D /* Assets.xcassets */,
 				84C67E1621A742980008864D /* LaunchScreen.storyboard */,
@@ -323,10 +332,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C67E4C21A771970008864D /* Zamb.swift in Sources */,
+				3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */,
 				84C67E1021A742950008864D /* ZambViewController.swift in Sources */,
 				84C67E0E21A742950008864D /* AppDelegate.swift in Sources */,
 				84C67E4E21A771CB0008864D /* ZambTableViewCell.swift in Sources */,
 				84C67E5021A778B50008864D /* ZambTableViewController.swift in Sources */,
+				3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */,
+				3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

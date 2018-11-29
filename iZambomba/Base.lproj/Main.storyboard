@@ -86,11 +86,68 @@
                             <outlet property="delegate" destination="qYi-Uq-aJ9" id="bPo-VS-7IV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your activity" id="PN2-Aq-HgR"/>
+                    <navigationItem key="navigationItem" title="Your activity" id="PN2-Aq-HgR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="qnN-7I-054">
+                            <connections>
+                                <segue destination="DOs-0y-Ekr" kind="show" identifier="addZamb" id="EfT-IQ-0bR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzZ-YZ-ylE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-180" y="32.833583208395808"/>
+        </scene>
+        <!--New Zamb-->
+        <scene sceneID="GnK-6a-Gbd">
+            <objects>
+                <viewController id="DOs-0y-Ekr" customClass="NewZambViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yoe-6T-CDE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No zambs yet!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-p0-ayc">
+                                <rect key="frame" x="116" y="204" width="143" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-da-ARP">
+                                <rect key="frame" x="69" y="574" width="236" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="changeSessionStatus:" destination="DOs-0y-Ekr" eventType="touchUpInside" id="qK7-0m-S63"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q8z-uN-60y"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Zamb" id="fgR-4U-ahC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ocv-wi-58W">
+                            <connections>
+                                <action selector="cancelNewZamb:" destination="DOs-0y-Ekr" id="T9T-du-2AV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="f1A-TF-A3N">
+                            <connections>
+                                <segue destination="Z6z-nk-aZi" kind="unwind" unwindAction="unwindFromNewZambWithSender:" id="kal-GL-0Pi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="ocv-wi-58W" id="sXa-Nr-t1n"/>
+                        <outlet property="saveButton" destination="f1A-TF-A3N" id="5HI-iz-9t1"/>
+                        <outlet property="startButton" destination="OyL-da-ARP" id="iNx-1J-K6i"/>
+                        <outlet property="zambAmount" destination="fr5-p0-ayc" id="p7v-5j-vXr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m44-Lp-8vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Z6z-nk-aZi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="-267"/>
         </scene>
         <!--Zamb View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -190,7 +247,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="xQS-SF-Zbq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="878" y="33"/>
+            <point key="canvasLocation" x="910" y="423"/>
         </scene>
         <!--Your activity-->
         <scene sceneID="7kY-xK-zTC">
