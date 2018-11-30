@@ -34,8 +34,9 @@ class WorkoutManager: MotionManagerDelegate {
     }
     
     // MARK: WorkoutManager
-    
-    func startWorkout() {
+    //type: 0 -> iPhone
+    //      1 -> iWatch
+    func startWorkout(type: Int) {
         // If we have already started the workout, then do nothing.
         if (session == true) {
             return
@@ -49,7 +50,8 @@ class WorkoutManager: MotionManagerDelegate {
         
         // Start the workout session and device motion updates.
         session = true
-        motionManager.startUpdates()
+        
+        motionManager.startUpdates(type: type)
     }
     
     func stopWorkout() {

@@ -34,12 +34,14 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         super.willActivate()
         startedZambSession = true
         
-        manager.startWorkout()
+        manager.startWorkout(type: 1) //type: 1 -> Watch
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        startedZambSession = false
+        manager.stopWorkout()
     }
     
     //MARK: Private methods

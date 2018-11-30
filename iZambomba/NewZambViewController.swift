@@ -54,7 +54,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         if (startButton.titleLabel!.text == "Start") {
             startButton.setTitle("Stop", for: .normal)
             
-            manager.startWorkout()
+            manager.startWorkout(type: 0) //type: 0 -> iPhone
             
         } else {
             manager.stopWorkout()

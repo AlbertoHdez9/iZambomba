@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Useless Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc">
+                <controller id="AgC-eL-Hgc" customClass="uselessInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="iZambomba" textAlignment="center" id="NEw-sc-QXj"/>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Tap to start" id="btG-JL-mKi">
@@ -38,7 +38,7 @@
                         </button>
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
-                                <imageView height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
+                                <imageView width="46" height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
                                 <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" id="rTb-Am-0Iv"/>
                             </items>
                         </group>

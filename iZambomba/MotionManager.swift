@@ -45,7 +45,7 @@ class MotionManager {
     }
     
     // MARK: Motion Manager
-    func startUpdates() {
+    func startUpdates(type: Int) {
         if !motionManager.isDeviceMotionAvailable {
             print("Device Motion is not available.")
             return
@@ -60,7 +60,7 @@ class MotionManager {
             }
             
             if deviceMotion != nil {
-                self.processDeviceMotion(deviceMotion!)
+                self.processDeviceMotion(deviceMotion!, type: type)
             }
         }
     }
@@ -72,13 +72,21 @@ class MotionManager {
     }
     
     // MARK: Motion Processing
-    
-    func processDeviceMotion(_ deviceMotion: CMDeviceMotion) {
-        if deviceMotion.userAcceleration.x < -2.5 {
-            print("hola")
-            zambAmount += 1
-            updateZambAmountDelegate()
+    //type: 0 -> iPhone
+    //      1 -> iWatch
+    func processDeviceMotion(_ deviceMotion: CMDeviceMotion, type: Int) {
+        if type == 0 {
+            if deviceMotion.userAcceleration.x < -2.5 {
+                zambAmount += 1
+                updateZambAmountDelegate()
+            }
+        } else if type == 1 {
+            if deviceMotion.userAcceleration.y < -2.5 {
+                zambAmount += 1
+                updateZambAmountDelegate()
+            }
         }
+        
     }
     
     // MARK: Data and Delegate Management
