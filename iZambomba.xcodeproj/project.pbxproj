@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
+		3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
 		3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04721AFFE50009E450B /* NewZambViewController.swift */; };
 		3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
 		3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
@@ -347,9 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
+				3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */,
 				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,
 				84C67E3121A742990008864D /* InterfaceController.swift in Sources */,
 				84C8942E21A8229E000ED015 /* Zamb.swift in Sources */,
+				3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

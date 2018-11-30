@@ -12,7 +12,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="iZambomba_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="iZambomba" textAlignment="center" id="NEw-sc-QXj"/>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Tap to start" id="btG-JL-mKi">
@@ -28,19 +28,35 @@
         <!--Interface Controller-->
         <scene sceneID="16n-e3-nuv">
             <objects>
-                <controller id="080-Xi-N2g">
+                <controller id="080-Xi-N2g" customClass="InterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="z1h-Ls-d44"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="z1h-Ls-d44">
+                            <connections>
+                                <action selector="doneButtonAction" destination="080-Xi-N2g" id="MZy-Lp-OKi"/>
+                                <segue destination="KeC-oM-SqC" kind="push" id="4S8-w5-EOO"/>
+                            </connections>
+                        </button>
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
-                                <imageView width="79" height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
-                                <label alignment="left" verticalAlignment="center" text="Label" id="rTb-Am-0Iv"/>
+                                <imageView height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
+                                <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" id="rTb-Am-0Iv"/>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="doneButton" destination="z1h-Ls-d44" id="ujE-Y8-75d"/>
+                        <outlet property="zambAmount" destination="rTb-Am-0Iv" id="EOS-kK-tou"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="520" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Q3H-Yf-3hS">
+            <objects>
+                <controller id="KeC-oM-SqC"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="345"/>
         </scene>
     </scenes>
 </document>
