@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Useless Interface Controller-->
+        <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="uselessInterfaceController" customModule="iZambomba_WatchKit_Extension">
+                <controller id="AgC-eL-Hgc">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="iZambomba" textAlignment="center" id="NEw-sc-QXj"/>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Tap to start" id="btG-JL-mKi">
@@ -33,7 +33,7 @@
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="z1h-Ls-d44">
                             <connections>
                                 <action selector="doneButtonAction" destination="080-Xi-N2g" id="MZy-Lp-OKi"/>
-                                <segue destination="KeC-oM-SqC" kind="push" id="4S8-w5-EOO"/>
+                                <segue destination="KeC-oM-SqC" kind="push" identifier="addZamb" id="ovD-oJ-LQ7"/>
                             </connections>
                         </button>
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
@@ -51,12 +51,33 @@
             </objects>
             <point key="canvasLocation" x="520" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Zamb List Interface Controller-->
         <scene sceneID="Q3H-Yf-3hS">
             <objects>
-                <controller id="KeC-oM-SqC"/>
+                <controller id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="FuG-xw-jaw"/>
+                        <label alignment="center" text="Label" id="N9P-f4-vwo"/>
+                        <group width="1" alignment="center" id="1lN-OI-qPw">
+                            <items>
+                                <label alignment="left" text="Label" id="04t-dK-W96"/>
+                                <label alignment="right" text="Label" id="Vq0-FZ-fxP"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Sync" id="3os-hE-kHr">
+                            <connections>
+                                <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="amountLabel" destination="N9P-f4-vwo" id="icK-KV-IYd"/>
+                        <outlet property="dateLabel" destination="04t-dK-W96" id="FYG-2s-cpP"/>
+                        <outlet property="locationLabel" destination="Vq0-FZ-fxP" id="gqZ-SN-Q1F"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="854" y="345"/>
+            <point key="canvasLocation" x="871" y="345"/>
         </scene>
     </scenes>
 </document>

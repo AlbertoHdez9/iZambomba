@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import os.log
 
 
 class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
@@ -20,12 +21,14 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     var zamb: Zamb?
     
     var manager = WorkoutManager()
+    
+    override init() {
+        super.init()
+        manager.delegate = self
+    }
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        manager.delegate = self
-        
         // Configure interface objects here.
     }
     
@@ -62,8 +65,29 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     @IBAction func doneButtonAction() {
         startedZambSession = false
         manager.stopWorkout()
+        if currentZambAmount == 0 {
+            popToRootController()
+        }
     }
     
-    
+    //MARK: Navigation
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        switch(segueIdentifier) {
+            case "addZamb":
+                let amount = currentZambAmount
+                let hand = "Right"
+                let location = "Indahouse"
+                let date = Date()
+                
+                zamb = Zamb(amount: amount, hand: hand, location: location, date: date)
+                
+                os_log("Adding a new zamb", log: OSLog.default, type: .debug)
+                return zamb
+            
+            default:
+                os_log("WTF am I doing", log: OSLog.default, type: .debug)
+                return nil
+        }
+    }
 
 }

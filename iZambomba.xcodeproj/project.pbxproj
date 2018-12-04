@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6A0C5521B17701001B47B3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */; };
 		3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
 		3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
 		3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04721AFFE50009E450B /* NewZambViewController.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZambListInterfaceController.swift; sourceTree = "<group>"; };
 		3A9EC04721AFFE50009E450B /* NewZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
 		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		3A9EC04B21B028B9009E450B /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */,
 				84C67E3021A742990008864D /* InterfaceController.swift */,
+				3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */,
 				84C67E3221A742990008864D /* ExtensionDelegate.swift */,
 				84C67E3421A742990008864D /* NotificationController.swift */,
 				84C67E3621A7429A0008864D /* Assets.xcassets */,
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6A0C5521B17701001B47B3 /* WKZambListInterfaceController.swift in Sources */,
 				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
 				3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */,
 				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,

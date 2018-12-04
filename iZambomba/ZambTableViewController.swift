@@ -8,12 +8,14 @@
 
 import UIKit
 import os.log
+import WatchConnectivity
 
 class ZambTableViewController: UITableViewController {
     
     //MARK: Properties
     
     var zambs = [Zamb]()
+    private var session = WCSession.default
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,12 @@ class ZambTableViewController: UITableViewController {
 //        } else {
             loadSampleZambs()
         //}
+        if isSuported() {
+            session.delegate = self as? WCSessionDelegate
+            session.activate()
+        }
+        
+        print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,6 +66,10 @@ class ZambTableViewController: UITableViewController {
     
     private func loadZambs() -> [Zamb]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Zamb.ArchiveURL.path) as? [Zamb]
+    }
+    
+    func isSuported() -> Bool {
+        return WCSession.isSupported()
     }
 
     // MARK: - Table view data source
@@ -173,13 +185,25 @@ class ZambTableViewController: UITableViewController {
     
     @IBAction func unwindFromNewZamb(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewZambViewController, let zamb = sourceViewController.zamb {
-            print("hola234")
+            
             //Add a new zamb
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             zambs.append(zamb)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             //saveZambs()
         }
+    }
+    
+    //MAR: Watch
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if (message["zamb"] is Zamb) {
+//            replyHandler(["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"])
+            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            zambs.append(message["zamb"] as! Zamb)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            print("pasa socio")
+        }
+        print("hola")
     }
     
 
