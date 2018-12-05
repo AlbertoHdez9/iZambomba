@@ -10,7 +10,15 @@ import UIKit
 import os.log
 import WatchConnectivity
 
-class ZambTableViewController: UITableViewController {
+class ZambTableViewController: UITableViewController, WCSessionDelegate {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("sessionDidBecomeInactive: \(session)")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("sessionDidDeactivate: \(session)")
+    }
+    
     
     //MARK: Properties
     
@@ -29,7 +37,7 @@ class ZambTableViewController: UITableViewController {
             loadSampleZambs()
         //}
         if isSuported() {
-            session.delegate = self as? WCSessionDelegate
+            session.delegate = self
             session.activate()
         }
         
@@ -194,8 +202,14 @@ class ZambTableViewController: UITableViewController {
         }
     }
     
-    //MAR: Watch
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+    //MARK: Watch
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
+        print("hola")
         if (message["zamb"] is Zamb) {
 //            replyHandler(["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"])
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
@@ -203,7 +217,6 @@ class ZambTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             print("pasa socio")
         }
-        print("hola")
     }
     
 

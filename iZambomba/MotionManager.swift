@@ -33,6 +33,8 @@ class MotionManager {
     weak var delegate: MotionManagerDelegate?
     
     var zambAmount = 0
+    var countOnePhone = false
+    var countOneWatch = false
     
     var recentDetection = false
     
@@ -76,12 +78,18 @@ class MotionManager {
     //      1 -> iWatch
     func processDeviceMotion(_ deviceMotion: CMDeviceMotion, type: Int) {
         if type == 0 {
-            if deviceMotion.userAcceleration.x < -2.5 {
+            if deviceMotion.userAcceleration.x < -2 {
+                countOnePhone = true
+            } else if countOnePhone && deviceMotion.userAcceleration.x > 2 {
+                countOnePhone = false
                 zambAmount += 1
                 updateZambAmountDelegate()
             }
         } else if type == 1 {
-            if deviceMotion.userAcceleration.y < -2.5 {
+            if deviceMotion.userAcceleration.y < -2 {
+                countOneWatch = true
+            } else if countOneWatch && deviceMotion.userAcceleration.y > 2 {
+                countOneWatch = false
                 zambAmount += 1
                 updateZambAmountDelegate()
             }

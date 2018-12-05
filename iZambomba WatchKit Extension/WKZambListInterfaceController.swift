@@ -26,6 +26,8 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         zamb = context as? Zamb
         print("amount: \(zamb!.amount), date : \(convertDateToString(date: zamb!.date)), location: \(String(describing: zamb!.location))      ")
         // Configure interface objects here.
+        updateLabels()
+        
     }
 
     override func willActivate() {
@@ -36,7 +38,6 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
             session.delegate = self
             session.activate()
         }
-        updateLabels()
     }
 
     override func didDeactivate() {
@@ -52,7 +53,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func sendMessage() {
         if isReachable() {
-            session.sendMessage(["zamb" : zamb!], replyHandler: {(response) in
+            session.sendMessage(["amount" : zamb!], replyHandler: {(response) in
                 print("Response: \(response)")
             }, errorHandler: { (error) in
                 print("Error: \(error)")
