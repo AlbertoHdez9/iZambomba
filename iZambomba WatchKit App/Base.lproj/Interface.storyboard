@@ -57,13 +57,8 @@
                 <controller id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="FuG-xw-jaw"/>
-                        <label alignment="center" text="Label" id="N9P-f4-vwo"/>
-                        <group width="1" alignment="center" id="1lN-OI-qPw">
-                            <items>
-                                <label alignment="left" text="Label" id="04t-dK-W96"/>
-                                <label alignment="right" text="Label" id="Vq0-FZ-fxP"/>
-                            </items>
-                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="N9P-f4-vwo"/>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="NTm-BX-TND"/>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Sync" id="3os-hE-kHr">
                             <connections>
                                 <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
@@ -71,9 +66,7 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="amountLabel" destination="N9P-f4-vwo" id="icK-KV-IYd"/>
-                        <outlet property="dateLabel" destination="04t-dK-W96" id="FYG-2s-cpP"/>
-                        <outlet property="locationLabel" destination="Vq0-FZ-fxP" id="gqZ-SN-Q1F"/>
+                        <outlet property="amountLabel" destination="N9P-f4-vwo" id="OyM-XH-mRZ"/>
                     </connections>
                 </controller>
             </objects>

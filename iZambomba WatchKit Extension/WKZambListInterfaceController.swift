@@ -23,11 +23,15 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        zamb = context as? Zamb
-        print("amount: \(zamb!.amount), date : \(convertDateToString(date: zamb!.date)), location: \(String(describing: zamb!.location))      ")
-        // Configure interface objects here.
-        updateLabels()
-        
+        if let zamb = context as? Zamb {
+            print("amount: \(zamb.amount), date : \(convertDateToString(date: zamb.date)), location: \(String(describing: zamb.location))")
+            // Configure interface objects here.
+            //updateLabels()
+            self.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
+            //self.dateLabel.setText(convertDateToString(date: zamb.date))
+            //locationLabel.setText(zamb.location)
+        }
+    
     }
 
     override func willActivate() {
@@ -43,6 +47,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        popToRootController()
     }
     
     //MARK: Actions
