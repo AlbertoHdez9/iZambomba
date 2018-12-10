@@ -106,8 +106,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No zambs yet!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-p0-ayc">
-                                <rect key="frame" x="116" y="204" width="143" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No zambs yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-p0-ayc">
+                                <rect key="frame" x="98" y="209" width="179" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
@@ -121,6 +121,13 @@
                                     <action selector="changeSessionStatus:" destination="DOs-0y-Ekr" eventType="touchUpInside" id="qK7-0m-S63"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Session has not started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF4-WM-cdB">
+                                <rect key="frame" x="93" y="123" width="189" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q8z-uN-60y"/>
@@ -141,13 +148,14 @@
                         <outlet property="cancelButton" destination="ocv-wi-58W" id="sXa-Nr-t1n"/>
                         <outlet property="saveButton" destination="f1A-TF-A3N" id="5HI-iz-9t1"/>
                         <outlet property="startButton" destination="OyL-da-ARP" id="iNx-1J-K6i"/>
-                        <outlet property="zambAmount" destination="fr5-p0-ayc" id="p7v-5j-vXr"/>
+                        <outlet property="timerLabel" destination="TF4-WM-cdB" id="odb-Yr-yRt"/>
+                        <outlet property="zambAmount" destination="fr5-p0-ayc" id="2Lf-dm-bEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m44-Lp-8vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Z6z-nk-aZi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="910" y="-267"/>
+            <point key="canvasLocation" x="909.60000000000002" y="-267.61619190404798"/>
         </scene>
         <!--Zamb View Controller-->
         <scene sceneID="tne-QT-ifu">

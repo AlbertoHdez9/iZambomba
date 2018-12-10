@@ -13,12 +13,15 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     
     
     @IBOutlet weak var zambAmount: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var currentZambAmount: Int = 0
     var startedZambSession: Bool = false
+    var timer: Timer?
+    var timerSeconds: Int = 0
     var zamb: Zamb?
     
     var manager = WorkoutManager()
@@ -45,8 +48,26 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             self.updateZambLabel()
         }
     }
-
     
+    @objc private func processTimer() {
+        timerSeconds += 1
+        timerLabel.text = "\(timerSeconds) seconds"
+    }
+    
+    private func secondsProcessor(inputSeconds: Int) -> String {
+        let processedTime: String
+        if (inputSeconds / 3600) > 0 {
+            processedTime = "\(inputSeconds / 3600)"
+        }
+        if ((inputSeconds % 3600) / 60) > 0 {
+            
+        }
+        let minutes: Int = (inputSeconds % 3600) / 60
+        let seconds: Int = (inputSeconds % 3600) % 60
+        
+        return ""
+    }
+
     
     //MARK: Actions
     @IBAction func changeSessionStatus(_ sender: UIButton) {
@@ -55,10 +76,14 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             startButton.setTitle("Stop", for: .normal)
             
             manager.startWorkout(type: 0) //type: 0 -> iPhone
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
+
             
         } else {
             manager.stopWorkout()
             startButton.setTitle("Start", for: .normal)
+            timer?.invalidate()
+            timer = nil
         }
     }
     

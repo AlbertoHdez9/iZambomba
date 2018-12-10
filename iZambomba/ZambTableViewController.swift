@@ -210,12 +210,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
         print("hola")
-        if (message["zamb"] is Zamb) {
+        if (message["amount"] is Int) {
+            let amount = message["amount"] as? Int
 //            replyHandler(["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"])
-            let newIndexPath = IndexPath(row: zambs.count, section: 0)
-            zambs.append(message["zamb"] as! Zamb)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            print("pasa socio")
+//            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+//            zambs.append(message["zamb"] as! Zamb)
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            print("pasa socio \(amount)")
         }
     }
     

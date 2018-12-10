@@ -44,9 +44,8 @@ class WorkoutManager: MotionManagerDelegate {
         
         // Configure the workout session.
         let workoutConfiguration = HKWorkoutConfiguration()
-        workoutConfiguration.activityType = .tennis
-        workoutConfiguration.locationType = .outdoor
-        
+        workoutConfiguration.activityType = .coreTraining
+        workoutConfiguration.locationType = .indoor
         
         // Start the workout session and device motion updates.
         session = true

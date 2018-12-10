@@ -30,6 +30,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
             self.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
             //self.dateLabel.setText(convertDateToString(date: zamb.date))
             //locationLabel.setText(zamb.location)
+            self.zamb = zamb
         }
     
     }
@@ -56,9 +57,9 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         popToRootController()
     }
     
-    @IBAction func sendMessage() {
+    func sendMessage() {
         if isReachable() {
-            session.sendMessage(["amount" : zamb!], replyHandler: {(response) in
+            session.sendMessage(["amount" : zamb!.amount], replyHandler: {(response) in
                 print("Response: \(response)")
             }, errorHandler: { (error) in
                 print("Error: \(error)")
