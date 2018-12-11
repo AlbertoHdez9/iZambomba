@@ -30,8 +30,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
 
 
         //If there are saved zambs, load'em, if not, load sample data
-        if loadZambs() != nil {
-            zambs += loadZambs()!
+        if let savedZambs = loadZambs() {
+            zambs += savedZambs
             print(zambs.count)
         } else {
             loadSampleZambs()
@@ -65,34 +65,29 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             fatalError("Unable to instantiate zamb3")
         }
         zambs += [zamb1, zamb2, zamb3]
-        //saveZambs()
+        saveZambs()
     }
     
     private func saveZambs() {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
-            try data.write(to: URL(string: Zamb.ArchiveURL.path)!)
+            try data.write(to: Zamb.ArchiveURL)
         } catch {
             print("Couldn't write file")
         }
-        //NSKeyedArchiver.archiveRootObject(zambs, toFile: Zamb.ArchiveURL.path)
     }
     
     private func loadZambs() -> [Zamb]? {
         var savedZambs: [Zamb]? = nil
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
-            if let loadedZambs = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Zamb] {
-                if !loadedZambs.isEmpty {
-                    savedZambs = loadedZambs
-                }
-                print("you serious", loadedZambs.count)
+            let rawdata = try Data(contentsOf: Zamb.ArchiveURL)
+            if let archivedZambs = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as! [Zamb]? {
+                savedZambs = archivedZambs
             }
         } catch {
             print("Couldn't read file.")
         }
         return savedZambs
-        //return NSKeyedUnarchiver.unarchiveObject(withFile: Zamb.ArchiveURL.path) as? [Zamb]
     }
     
     func isSuported() -> Bool {
@@ -205,7 +200,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 zambs[selectedIndexPath.row] = zamb
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
-            //saveZambs()
+            saveZambs()
         }
         
         
@@ -218,7 +213,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             zambs.append(zamb)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-            //saveZambs()
+            saveZambs()
         }
     }
     

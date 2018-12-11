@@ -8,7 +8,7 @@
 import UIKit
 import os.log
 
-class Zamb: NSObject, Codable {
+class Zamb: NSObject, NSCoding {
     
     //MARK: Properties
     var amount: Int
@@ -16,6 +16,7 @@ class Zamb: NSObject, Codable {
     var location: String?
     var date: Date
     var sessionTime: Int
+    var frecuency: Float
     
     //MARK: Archiving paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -39,10 +40,11 @@ class Zamb: NSObject, Codable {
             return nil
         }*/
         self.amount = amount
-        self.hand = hand
-        self.location = location
+        self.hand = hand ?? nil
+        self.location = location ?? nil
         self.date = date
-        self.sessionTime = sessionTime 
+        self.sessionTime = sessionTime
+        self.frecuency = Float(amount/sessionTime)
     }
     
     //MARK: NSCoding
@@ -50,30 +52,32 @@ class Zamb: NSObject, Codable {
         aCoder.encode(amount, forKey: PropertyKey.amount)
         aCoder.encode(hand, forKey: PropertyKey.hand)
         aCoder.encode(location, forKey: PropertyKey.location)
-        aCoder.encode(date, forKey: PropertyKey.date)
+            //Date to string
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM dd, yyyy HH:mm a"
+            formatter.locale = Locale(identifier: "en_US")
+            let dateString = formatter.string(from: date)
+        aCoder.encode(dateString, forKey: PropertyKey.date)
         aCoder.encode(sessionTime, forKey: PropertyKey.sessionTime)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         //The name is required. If we cannot decode a name String. the init should fail
-        guard let amount = aDecoder.decodeObject(forKey: PropertyKey.amount) as? Int else {
-            os_log("Unable to decode the amount for the selected Zamb.", log: OSLog.default, type: .debug)
-            return nil
-        }
-        let hand = aDecoder.decodeObject(forKey: PropertyKey.hand) as? String
-        let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
+        let amount = aDecoder.decodeInteger(forKey: PropertyKey.amount)
+        let hand = aDecoder.decodeObject(forKey: PropertyKey.hand) as? String ?? "No hand"
+        let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String ?? "No location"
         
-        let dateString = aDecoder.decodeObject(forKey: PropertyKey.date) as! String
+        let dateString = aDecoder.decodeObject(forKey: PropertyKey.date) as? String
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy HH:mm a"
         formatter.locale = Locale(identifier: "en_US")
-        
-        let date = formatter.date(from: dateString)
-        let sessionTime = aDecoder.decodeObject(forKey: PropertyKey.amount) as? Int
+
+        let date = formatter.date(from: dateString!)
+        let sessionTime = aDecoder.decodeInteger(forKey: PropertyKey.sessionTime)
         
         //TODO - check if this shit works (the as! shit)
         
         //Must call designated initializer
-        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime!)
+        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime)
     }
 }

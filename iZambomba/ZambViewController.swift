@@ -80,6 +80,12 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         return "\((inputSeconds % 3600) / 60):\(secondsString)"
     }
     
+    private func updateAcceptButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = locationLabel.text ?? ""
+        acceptButton.isEnabled = !text.isEmpty
+    }
+    
     
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -90,10 +96,12 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //Disable the Save button while editing
+        acceptButton.isEnabled = false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         locationLabel.text = textField.text
+        updateAcceptButtonState()
         locationChanged = true
     }
     
@@ -118,7 +126,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         let date = zamb!.date
         let sessionTime = zamb!.sessionTime
         
-        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
+        zamb = Zamb(amount: amount, hand: hand, location: location!, date: date, sessionTime: sessionTime)
         
         locationChanged = false
     }

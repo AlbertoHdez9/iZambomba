@@ -107,8 +107,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         }
         
         let amount = currentZambAmount
-        let hand = "Right"
-        let location = "Choso"
+        let hand = ""
+        let location = ""
         let date = Date()
         let sessionTime = timerSeconds
         
