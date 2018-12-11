@@ -14,6 +14,7 @@ class ZambTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var zambsAmountLabel: UILabel!
+    @IBOutlet weak var sessionTimeLabel: UILabel!
     
 
     override func awakeFromNib() {
@@ -26,5 +27,4 @@ class ZambTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

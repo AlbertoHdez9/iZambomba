@@ -16,6 +16,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var sessionTimeLabel: UILabel!
     
         //Buttons
     @IBOutlet weak var dismissButton: UIButton!
@@ -38,6 +39,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             //botones de los switches = zamb.hand
             dateLabel.text = convertDateToString(date: zamb.date)
             locationLabel.text = zamb.location
+            sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
         }
     }
     
@@ -67,6 +69,15 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         
         let dateString = formatter.string(from: date)
         return dateString
+    }
+    
+    func secondsProcessor(inputSeconds: Int) -> String {
+        let secondsInt = ((inputSeconds % 3600) % 60)
+        var secondsString: String = "\(secondsInt)"
+        if secondsInt < 10 {
+            secondsString = "0\((inputSeconds % 3600) % 60)"
+        }
+        return "\((inputSeconds % 3600) / 60):\(secondsString)"
     }
     
     
@@ -105,8 +116,9 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         let hand = zamb!.hand
         let location = locationChanged ? locationTextField.text : zamb!.location
         let date = zamb!.date
+        let sessionTime = zamb!.sessionTime
         
-        zamb = Zamb(amount: amount, hand: hand, location: location, date: date)
+        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
         
         locationChanged = false
     }

@@ -51,21 +51,16 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     
     @objc private func processTimer() {
         timerSeconds += 1
-        timerLabel.text = "\(timerSeconds) seconds"
+        timerLabel.text = secondsProcessor(inputSeconds: timerSeconds)
     }
     
     private func secondsProcessor(inputSeconds: Int) -> String {
-        let processedTime: String
-        if (inputSeconds / 3600) > 0 {
-            processedTime = "\(inputSeconds / 3600)"
+        let secondsInt = ((inputSeconds % 3600) % 60)
+        var secondsString: String = "\(secondsInt)"
+        if secondsInt < 10 {
+            secondsString = "0\((inputSeconds % 3600) % 60)"
         }
-        if ((inputSeconds % 3600) / 60) > 0 {
-            
-        }
-        let minutes: Int = (inputSeconds % 3600) / 60
-        let seconds: Int = (inputSeconds % 3600) % 60
-        
-        return ""
+        return "\((inputSeconds % 3600) / 60):\(secondsString)"
     }
 
     
@@ -75,13 +70,19 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         if (startButton.titleLabel!.text == "Start") {
             startButton.setTitle("Stop", for: .normal)
             
+            //Workout manager start
             manager.startWorkout(type: 0) //type: 0 -> iPhone
+            
+            //Timer start
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
 
             
         } else {
+            //Workout manager stop
             manager.stopWorkout()
             startButton.setTitle("Start", for: .normal)
+            
+            //Timer stops
             timer?.invalidate()
             timer = nil
         }
@@ -109,8 +110,9 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         let hand = "Right"
         let location = "Choso"
         let date = Date()
+        let sessionTime = timerSeconds
         
-        zamb = Zamb(amount: amount, hand: hand, location: location, date: date)
+        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
     }
     
 

@@ -78,8 +78,9 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
                 let hand = "Right"
                 let location = "Indahouse"
                 let date = Date()
+                let sessionTime = 2
                 
-                zamb = Zamb(amount: amount, hand: hand, location: location, date: date)
+                zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
                 
                 os_log("Adding a new zamb", log: OSLog.default, type: .debug)
                 return zamb

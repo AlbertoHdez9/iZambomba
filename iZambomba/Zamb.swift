@@ -15,6 +15,7 @@ class Zamb: NSObject, Codable {
     var hand: String?
     var location: String?
     var date: Date
+    var sessionTime: Int
     
     //MARK: Archiving paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -26,10 +27,11 @@ class Zamb: NSObject, Codable {
         static let hand = "hand"
         static let location = "location"
         static let date = "date"
+        static let sessionTime = "sessionTime"
     }
     
     //Initialization
-    init?(amount: Int, hand: String?, location: String?, date: Date) {
+    init?(amount: Int, hand: String?, location: String?, date: Date, sessionTime: Int) {
         guard amount != 0 else {
             return nil
         }
@@ -40,6 +42,7 @@ class Zamb: NSObject, Codable {
         self.hand = hand
         self.location = location
         self.date = date
+        self.sessionTime = sessionTime 
     }
     
     //MARK: NSCoding
@@ -48,6 +51,7 @@ class Zamb: NSObject, Codable {
         aCoder.encode(hand, forKey: PropertyKey.hand)
         aCoder.encode(location, forKey: PropertyKey.location)
         aCoder.encode(date, forKey: PropertyKey.date)
+        aCoder.encode(sessionTime, forKey: PropertyKey.sessionTime)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -65,10 +69,11 @@ class Zamb: NSObject, Codable {
         formatter.locale = Locale(identifier: "en_US")
         
         let date = formatter.date(from: dateString)
+        let sessionTime = aDecoder.decodeObject(forKey: PropertyKey.amount) as? Int
         
         //TODO - check if this shit works (the as! shit)
         
         //Must call designated initializer
-        self.init(amount: amount, hand: hand, location: location, date: date!)
+        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime!)
     }
 }

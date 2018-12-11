@@ -30,12 +30,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
 
 
         //If there are saved zambs, load'em, if not, load sample data
-//        if let savedZambs = loadZambs() {
-//            zambs += savedZambs
-//            print(zambs.count)
-//        } else {
+        if loadZambs() != nil {
+            zambs += loadZambs()!
+            print(zambs.count)
+        } else {
             loadSampleZambs()
-        //}
+        }
         if isSuported() {
             session.delegate = self
             session.activate()
@@ -53,15 +53,15 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     //MARK: Private Methods
     
     private func loadSampleZambs() {
-        guard let zamb1 = Zamb(amount: 275, hand: "Other", location: "Home", date: Date()) else {
+        guard let zamb1 = Zamb(amount: 275, hand: "Other", location: "Home", date: Date(), sessionTime: 345) else {
             fatalError("Unable to instantiate zamb1")
         }
 
-        guard let zamb2 = Zamb(amount: 350, hand: "Left", location: "Office", date: Date()) else {
+        guard let zamb2 = Zamb(amount: 350, hand: "Left", location: "Office", date: Date(), sessionTime: 445) else {
             fatalError("Unable to instantiate zamb2")
         }
 
-        guard let zamb3 = Zamb(amount: 250, hand: "Right", location: "Space", date: Date()) else {
+        guard let zamb3 = Zamb(amount: 250, hand: "Right", location: "Space", date: Date(), sessionTime: 245) else {
             fatalError("Unable to instantiate zamb3")
         }
         zambs += [zamb1, zamb2, zamb3]
@@ -69,11 +69,30 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     private func saveZambs() {
-        NSKeyedArchiver.archiveRootObject(zambs, toFile: Zamb.ArchiveURL.path)
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
+            try data.write(to: URL(string: Zamb.ArchiveURL.path)!)
+        } catch {
+            print("Couldn't write file")
+        }
+        //NSKeyedArchiver.archiveRootObject(zambs, toFile: Zamb.ArchiveURL.path)
     }
     
     private func loadZambs() -> [Zamb]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Zamb.ArchiveURL.path) as? [Zamb]
+        var savedZambs: [Zamb]? = nil
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
+            if let loadedZambs = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Zamb] {
+                if !loadedZambs.isEmpty {
+                    savedZambs = loadedZambs
+                }
+                print("you serious", loadedZambs.count)
+            }
+        } catch {
+            print("Couldn't read file.")
+        }
+        return savedZambs
+        //return NSKeyedUnarchiver.unarchiveObject(withFile: Zamb.ArchiveURL.path) as? [Zamb]
     }
     
     func isSuported() -> Bool {
@@ -101,11 +120,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         // Fetches the appropriate meal for the data source layout.
         let zamb = zambs[indexPath.row]
-        
+        let zambVC = ZambViewController() //Zamb VC instance to use its methods
         //Cell config
         cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!!"
         cell.locationLabel.text = zamb.location
-        cell.dateLabel.text = ZambViewController().convertDateToString(date: zamb.date)
+        cell.dateLabel.text = zambVC.convertDateToString(date: zamb.date)
+        cell.sessionTimeLabel.text = zambVC.secondsProcessor(inputSeconds: zamb.sessionTime)
 
         return cell
     }
