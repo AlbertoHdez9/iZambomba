@@ -86,9 +86,9 @@ class MotionManager {
                 updateZambAmountDelegate()
             }
         } else if type == 1 {
-            if deviceMotion.userAcceleration.y < -2 {
+            if deviceMotion.userAcceleration.y < -1 {
                 countOneWatch = true
-            } else if countOneWatch && deviceMotion.userAcceleration.y > 2 {
+            } else if countOneWatch && deviceMotion.userAcceleration.y > 1 {
                 countOneWatch = false
                 zambAmount += 1
                 updateZambAmountDelegate()

@@ -108,6 +108,9 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             leftHandSwitch.isOn = false
             otherHandSwitch.isOn = true
         default:
+            rightHandSwitch.isOn = false
+            leftHandSwitch.isOn = false
+            otherHandSwitch.isOn = false
             print("This shouldn't be printing")
         }
     }

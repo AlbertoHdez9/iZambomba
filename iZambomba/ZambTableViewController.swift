@@ -201,8 +201,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             }
             saveZambs()
         }
-        
-        
     }
     
     @IBAction func unwindFromNewZamb(sender: UIStoryboardSegue) {
@@ -225,12 +223,14 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
         if (message["amount"] is Int) {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            
             let zamb = Zamb(
                 amount: message["amount"] as! Int,
                 hand: message["hand"] as? String,
                 location: message["location"] as? String,
                 date: message["date"] as! Date,
                 sessionTime: message["sessionTime"] as! Int)
+            
             zambs.append(zamb!)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }

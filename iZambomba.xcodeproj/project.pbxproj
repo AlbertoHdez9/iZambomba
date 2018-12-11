@@ -13,6 +13,7 @@
 		3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04721AFFE50009E450B /* NewZambViewController.swift */; };
 		3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
 		3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
+		3AC09B8321C02253004C788A /* HandSwitchesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC09B8221C02253004C788A /* HandSwitchesHandler.swift */; };
 		3ACA9B1121B6AFB2009B7A90 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */; };
 		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
 		84C67E1021A742950008864D /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ZambViewController.swift */; };
@@ -80,6 +81,7 @@
 		3A9EC04721AFFE50009E450B /* NewZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
 		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		3A9EC04B21B028B9009E450B /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		3AC09B8221C02253004C788A /* HandSwitchesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSwitchesHandler.swift; sourceTree = "<group>"; };
 		3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8424D53621AD780700BBFDA3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
@@ -162,11 +164,12 @@
 				84C67E0D21A742950008864D /* AppDelegate.swift */,
 				3A9EC04721AFFE50009E450B /* NewZambViewController.swift */,
 				84C67E0F21A742950008864D /* ZambViewController.swift */,
-				84C67E4B21A771970008864D /* Zamb.swift */,
 				84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */,
 				84C67E4F21A778B50008864D /* ZambTableViewController.swift */,
 				3A9EC04B21B028B9009E450B /* MotionManager.swift */,
 				3A9EC04921B027E5009E450B /* WorkoutManager.swift */,
+				84C67E4B21A771970008864D /* Zamb.swift */,
+				3AC09B8221C02253004C788A /* HandSwitchesHandler.swift */,
 				84C67E1121A742950008864D /* Main.storyboard */,
 				84C67E1421A742980008864D /* Assets.xcassets */,
 				84C67E1621A742980008864D /* LaunchScreen.storyboard */,
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC09B8321C02253004C788A /* HandSwitchesHandler.swift in Sources */,
 				84C67E4C21A771970008864D /* Zamb.swift in Sources */,
 				3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */,
 				84C67E1021A742950008864D /* ZambViewController.swift in Sources */,
