@@ -223,22 +223,16 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
-        print("hola")
         if (message["amount"] is Int) {
-            let amount = message["amount"] as? Int
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
-            let zamb = Zamb(amount: amount!, hand: "Right", location: "In-House", date: Date(), sessionTime: 45)
+            let zamb = Zamb(
+                amount: message["amount"] as! Int,
+                hand: message["hand"] as? String,
+                location: message["location"] as? String,
+                date: message["date"] as! Date,
+                sessionTime: message["sessionTime"] as! Int)
             zambs.append(zamb!)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-            print("pasa socio \(String(describing: amount))")
         }
     }
-    
-    func session(_ session: WCSession,
-                 didReceiveMessage message: [String : Any],
-                 replyHandler: @escaping ([String : Any]) -> Void) {
-        print("hello")
-    }
-    
-
 }

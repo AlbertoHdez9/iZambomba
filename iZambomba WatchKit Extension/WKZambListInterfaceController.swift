@@ -24,10 +24,11 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         super.awake(withContext: context)
         
         if let zamb = context as? Zamb {
-            print("amount: \(zamb.amount), date : \(convertDateToString(date: zamb.date)), location: \(String(describing: zamb.location))")
+            print("amount: \(zamb.amount), date : \(convertDateToString(date: zamb.date)), location: \(String(describing: zamb.location)), hand: \(String(describing: zamb.hand)), sessionTime: \(zamb.sessionTime)")
+            
             // Configure interface objects here.
-            //updateLabels()
-            self.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
+            
+            //self.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
             //self.dateLabel.setText(convertDateToString(date: zamb.date))
             //locationLabel.setText(zamb.location)
             self.zamb = zamb
@@ -39,6 +40,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
+        updateLabels()
         if isSupported() {
             session.delegate = self
             session.activate()
@@ -60,10 +62,18 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     func sendMessage() {
         if isReachable() {
             if let zamb = zamb {
-                session.sendMessage(["amount" : zamb.amount], replyHandler: nil, errorHandler: nil)
+                
+                let message: [String : Any] = [
+                    "amount"        : zamb.amount,
+                    "hand"          : zamb.hand ?? "",
+                    "location"      : zamb.location ?? "",
+                    "date"          : zamb.date,
+                    "sessionTime"   : zamb.sessionTime ]
+                
+                session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")
             } else {
-                print("SHIT")
+                print("Zamb incomplete, message could not be sent")
             }
         } else {
             print("Phone is not reachable")
@@ -72,9 +82,11 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     //MARK: Private methods
     private func updateLabels() {
-        amountLabel.setText("\(zamb!.amount) ZAMBS!!!")
-        dateLabel.setText(convertDateToString(date: zamb!.date))
-        locationLabel.setText(zamb!.location)
+        if let zamb = zamb {
+            amountLabel.setText("\(zamb.amount) ZAMBS!!!")
+            dateLabel.setText(convertDateToString(date: zamb.date))
+            locationLabel.setText(zamb.location)
+        }
     }
     
     private func isSupported() -> Bool {

@@ -39,12 +39,18 @@
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
                                 <imageView width="46" height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
-                                <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" id="rTb-Am-0Iv"/>
+                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" id="rTb-Am-0Iv"/>
+                                        <label alignment="center" verticalAlignment="bottom" text="00:00" id="pLD-NC-OXM"/>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="doneButton" destination="z1h-Ls-d44" id="ujE-Y8-75d"/>
+                        <outlet property="timerLabel" destination="pLD-NC-OXM" id="Gjz-rm-EWm"/>
                         <outlet property="zambAmount" destination="rTb-Am-0Iv" id="EOS-kK-tou"/>
                     </connections>
                 </controller>
@@ -57,8 +63,13 @@
                 <controller id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="FuG-xw-jaw"/>
-                        <label alignment="center" verticalAlignment="center" text="Label" id="N9P-f4-vwo"/>
-                        <label alignment="center" verticalAlignment="center" text="Label" id="NTm-BX-TND"/>
+                        <label alignment="center" text="Label" id="N9P-f4-vwo"/>
+                        <group width="1" alignment="center" id="OzV-5f-uWz">
+                            <items>
+                                <label alignment="left" text="Label" id="3cw-o6-SQ2"/>
+                                <label alignment="right" text="Label" id="alS-eg-BI4"/>
+                            </items>
+                        </group>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Sync" id="3os-hE-kHr">
                             <connections>
                                 <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
@@ -67,6 +78,8 @@
                     </items>
                     <connections>
                         <outlet property="amountLabel" destination="N9P-f4-vwo" id="OyM-XH-mRZ"/>
+                        <outlet property="dateLabel" destination="3cw-o6-SQ2" id="Arf-X1-9yl"/>
+                        <outlet property="locationLabel" destination="alS-eg-BI4" id="KOO-TQ-9h2"/>
                     </connections>
                 </controller>
             </objects>
