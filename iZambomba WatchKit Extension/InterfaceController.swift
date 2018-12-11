@@ -37,14 +37,14 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         super.willActivate()
         startedZambSession = true
         
-        manager.startWorkout(type: 1) //type: 1 -> Watch
+        //manager.startWorkout(type: 1) //type: 1 -> Watch
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         startedZambSession = false
-        manager.stopWorkout()
+        //manager.stopWorkout()
     }
     
     //MARK: Private methods
@@ -64,17 +64,18 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     //MARK: Actions
     @IBAction func doneButtonAction() {
         startedZambSession = false
-        manager.stopWorkout()
-        if currentZambAmount == 0 {
-            popToRootController()
-        }
+        //manager.stopWorkout()
+        //if currentZambAmount == 0 {
+            //popToRootController()
+        //}
     }
     
     //MARK: Navigation
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch(segueIdentifier) {
             case "addZamb":
-                let amount = currentZambAmount
+                //let amount = currentZambAmount
+                let amount = 2500 //for simulation purposes
                 let hand = "Right"
                 let location = "Indahouse"
                 let date = Date()
@@ -86,7 +87,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
                 return zamb
             
             default:
-                os_log("WTF am I doing", log: OSLog.default, type: .debug)
+                os_log("This shouldn't be printing", log: OSLog.default, type: .debug)
                 return nil
         }
     }

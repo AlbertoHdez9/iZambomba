@@ -59,11 +59,12 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func sendMessage() {
         if isReachable() {
-            session.sendMessage(["amount" : zamb!.amount], replyHandler: {(response) in
-                print("Response: \(response)")
-            }, errorHandler: { (error) in
-                print("Error: \(error)")
-            })
+            if let zamb = zamb {
+                session.sendMessage(["amount" : zamb.amount], replyHandler: nil, errorHandler: nil)
+                print("Message sent")
+            } else {
+                print("SHIT")
+            }
         } else {
             print("Phone is not reachable")
         }

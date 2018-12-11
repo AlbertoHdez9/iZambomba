@@ -18,9 +18,15 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var sessionTimeLabel: UILabel!
     
-        //Buttons
+    //Buttons
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    
+    //Switches
+    @IBOutlet weak var rightHandSwitch: UISwitch!
+    @IBOutlet weak var leftHandSwitch: UISwitch!
+    @IBOutlet weak var otherHandSwitch: UISwitch!
+    
     
     var zamb: Zamb?
     var locationChanged = false
@@ -37,6 +43,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         if let zamb = zamb {
             amountLabel.text = "\(zamb.amount) ZAMBS!"
             //botones de los switches = zamb.hand
+            handleSwitches(hand: zamb.hand!)
             dateLabel.text = convertDateToString(date: zamb.date)
             locationLabel.text = zamb.location
             sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
@@ -84,6 +91,25 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         // Disable the Save button if the text field is empty.
         let text = locationLabel.text ?? ""
         acceptButton.isEnabled = !text.isEmpty
+    }
+    
+    private func handleSwitches(hand: String) {
+        switch hand {
+        case "Right":
+            rightHandSwitch.isOn = true
+            leftHandSwitch.isOn = false
+            otherHandSwitch.isOn = false
+        case "Left":
+            rightHandSwitch.isOn = false
+            leftHandSwitch.isOn = true
+            otherHandSwitch.isOn = false
+        case "Other":
+            rightHandSwitch.isOn = false
+            leftHandSwitch.isOn = false
+            otherHandSwitch.isOn = true
+        default:
+            print("This shouldn't be printing")
+        }
     }
     
     

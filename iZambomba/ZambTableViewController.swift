@@ -11,6 +11,7 @@ import os.log
 import WatchConnectivity
 
 class ZambTableViewController: UITableViewController, WCSessionDelegate {
+    
     func sessionDidBecomeInactive(_ session: WCSession) {
         print("sessionDidBecomeInactive: \(session)")
     }
@@ -32,7 +33,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         //If there are saved zambs, load'em, if not, load sample data
         if let savedZambs = loadZambs() {
             zambs += savedZambs
-            print(zambs.count)
         } else {
             loadSampleZambs()
         }
@@ -97,7 +97,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -227,12 +226,18 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         print("hola")
         if (message["amount"] is Int) {
             let amount = message["amount"] as? Int
-//            replyHandler(["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"])
-//            let newIndexPath = IndexPath(row: zambs.count, section: 0)
-//            zambs.append(message["zamb"] as! Zamb)
-//            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            print("pasa socio \(amount)")
+            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            let zamb = Zamb(amount: amount!, hand: "Right", location: "In-House", date: Date(), sessionTime: 45)
+            zambs.append(zamb!)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            print("pasa socio \(String(describing: amount))")
         }
+    }
+    
+    func session(_ session: WCSession,
+                 didReceiveMessage message: [String : Any],
+                 replyHandler: @escaping ([String : Any]) -> Void) {
+        print("hello")
     }
     
 
