@@ -25,10 +25,14 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     var zambs = [Zamb]()
     private var session = WCSession.default
+    
+    @IBOutlet weak var weeklyZambs: UILabel!
+    @IBOutlet weak var weekDate: UILabel!
+    var aboutAWeekAgo: Date?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         //If there are saved zambs, load'em, if not, load sample data
         if let savedZambs = loadZambs() {
@@ -40,14 +44,22 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             session.delegate = self
             session.activate()
         }
+        //Weekly zambs
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        let userCalendar = NSCalendar.current
+        if let aWeekAgo = userCalendar.date(byAdding: Calendar.Component.day, value: -7, to: Date()) {
+            aboutAWeekAgo = aWeekAgo
+            weekDate.text = "since \(formatter.string(from: aWeekAgo))"
+        }
+        let weeklyZambCount = getWeeklyZambs()
+        if !zambs.isEmpty || weeklyZambCount != 0 {
+            weeklyZambs.text = "\(weeklyZambCount) ZAMBS!!!"
+        } else {
+            weeklyZambs.text = "No zambs"
+        }
         
         print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     //MARK: Private Methods
@@ -88,6 +100,16 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             print("Couldn't read file.")
         }
         return savedZambs
+    }
+    
+    private func getWeeklyZambs() -> Int{
+        var sumatory = 0
+        for zamb in zambs {
+            if(zamb.date > aboutAWeekAgo!) {
+                sumatory += zamb.amount
+            }
+        }
+        return sumatory
     }
     
     func isSuported() -> Bool {

@@ -30,6 +30,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     
     var zamb: Zamb?
     var locationChanged = false
+    var selectedHand: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +94,10 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         acceptButton.isEnabled = !text.isEmpty
     }
     
+    //MARK: Switches
+    
     private func handleSwitches(hand: String) {
+        selectedHand = hand
         switch hand {
         case "Right":
             rightHandSwitch.isOn = true
@@ -115,6 +119,41 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func rightHandSwitchTouch(_ sender: UISwitch) {
+        if selectedHand == "Right" {
+            selectedHand = "No hand"
+            rightHandSwitch.setOn(false, animated: true)
+        } else {
+            rightHandSwitch.setOn(true, animated: true)
+            selectedHand = "Right"
+            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
+            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+        }
+    }
+    
+    @IBAction func leftHandSwitchTouch(_ sender: UISwitch) {
+        if selectedHand == "Left" {
+            selectedHand = "No hand"
+            leftHandSwitch.setOn(false, animated: true)
+        } else {
+            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
+            selectedHand = "Left"
+            leftHandSwitch.setOn(true, animated: true)
+            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+        }
+    }
+    
+    @IBAction func otherHandSwitchTouch(_ sender: UISwitch) {
+        if selectedHand == "Other" {
+            selectedHand = "No hand"
+            otherHandSwitch.setOn(false, animated: true)
+        } else {
+            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
+            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
+            otherHandSwitch.setOn(true, animated: true)
+            selectedHand = "Other"
+        }
+    }
     
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -150,12 +189,11 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         }
         
         let amount = zamb!.amount
-        let hand = zamb!.hand
         let location = locationChanged ? locationTextField.text : zamb!.location
         let date = zamb!.date
         let sessionTime = zamb!.sessionTime
         
-        zamb = Zamb(amount: amount, hand: hand, location: location!, date: date, sessionTime: sessionTime)
+        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime)
         
         locationChanged = false
     }
