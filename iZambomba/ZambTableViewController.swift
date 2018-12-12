@@ -29,7 +29,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     @IBOutlet weak var weeklyZambs: UILabel!
     @IBOutlet weak var weekDate: UILabel!
     var aboutAWeekAgo: Date?
-    
+    var weeklyZambCount: Int? = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +52,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             aboutAWeekAgo = aWeekAgo
             weekDate.text = "since \(formatter.string(from: aWeekAgo))"
         }
-        let weeklyZambCount = getWeeklyZambs()
+        weeklyZambCount = getWeeklyZambs()
         if !zambs.isEmpty || weeklyZambCount != 0 {
-            weeklyZambs.text = "\(weeklyZambCount) ZAMBS!!!"
+            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
         } else {
             weeklyZambs.text = "No zambs"
         }
@@ -254,6 +254,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 sessionTime: message["sessionTime"] as! Int)
             
             zambs.append(zamb!)
+            weeklyZambCount = weeklyZambCount! + zamb!.amount
+            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }

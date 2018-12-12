@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2FA1AE21C1449A00B1042B /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */; };
 		3A6A0C5521B17701001B47B3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */; };
 		3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
 		3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZambRowController.swift; sourceTree = "<group>"; };
 		3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZambListInterfaceController.swift; sourceTree = "<group>"; };
 		3A9EC04721AFFE50009E450B /* NewZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
 		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				84C67E3621A7429A0008864D /* Assets.xcassets */,
 				84C67E3821A7429A0008864D /* Info.plist */,
 				84C67E3921A7429A0008864D /* PushNotificationPayload.apns */,
+				3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */,
 			);
 			path = "iZambomba WatchKit Extension";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
 				3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */,
 				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,
+				3A2FA1AE21C1449A00B1042B /* WKZambRowController.swift in Sources */,
 				84C67E3121A742990008864D /* InterfaceController.swift in Sources */,
 				84C8942E21A8229E000ED015 /* Zamb.swift in Sources */,
 				3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */,

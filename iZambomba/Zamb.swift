@@ -44,7 +44,7 @@ class Zamb: NSObject, NSCoding {
         self.location = location ?? nil
         self.date = date
         self.sessionTime = sessionTime
-        self.frecuency = Float(amount/sessionTime)
+        self.frecuency = Float(amount/(sessionTime == 0 ? 1 : sessionTime))
     }
     
     //MARK: NSCoding

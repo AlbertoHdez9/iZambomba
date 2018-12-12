@@ -12,26 +12,25 @@ import WatchConnectivity
 
 class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     
-    @IBOutlet var amountLabel: WKInterfaceLabel!
-    @IBOutlet var dateLabel: WKInterfaceLabel!
-    @IBOutlet var locationLabel: WKInterfaceLabel!
+    @IBOutlet var tableView: WKInterfaceTable!
     
-    var zamb: Zamb?
+    var zambs = [Zamb]()
+    
+    //TODO - el array zambs se reinicia con cada instancia de la lista, asi que habria que cambiar la declaracion al rootController, de ese modo pasamos el array por contexto al resto de controllers que van rellenando el mismo, y aqui lo recuperamos y pasamos al rowController
+    
     private var session = WCSession.default
     
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+
         if let zamb = context as? Zamb {
             print("amount: \(zamb.amount), date : \(convertDateToString(date: zamb.date)), location: \(String(describing: zamb.location)), hand: \(String(describing: zamb.hand)), sessionTime: \(zamb.sessionTime)")
             
             // Configure interface objects here.
+            zambs += [zamb]
+            loadTableCells()
             
-            //self.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
-            //self.dateLabel.setText(convertDateToString(date: zamb.date))
-            //locationLabel.setText(zamb.location)
-            self.zamb = zamb
         }
     
     }
@@ -40,7 +39,6 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        updateLabels()
         if isSupported() {
             session.delegate = self
             session.activate()
@@ -50,7 +48,23 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        popToRootController()
+    }
+    
+    override func willDisappear() {
+        //popToRootController()
+    }
+    
+    func loadTableCells() {
+        print(zambs.count)
+        tableView.setNumberOfRows(zambs.count, withRowType: "WKZambRowController")
+        
+        for (index, zamb) in zambs.enumerated() {
+            if let zambListRowController = tableView.rowController(at: index) as? WKZambRowController {
+                zambListRowController.amountLabel.setText("\(zamb.amount) ZAMBS!!!")
+                zambListRowController.dateLabel.setText(convertDateToString(date: zamb.date))
+                zambListRowController.locationLabel.setText(zamb.location)
+            }
+        }
     }
     
     //MARK: Actions
@@ -61,8 +75,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func sendMessage() {
         if isReachable() {
-            if let zamb = zamb {
-                
+            for zamb in zambs {
                 let message: [String : Any] = [
                     "amount"        : zamb.amount,
                     "hand"          : zamb.hand ?? "",
@@ -72,8 +85,6 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")
-            } else {
-                print("Zamb incomplete, message could not be sent")
             }
         } else {
             print("Phone is not reachable")
@@ -81,14 +92,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     //MARK: Private methods
-    private func updateLabels() {
-        if let zamb = zamb {
-            amountLabel.setText("\(zamb.amount) ZAMBS!!!")
-            dateLabel.setText(convertDateToString(date: zamb.date))
-            locationLabel.setText(zamb.location)
-        }
-    }
-    
+  
     private func isSupported() -> Bool {
         return WCSession.isSupported()
     }

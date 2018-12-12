@@ -62,14 +62,28 @@
             <objects>
                 <controller id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="FuG-xw-jaw"/>
-                        <label alignment="center" text="Label" id="N9P-f4-vwo"/>
-                        <group width="1" alignment="center" id="OzV-5f-uWz">
+                        <table alignment="left" id="K3z-75-XdB">
                             <items>
-                                <label alignment="left" text="Label" id="3cw-o6-SQ2"/>
-                                <label alignment="right" text="Label" id="alS-eg-BI4"/>
+                                <tableRow identifier="WKZambRowController" selectable="NO" id="Pfd-gh-TWh" customClass="WKZambRowController" customModule="iZambomba_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="H3x-D0-UCX">
+                                        <items>
+                                            <group width="62" alignment="left" layout="vertical" id="m4w-dW-fcI">
+                                                <items>
+                                                    <label alignment="center" text="Label" id="yrx-hp-Jdj"/>
+                                                    <label alignment="center" text="Label" id="CGb-NS-NWY"/>
+                                                </items>
+                                            </group>
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="amountLabel" destination="Juz-0U-VIR" id="Hnw-kY-Li3"/>
+                                        <outlet property="dateLabel" destination="yrx-hp-Jdj" id="Cs2-U3-Qcu"/>
+                                        <outlet property="locationLabel" destination="CGb-NS-NWY" id="rQ5-Io-9go"/>
+                                    </connections>
+                                </tableRow>
                             </items>
-                        </group>
+                        </table>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Sync" id="3os-hE-kHr">
                             <connections>
                                 <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
@@ -77,9 +91,7 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="amountLabel" destination="N9P-f4-vwo" id="OyM-XH-mRZ"/>
-                        <outlet property="dateLabel" destination="3cw-o6-SQ2" id="Arf-X1-9yl"/>
-                        <outlet property="locationLabel" destination="alS-eg-BI4" id="KOO-TQ-9h2"/>
+                        <outlet property="tableView" destination="K3z-75-XdB" id="TgR-QW-kew"/>
                     </connections>
                 </controller>
             </objects>
