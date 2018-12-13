@@ -40,6 +40,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         
         locationTextField.delegate = self
         
+        
         //Set up views if editing an existing ZAMB
         if let zamb = zamb {
             amountLabel.text = "\(zamb.amount) ZAMBS!"

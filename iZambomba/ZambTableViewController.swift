@@ -26,6 +26,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     var zambs = [Zamb]()
     private var session = WCSession.default
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var weeklyZambs: UILabel!
     @IBOutlet weak var weekDate: UILabel!
     var aboutAWeekAgo: Date?
@@ -33,7 +34,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setNavBarAndBackground()
+        
         //If there are saved zambs, load'em, if not, load sample data
         if let savedZambs = loadZambs() {
             zambs += savedZambs
@@ -51,6 +54,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         if let aWeekAgo = userCalendar.date(byAdding: Calendar.Component.day, value: -7, to: Date()) {
             aboutAWeekAgo = aWeekAgo
             weekDate.text = "since \(formatter.string(from: aWeekAgo))"
+            weekDate.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
         }
         weeklyZambCount = getWeeklyZambs()
         if !zambs.isEmpty || weeklyZambCount != 0 {
@@ -58,6 +62,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         } else {
             weeklyZambs.text = "No zambs"
         }
+        weeklyZambs.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
         
         print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
     }
@@ -68,15 +73,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         guard let zamb1 = Zamb(amount: 275, hand: "Other", location: "Home", date: Date(), sessionTime: 345) else {
             fatalError("Unable to instantiate zamb1")
         }
-
-        guard let zamb2 = Zamb(amount: 350, hand: "Left", location: "Office", date: Date(), sessionTime: 445) else {
-            fatalError("Unable to instantiate zamb2")
-        }
-
-        guard let zamb3 = Zamb(amount: 250, hand: "Right", location: "Space", date: Date(), sessionTime: 245) else {
-            fatalError("Unable to instantiate zamb3")
-        }
-        zambs += [zamb1, zamb2, zamb3]
+        zambs += [zamb1]
         saveZambs()
     }
     
@@ -100,6 +97,21 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             print("Couldn't read file.")
         }
         return savedZambs
+    }
+    
+    private func setNavBarAndBackground() {
+        
+        //Nav bar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.tintColor = .none
+        
+        //Top view background
+        topView.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
+        
+        //Not working
+        //view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
     }
     
     private func getWeeklyZambs() -> Int{

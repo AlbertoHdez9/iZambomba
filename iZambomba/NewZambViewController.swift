@@ -18,6 +18,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     var currentZambAmount: Int = 0
     var startedZambSession: Bool = false
     var timer: Timer?
@@ -31,6 +33,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         manager.delegate = self
         
+        setNavBarAndBackground()
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +42,16 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         if startedZambSession {
             zambAmount.text = "\(self.currentZambAmount) ZAMBS!!!"
         }
+    }
+    
+    private func setNavBarAndBackground() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.tintColor = .none
+        
+        //Not working
+        view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
     }
     
     

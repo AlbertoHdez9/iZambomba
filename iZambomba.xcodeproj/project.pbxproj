@@ -15,6 +15,8 @@
 		3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
 		3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
 		3ACA9B1121B6AFB2009B7A90 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */; };
+		3AD5205521C2921100719234 /* Lato in Resources */ = {isa = PBXBuildFile; fileRef = 3AD5205421C2921100719234 /* Lato */; };
+		3AD5205621C2921100719234 /* Lato in Resources */ = {isa = PBXBuildFile; fileRef = 3AD5205421C2921100719234 /* Lato */; };
 		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
 		84C67E1021A742950008864D /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ZambViewController.swift */; };
 		84C67E1321A742950008864D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1121A742950008864D /* Main.storyboard */; };
@@ -83,6 +85,7 @@
 		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		3A9EC04B21B028B9009E450B /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AD5205421C2921100719234 /* Lato */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lato; sourceTree = "<group>"; };
 		8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8424D53621AD780700BBFDA3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
 		8424D53721AD780D00BBFDA3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		84C67E0121A742950008864D = {
 			isa = PBXGroup;
 			children = (
+				3AD5205421C2921100719234 /* Lato */,
 				84C67E0C21A742950008864D /* iZambomba */,
 				84C67E2021A742990008864D /* iZambomba WatchKit App */,
 				84C67E2F21A742990008864D /* iZambomba WatchKit Extension */,
@@ -194,12 +198,12 @@
 				8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */,
 				84C67E3021A742990008864D /* InterfaceController.swift */,
 				3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */,
+				3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */,
 				84C67E3221A742990008864D /* ExtensionDelegate.swift */,
 				84C67E3421A742990008864D /* NotificationController.swift */,
 				84C67E3621A7429A0008864D /* Assets.xcassets */,
 				84C67E3821A7429A0008864D /* Info.plist */,
 				84C67E3921A7429A0008864D /* PushNotificationPayload.apns */,
-				3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */,
 			);
 			path = "iZambomba WatchKit Extension";
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD5205521C2921100719234 /* Lato in Resources */,
 				84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */,
 				84C67E1521A742980008864D /* Assets.xcassets in Resources */,
 				84C67E1321A742950008864D /* Main.storyboard in Resources */,
@@ -343,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD5205621C2921100719234 /* Lato in Resources */,
 				84C67E3721A7429A0008864D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

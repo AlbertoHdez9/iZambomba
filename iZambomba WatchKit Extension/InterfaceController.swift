@@ -103,7 +103,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         switch(segueIdentifier) {
             case "addZamb":
                 //let amount = 2500 //for simulation purposes
-                let amount = 20
+                let amount = currentZambAmount
                 let hand = "No hand"
                 let location = "No location"
                 let date = Date()
