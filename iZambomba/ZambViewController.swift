@@ -27,6 +27,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var leftHandSwitch: UISwitch!
     @IBOutlet weak var otherHandSwitch: UISwitch!
     
+    @IBOutlet weak var modalView: UIView!
     
     var zamb: Zamb?
     var locationChanged = false
@@ -39,7 +40,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ZambViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         locationTextField.delegate = self
-        
+        view.backgroundColor = .clear
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         //Set up views if editing an existing ZAMB
         if let zamb = zamb {
@@ -72,8 +74,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     //MARK: Helpers
     func convertDateToString(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .short
+        formatter.dateFormat = "d MMM yy, hh:mm a"
         formatter.locale = Locale(identifier: "en_US")
         
         let dateString = formatter.string(from: date)
@@ -95,7 +96,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         acceptButton.isEnabled = !text.isEmpty
     }
     
-    //MARK: Switches
+    //MARK: Switches control
     
     private func handleSwitches(hand: String) {
         selectedHand = hand
@@ -116,7 +117,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             rightHandSwitch.isOn = false
             leftHandSwitch.isOn = false
             otherHandSwitch.isOn = false
-            print("This shouldn't be printing")
+            print("This shouldn't be printing, location: handleSwitches")
         }
     }
     

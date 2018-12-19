@@ -15,11 +15,16 @@ class ZambTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var zambsAmountLabel: UILabel!
     @IBOutlet weak var sessionTimeLabel: UILabel!
+    @IBOutlet weak var viewForImage: UIView!
+    @IBOutlet weak var locationIcon: UIImageView!
+    @IBOutlet weak var validationLabel: UILabel!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

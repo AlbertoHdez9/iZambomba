@@ -54,7 +54,7 @@ class Zamb: NSObject, NSCoding {
         aCoder.encode(location, forKey: PropertyKey.location)
             //Date to string
             let formatter = DateFormatter()
-            formatter.dateFormat = "MMMM dd, yyyy HH:mm a"
+            formatter.dateFormat = "d MMM yy, hh:mm a"
             formatter.locale = Locale(identifier: "en_US")
             let dateString = formatter.string(from: date)
         aCoder.encode(dateString, forKey: PropertyKey.date)
@@ -69,13 +69,11 @@ class Zamb: NSObject, NSCoding {
         
         let dateString = aDecoder.decodeObject(forKey: PropertyKey.date) as? String
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM dd, yyyy HH:mm a"
+        formatter.dateFormat = "d MMM yy, hh:mm a"
         formatter.locale = Locale(identifier: "en_US")
 
         let date = formatter.date(from: dateString!)
         let sessionTime = aDecoder.decodeInteger(forKey: PropertyKey.sessionTime)
-        
-        //TODO - check if this shit works (the as! shit)
         
         //Must call designated initializer
         self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime)

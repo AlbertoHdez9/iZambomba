@@ -27,6 +27,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     private var session = WCSession.default
     
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var restView: UIView!
+    
+    
     @IBOutlet weak var weeklyZambs: UILabel!
     @IBOutlet weak var weekDate: UILabel!
     var aboutAWeekAgo: Date?
@@ -106,9 +109,30 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .none
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundImage")!)
+        
+        
+        //Table view
+        restView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        //restView.heightAnchor.constraint(equalToConstant: 400.0).isActive = true
+        //self.tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        //restView.translatesAutoresizingMaskIntoConstraints = false
+        //restView.topAnchor.constraint(equalTo: tableContent.topAnchor, constant: 10).isActive = true
+        //restView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        let bgView = UIImageView(frame: tableView.bounds)
+        bgView.image = UIImage(named: "backgroundImage")
+        tableView.backgroundView = bgView
+        tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        tableView.separatorColor = UIColor.white
+        
+        //THIS DOES NOT WORK, PARA MOSTRAR EL PRIMER SEPARATOR
+        //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+        
         
         //Top view background
-        topView.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
+        topView.backgroundColor = UIColor.black.withAlphaComponent(0.67)
         
         //Not working
         //view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
@@ -149,11 +173,34 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         // Fetches the appropriate meal for the data source layout.
         let zamb = zambs[indexPath.row]
         let zambVC = ZambViewController() //Zamb VC instance to use its methods
+        
         //Cell config
         cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!!"
         cell.locationLabel.text = zamb.location
         cell.dateLabel.text = zambVC.convertDateToString(date: zamb.date)
         cell.sessionTimeLabel.text = zambVC.secondsProcessor(inputSeconds: zamb.sessionTime)
+        
+        
+        if(zamb.hand != "No hand") {
+            
+            //Remove previous label
+            cell.validationLabel.removeFromSuperview()
+            
+            //Create image and add it
+            let imageView = UIImageView(image: UIImage(named: "circleCheck"))
+            imageView.frame = CGRect(x: 15, y: 15, width: 30, height: 30)
+            imageView.contentMode = .scaleAspectFit
+            cell.viewForImage.addSubview(imageView)
+            
+            //Change label colors and location icon
+            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.3)
+            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.3)
+            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.3)
+            cell.locationIcon.image = UIImage(named: "locationIconOp")
+        }
+        cell.separatorInset = .zero
+        cell.selectionStyle = .none
 
         return cell
     }
