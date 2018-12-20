@@ -21,7 +21,9 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     //Zamb session config
     var currentZambAmount: Int = 0
     var startedZambSession: Bool = false
-    var zamb: Zamb?
+    
+    //Zambs for controller and context
+    var zambs = [Zamb]()
     
     //Timer
     var timer: Timer?
@@ -37,6 +39,13 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
+        
+        if let contextZambs = context as? [Zamb] {
+            print(contextZambs.count)
+        
+            // Configure interface objects here.
+            zambs = contextZambs
+        }
     }
     
     override func willActivate() {
@@ -102,17 +111,19 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch(segueIdentifier) {
             case "addZamb":
-                //let amount = 2500 //for simulation purposes
-                let amount = currentZambAmount
+                let amount = 2500 //for simulation purposes
+                //let amount = currentZambAmount
                 let hand = "No hand"
                 let location = "No location"
                 let date = Date()
                 let sessionTime = timerSeconds
                 
-                zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
+                if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime) {
+                    zambs += [zamb]
+                }
                 
                 os_log("Adding a new zamb", log: OSLog.default, type: .debug)
-                return zamb
+                return zambs
             
             default:
                 os_log("This shouldn't be printing", log: OSLog.default, type: .debug)

@@ -89,7 +89,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
     }
     
-    private func loadZambs() -> [Zamb]? {
+    func loadZambs() -> [Zamb]? {
         var savedZambs: [Zamb]? = nil
         do {
             let rawdata = try Data(contentsOf: Zamb.ArchiveURL)
@@ -109,11 +109,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .none
+        navigationController?.hidesBarsOnSwipe = true
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundImage")!)
         
         
         //Table view
-        restView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        //restView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         //restView.heightAnchor.constraint(equalToConstant: 400.0).isActive = true
         //self.tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         //restView.translatesAutoresizingMaskIntoConstraints = false
@@ -127,15 +128,16 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.separatorColor = UIColor.white
         
+//        let letsTry = UIView()
+//        letsTry.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+//        tableView.tableFooterView = letsTry
+        
         //THIS DOES NOT WORK, PARA MOSTRAR EL PRIMER SEPARATOR
         //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
         
         
         //Top view background
         topView.backgroundColor = UIColor.black.withAlphaComponent(0.67)
-        
-        //Not working
-        //view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
     }
     
     private func getWeeklyZambs() -> Int{
@@ -160,6 +162,30 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return zambs.count
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let result = UIView()
+        
+        // recreate insets from existing ones in the table view
+        let width = tableView.bounds.width
+        let sepFrame = CGRect(x: 0, y: -0.5, width: width, height: 0.5)
+        
+        // create layer with separator, setting color
+        let sep = CALayer()
+        sep.frame = sepFrame
+        sep.backgroundColor = tableView.separatorColor?.cgColor
+        result.layer.addSublayer(sep)
+        
+        result.frame = CGRect(x:0, y:0, width: width, height: 200)
+        result.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        result.translatesAutoresizingMaskIntoConstraints = false
+//        let inset = CGFloat(zambs.count) * 90.0
+//        result.heightAnchor.constraint(equalTo: tableView.heightAnchor, multiplier: 0, constant: inset).isActive = true
+        result.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        return result
     }
 
     

@@ -16,7 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //If
+        if (ZambTableViewController().loadZambs() == nil) {
+            switchViewControllers()
+        }
+        
         return true
+    }
+    
+    private func switchViewControllers() {
+        
+        // switch root view controllers
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "optionalRoot")
+        
+        self.window?.rootViewController = nav
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

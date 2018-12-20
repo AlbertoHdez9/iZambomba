@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wzh-aj-VPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8wD-nj-HH5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,11 +63,6 @@
                                 <constraint firstItem="caT-NQ-OCZ" firstAttribute="top" secondItem="ckV-DU-RDR" secondAttribute="top" constant="13" id="RdR-eK-veE"/>
                                 <constraint firstAttribute="bottom" secondItem="caT-NQ-OCZ" secondAttribute="bottom" constant="13" id="tHA-BA-wcl"/>
                             </constraints>
-                        </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="Or0-62-WZi" userLabel="Rest View">
-                            <rect key="frame" x="0.0" y="198" width="414" height="534"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZambTableViewCell" rowHeight="90" id="PxF-pT-9u2" customClass="ZambTableViewCell" customModule="iZambomba" customModuleProvider="target">
@@ -187,7 +182,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="restView" destination="Or0-62-WZi" id="R4L-GG-bNM"/>
                         <outlet property="topView" destination="ckV-DU-RDR" id="6qf-oB-xsX"/>
                         <outlet property="weekDate" destination="xhh-eR-bmX" id="fio-i8-l2E"/>
                         <outlet property="weeklyZambs" destination="3XC-Ne-dND" id="Qfi-9z-lUI"/>
@@ -358,7 +352,6 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDz-vM-Q4n">
                                                 <rect key="frame" x="46" y="11" width="254" height="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -643,7 +636,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XwJ-c4-XuD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Wzh-aj-VPL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="optionalRoot" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Wzh-aj-VPL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LuR-Xm-qQo">
                         <autoresizingMask key="autoresizingMask"/>
