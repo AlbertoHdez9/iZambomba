@@ -40,13 +40,13 @@
                                     <rect key="frame" x="85" y="13" width="244" height="54"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-Ne-dND">
-                                            <rect key="frame" x="94" y="0.0" width="56.5" height="37.5"/>
+                                            <rect key="frame" x="93.5" y="0.0" width="57" height="37"/>
                                             <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="23"/>
                                             <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-eR-bmX">
-                                            <rect key="frame" x="105" y="37.5" width="34.5" height="16.5"/>
+                                            <rect key="frame" x="104.5" y="37" width="35" height="17"/>
                                             <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="14"/>
                                             <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                             <rect key="frame" x="334" y="15" width="60" height="60"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALIDATION REQUIRED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9A-d9-6zP">
-                                                    <rect key="frame" x="2" y="7.5" width="56.5" height="45"/>
+                                                    <rect key="frame" x="0.0" y="7.5" width="60" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="LqX-un-b4B"/>
                                                     </constraints>
@@ -189,7 +189,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzZ-YZ-ylE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="49"/>
+            <point key="canvasLocation" x="1634.7826086956522" y="48.883928571428569"/>
         </scene>
         <!--New Zamb-->
         <scene sceneID="GnK-6a-Gbd">
@@ -215,7 +215,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-da-ARP">
-                                <rect key="frame" x="69" y="787" width="276" height="36"/>
+                                <rect key="frame" x="69" y="738" width="276" height="36"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -279,7 +279,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m44-Lp-8vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Z6z-nk-aZi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="-267.61619190404798"/>
+            <point key="canvasLocation" x="2757.971014492754" y="-267.85714285714283"/>
         </scene>
         <!--Zamb View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -304,25 +304,25 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-7t-UyU">
-                                        <rect key="frame" x="15" y="97" width="352" height="17.5"/>
+                                        <rect key="frame" x="15" y="98" width="352" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2do-uF-Wlr">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="17.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="18"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-Wt-leh">
-                                                <rect key="frame" x="185" y="0.0" width="167" height="17.5"/>
+                                                <rect key="frame" x="185" y="0.0" width="167" height="18"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5O2-oD-1X3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="17.5" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="5O2-oD-1X3" secondAttribute="height" id="jIP-Ir-kh0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYz-73-3YI">
-                                                        <rect key="frame" x="17.5" y="0.0" width="149.5" height="17.5"/>
+                                                        <rect key="frame" x="18" y="0.0" width="149" height="18"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -342,7 +342,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evl-m7-6a1">
-                                        <rect key="frame" x="44" y="130.5" width="42" height="20.5"/>
+                                        <rect key="frame" x="44" y="132" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -462,7 +462,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-sX-uJC">
-                                        <rect key="frame" x="44" y="43" width="294" height="34"/>
+                                        <rect key="frame" x="44" y="43" width="294" height="35"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="29"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -527,7 +527,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="xQS-SF-Zbq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="422.33883058470769"/>
+            <point key="canvasLocation" x="2757.971014492754" y="421.875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ISu-8l-1hU">
@@ -551,16 +551,16 @@
                                 <rect key="frame" x="90" y="277" width="235" height="354"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ahx-Cg-Qvw">
-                                <rect key="frame" x="28" y="726" width="356" height="61"/>
+                                <rect key="frame" x="28" y="725" width="356" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Discover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-B5-IAD">
-                                        <rect key="frame" x="0.0" y="0.0" width="356" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="356" height="28"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a1-er-bWv">
-                                        <rect key="frame" x="0.0" y="27" width="356" height="34"/>
+                                        <rect key="frame" x="0.0" y="28" width="356" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The ZAMB experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bZ-1Z-y2D">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
@@ -619,6 +619,7 @@
         <scene sceneID="7kY-xK-zTC">
             <objects>
                 <navigationController title="Your activity" automaticallyAdjustsScrollViewInsets="NO" id="8wD-nj-HH5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Your activity" image="mostRecent" id="vPF-n0-2RQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XNq-dX-npj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -631,7 +632,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEA-gk-ysh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="49"/>
+            <point key="canvasLocation" x="781.15942028985512" y="48.883928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XwJ-c4-XuD">
@@ -688,7 +689,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8wD-nj-HH5" kind="show" id="cXM-nh-rfh"/>
+                                    <segue destination="FvO-KK-SQo" kind="show" id="cXM-nh-rfh"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="NI4-I8-hrJ">
@@ -742,6 +743,60 @@
             </objects>
             <point key="canvasLocation" x="-672" y="884"/>
         </scene>
+        <!--Stats-->
+        <scene sceneID="2VL-VF-9IU">
+            <objects>
+                <viewController id="MWd-JD-ZAh" customClass="StatsViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZKB-gF-VpY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1S-gW-VJD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="0.71764707569999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Stats" id="UdJ-Rw-0WQ"/>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nt-05-XNU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Weekly" id="3Q7-gE-shk"/>
+                                    <tabBarItem systemItem="more" id="Khv-wk-Dbf"/>
+                                </items>
+                            </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-aJ-NSa">
+                                <rect key="frame" x="0.0" y="137" width="414" height="676"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Nt-05-XNU" firstAttribute="leading" secondItem="yI2-mh-TNN" secondAttribute="leading" id="6WS-E5-7mi"/>
+                            <constraint firstItem="H1S-gW-VJD" firstAttribute="top" secondItem="yI2-mh-TNN" secondAttribute="top" id="6Y6-oy-TVG"/>
+                            <constraint firstItem="H1S-gW-VJD" firstAttribute="leading" secondItem="yI2-mh-TNN" secondAttribute="leading" id="79g-FR-4QR"/>
+                            <constraint firstItem="2y8-aJ-NSa" firstAttribute="leading" secondItem="yI2-mh-TNN" secondAttribute="leading" id="Ipi-0O-zUZ"/>
+                            <constraint firstItem="H1S-gW-VJD" firstAttribute="trailing" secondItem="yI2-mh-TNN" secondAttribute="trailing" id="VRO-Cy-juM"/>
+                            <constraint firstItem="2y8-aJ-NSa" firstAttribute="trailing" secondItem="yI2-mh-TNN" secondAttribute="trailing" id="YlH-Qi-CpL"/>
+                            <constraint firstItem="0Nt-05-XNU" firstAttribute="top" secondItem="H1S-gW-VJD" secondAttribute="bottom" id="eiC-Us-Xgg"/>
+                            <constraint firstItem="2y8-aJ-NSa" firstAttribute="bottom" secondItem="yI2-mh-TNN" secondAttribute="bottom" id="ly6-vQ-MQO"/>
+                            <constraint firstItem="2y8-aJ-NSa" firstAttribute="top" secondItem="0Nt-05-XNU" secondAttribute="bottom" id="n6w-2z-P5E"/>
+                            <constraint firstItem="0Nt-05-XNU" firstAttribute="trailing" secondItem="yI2-mh-TNN" secondAttribute="trailing" id="oBW-z6-2Lz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yI2-mh-TNN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="mostViewed" id="bJf-up-wWb"/>
+                    <connections>
+                        <outlet property="navBar" destination="H1S-gW-VJD" id="y7K-Ct-lDZ"/>
+                        <outlet property="restView" destination="2y8-aJ-NSa" id="Z5o-Eo-fob"/>
+                        <outlet property="tabBar" destination="0Nt-05-XNU" id="udm-Ld-MGK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REO-wr-TFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.86956521739137" y="796.875"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="acO-cz-8W6">
             <objects>
@@ -772,7 +827,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8wD-nj-HH5" kind="show" id="pph-ZO-eb2"/>
+                                    <segue destination="FvO-KK-SQo" kind="show" id="pph-ZO-eb2"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="h1B-Vy-Vyn">
@@ -852,7 +907,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="361" id="S6i-hy-oTY"/>
                                 </constraints>
-                                <mutableString key="text">It consists of a hollow cylinder that can be made of different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod, made of wood or other materials.  This rod, sometimes, is replaced by a rope. By rubbing the rod with one or both hands, the vibration roduced by the rod is transmitted to the leather, producing a serious and special sound.</mutableString>
+                                <string key="text">It consists of a hollow cylinder that can be made of different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod, made of wood or other materials.  This rod, sometimes, is replaced by a rope. By rubbing the rod with one or both hands, the vibration roduced by the rod is transmitted to the leather, producing a serious and special sound.</string>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -870,7 +925,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8wD-nj-HH5" kind="show" id="VpR-G8-81c"/>
+                                    <segue destination="FvO-KK-SQo" kind="show" id="VpR-G8-81c"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="el9-Zz-mSh">
@@ -912,6 +967,25 @@
             </objects>
             <point key="canvasLocation" x="-1357" y="884"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZjX-Nc-Eh5">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FvO-KK-SQo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JMh-c7-wcV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8wD-nj-HH5" kind="relationship" relationship="viewControllers" id="vk9-m8-n8f"/>
+                        <segue destination="MWd-JD-ZAh" kind="relationship" relationship="viewControllers" id="60A-WC-nqO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewl-nQ-gXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128.98550724637681" y="48.883928571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowRight" width="33" height="34"/>
@@ -920,9 +994,11 @@
         <image name="iZambombaLogo" width="196" height="203"/>
         <image name="iZambombaTypo" width="189" height="48"/>
         <image name="locationIcon" width="11" height="15"/>
+        <image name="mostRecent" width="12" height="12"/>
+        <image name="mostViewed" width="11" height="11"/>
         <image name="rightHand" width="24" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cXM-nh-rfh"/>
+        <segue reference="pph-ZO-eb2"/>
     </inferredMetricsTieBreakers>
 </document>

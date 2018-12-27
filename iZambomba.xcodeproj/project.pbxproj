@@ -12,6 +12,7 @@
 		3AB389E421D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
 		3AB389E521D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
 		3AB389EB21D502AB000D1C4F /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */; };
+		3AB389ED21D50DE0000D1C4F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */; };
 		3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB38F21CD150300C7C9E3 /* Main.storyboard */; };
 		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
 		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
@@ -87,6 +88,7 @@
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3AB389E321D4FC48000D1C4F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		3AEEB38821CD150300C7C9E3 /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB39021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AEEB39221CD150300C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
 				3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */,
+				3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */,
 				3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */,
 				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
 				3AEEB39221CD150300C7C9E3 /* Assets.xcassets */,
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
+				3AB389ED21D50DE0000D1C4F /* StatsViewController.swift in Sources */,
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
