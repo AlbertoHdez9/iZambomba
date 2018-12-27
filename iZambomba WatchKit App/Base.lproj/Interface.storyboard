@@ -27,7 +27,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" radius="0.0" spacing="0.0" id="uuV-57-pf1">
                             <items>
-                                <imageView alignment="center" verticalAlignment="center" image="iZambombaTypo" id="0pT-ZB-JK8"/>
+                                <imageView width="16" alignment="center" verticalAlignment="center" image="iZambombaTypo" id="0pT-ZB-JK8"/>
                                 <button alignment="center" verticalAlignment="bottom" title="Tap to start" backgroundImage="buttonTapWatch" id="btG-JL-mKi">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
@@ -41,7 +41,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="219.52173913043478" y="344.55357142857144"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="16n-e3-nuv">

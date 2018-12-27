@@ -46,6 +46,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         } else {
             loadSampleZambs()
         }
+        
+        //Watch Connectivity
         if isSuported() {
             session.delegate = self
             session.activate()
@@ -128,9 +130,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.separatorColor = UIColor.white
         
-//        let letsTry = UIView()
-//        letsTry.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-//        tableView.tableFooterView = letsTry
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        tableView.tableFooterView = footerView
         
         //THIS DOES NOT WORK, PARA MOSTRAR EL PRIMER SEPARATOR
         //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)

@@ -111,8 +111,8 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch(segueIdentifier) {
             case "addZamb":
-                let amount = 2500 //for simulation purposes
-                //let amount = currentZambAmount
+                //let amount = 2500 //for simulation purposes
+                let amount = currentZambAmount
                 let hand = "No hand"
                 let location = "No location"
                 let date = Date()

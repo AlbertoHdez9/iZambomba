@@ -69,6 +69,8 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willDisappear() {
         if (!isGonnaSync) {
             WKInterfaceController.reloadRootControllers(withNames: ["First Interface Controller"], contexts: [zambs])
+        } else {
+            zambs = []
         }
     }
     
@@ -93,6 +95,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     //MARK: Actions
     @IBAction func syncZamb() {
         isGonnaSync = true
+        print("State: \(session.activationState) isReachable: \(session.isReachable)")
         sendMessage()
         popToRootController()
     }

@@ -3,94 +3,79 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2FA1AE21C1449A00B1042B /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */; };
-		3A5AD13B21CB9EDB006DAD44 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AD13A21CB9EDB006DAD44 /* FirstInterfaceController.swift */; };
-		3A6A0C5521B17701001B47B3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */; };
-		3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
-		3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
-		3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04721AFFE50009E450B /* NewZambViewController.swift */; };
-		3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04921B027E5009E450B /* WorkoutManager.swift */; };
-		3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9EC04B21B028B9009E450B /* MotionManager.swift */; };
-		3ACA9B1121B6AFB2009B7A90 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */; };
-		3ADADC2921CA715100090EE3 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC1F21CA715000090EE3 /* Lato-BoldItalic.ttf */; };
-		3ADADC2A21CA715100090EE3 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC1F21CA715000090EE3 /* Lato-BoldItalic.ttf */; };
-		3ADADC2B21CA715100090EE3 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2021CA715000090EE3 /* Lato-BlackItalic.ttf */; };
-		3ADADC2C21CA715100090EE3 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2021CA715000090EE3 /* Lato-BlackItalic.ttf */; };
-		3ADADC2D21CA715100090EE3 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2121CA715000090EE3 /* Lato-Hairline.ttf */; };
-		3ADADC2E21CA715100090EE3 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2121CA715000090EE3 /* Lato-Hairline.ttf */; };
-		3ADADC2F21CA715100090EE3 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2221CA715000090EE3 /* Lato-HairlineItalic.ttf */; };
-		3ADADC3021CA715100090EE3 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2221CA715000090EE3 /* Lato-HairlineItalic.ttf */; };
-		3ADADC3121CA715100090EE3 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2321CA715000090EE3 /* Lato-Black.ttf */; };
-		3ADADC3221CA715100090EE3 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2321CA715000090EE3 /* Lato-Black.ttf */; };
-		3ADADC3321CA715100090EE3 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2421CA715000090EE3 /* Lato-Light.ttf */; };
-		3ADADC3421CA715100090EE3 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2421CA715000090EE3 /* Lato-Light.ttf */; };
-		3ADADC3521CA715100090EE3 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2521CA715100090EE3 /* Lato-Regular.ttf */; };
-		3ADADC3621CA715100090EE3 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2521CA715100090EE3 /* Lato-Regular.ttf */; };
-		3ADADC3721CA715100090EE3 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2621CA715100090EE3 /* Lato-Italic.ttf */; };
-		3ADADC3821CA715100090EE3 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2621CA715100090EE3 /* Lato-Italic.ttf */; };
-		3ADADC3921CA715100090EE3 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2721CA715100090EE3 /* Lato-Bold.ttf */; };
-		3ADADC3A21CA715100090EE3 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2721CA715100090EE3 /* Lato-Bold.ttf */; };
-		3ADADC3B21CA715100090EE3 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2821CA715100090EE3 /* Lato-LightItalic.ttf */; };
-		3ADADC3C21CA715100090EE3 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ADADC2821CA715100090EE3 /* Lato-LightItalic.ttf */; };
-		84C67E0E21A742950008864D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0D21A742950008864D /* AppDelegate.swift */; };
-		84C67E1021A742950008864D /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E0F21A742950008864D /* ZambViewController.swift */; };
-		84C67E1321A742950008864D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1121A742950008864D /* Main.storyboard */; };
-		84C67E1521A742980008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1421A742980008864D /* Assets.xcassets */; };
-		84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E1621A742980008864D /* LaunchScreen.storyboard */; };
-		84C67E1D21A742990008864D /* iZambomba WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84C67E1C21A742990008864D /* iZambomba WatchKit App.app */; };
-		84C67E2321A742990008864D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E2121A742990008864D /* Interface.storyboard */; };
-		84C67E2521A742990008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E2421A742990008864D /* Assets.xcassets */; };
-		84C67E2C21A742990008864D /* iZambomba WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		84C67E3121A742990008864D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3021A742990008864D /* InterfaceController.swift */; };
-		84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3221A742990008864D /* ExtensionDelegate.swift */; };
-		84C67E3521A742990008864D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E3421A742990008864D /* NotificationController.swift */; };
-		84C67E3721A7429A0008864D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C67E3621A7429A0008864D /* Assets.xcassets */; };
-		84C67E4C21A771970008864D /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4B21A771970008864D /* Zamb.swift */; };
-		84C67E4E21A771CB0008864D /* ZambTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */; };
-		84C67E5021A778B50008864D /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4F21A778B50008864D /* ZambTableViewController.swift */; };
-		84C8942E21A8229E000ED015 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67E4B21A771970008864D /* Zamb.swift */; };
+		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
+		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
+		3AB389E421D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
+		3AB389E521D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
+		3AB389EB21D502AB000D1C4F /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */; };
+		3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB38F21CD150300C7C9E3 /* Main.storyboard */; };
+		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
+		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
+		3AEEB39B21CD150300C7C9E3 /* iZambomba WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */; };
+		3AEEB3A121CD150300C7C9E3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
+		3AEEB3A321CD150400C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */; };
+		3AEEB3AA21CD150400C7C9E3 /* iZambomba WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3AEEB3B121CD150400C7C9E3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */; };
+		3AEEB3B321CD150400C7C9E3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */; };
+		3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */; };
+		3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C721CD156500C7C9E3 /* Zamb.swift */; };
+		3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C821CD156500C7C9E3 /* NewZambViewController.swift */; };
+		3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */; };
+		3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
+		3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */; };
+		3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
+		3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
+		3AEEB3D521CD156800C7C9E3 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C721CD156500C7C9E3 /* Zamb.swift */; };
+		3AEEB3D621CD157F00C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
+		3AEEB3D721CD158200C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
+		3AEEB3DC21CD162500C7C9E3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D821CD162500C7C9E3 /* WKZambListInterfaceController.swift */; };
+		3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */; };
+		3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */; };
+		3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
+		3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */; };
+		3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84C67E1E21A742990008864D /* PBXContainerItemProxy */ = {
+		3AEEB39C21CD150300C7C9E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 84C67E0221A742950008864D /* Project object */;
+			containerPortal = 3AEEB38021CD150200C7C9E3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 84C67E1B21A742990008864D;
+			remoteGlobalIDString = 3AEEB39921CD150300C7C9E3;
 			remoteInfo = "iZambomba WatchKit App";
 		};
-		84C67E2D21A742990008864D /* PBXContainerItemProxy */ = {
+		3AEEB3AB21CD150400C7C9E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 84C67E0221A742950008864D /* Project object */;
+			containerPortal = 3AEEB38021CD150200C7C9E3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 84C67E2A21A742990008864D;
+			remoteGlobalIDString = 3AEEB3A821CD150400C7C9E3;
 			remoteInfo = "iZambomba WatchKit Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		84C67E3F21A7429A0008864D /* Embed App Extensions */ = {
+		3AEEB3BD21CD150500C7C9E3 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				84C67E2C21A742990008864D /* iZambomba WatchKit Extension.appex in Embed App Extensions */,
+				3AEEB3AA21CD150400C7C9E3 /* iZambomba WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84C67E4321A7429A0008864D /* Embed Watch Content */ = {
+		3AEEB3C121CD150500C7C9E3 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				84C67E1D21A742990008864D /* iZambomba WatchKit App.app in Embed Watch Content */,
+				3AEEB39B21CD150300C7C9E3 /* iZambomba WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,209 +83,190 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZambRowController.swift; sourceTree = "<group>"; };
-		3A5AD13A21CB9EDB006DAD44 /* FirstInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInterfaceController.swift; sourceTree = "<group>"; };
-		3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZambListInterfaceController.swift; sourceTree = "<group>"; };
-		3A9EC04721AFFE50009E450B /* NewZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
-		3A9EC04921B027E5009E450B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
-		3A9EC04B21B028B9009E450B /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
-		3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		3ADADC1F21CA715000090EE3 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
-		3ADADC2021CA715000090EE3 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
-		3ADADC2121CA715000090EE3 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
-		3ADADC2221CA715000090EE3 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
-		3ADADC2321CA715000090EE3 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
-		3ADADC2421CA715000090EE3 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		3ADADC2521CA715100090EE3 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		3ADADC2621CA715100090EE3 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
-		3ADADC2721CA715100090EE3 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
-		3ADADC2821CA715100090EE3 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
-		8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		8424D53621AD780700BBFDA3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
-		8424D53721AD780D00BBFDA3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
-		84C67E0A21A742950008864D /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C67E0D21A742950008864D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C67E0F21A742950008864D /* ZambViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambViewController.swift; sourceTree = "<group>"; };
-		84C67E1221A742950008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84C67E1421A742980008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84C67E1721A742980008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84C67E1921A742980008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C67E1C21A742990008864D /* iZambomba WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iZambomba WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C67E2221A742990008864D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		84C67E2421A742990008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84C67E2621A742990008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C67E3021A742990008864D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		84C67E3221A742990008864D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		84C67E3421A742990008864D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		84C67E3621A7429A0008864D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84C67E3821A7429A0008864D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C67E3921A7429A0008864D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		84C67E4B21A771970008864D /* Zamb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zamb.swift; sourceTree = "<group>"; };
-		84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambTableViewCell.swift; sourceTree = "<group>"; };
-		84C67E4F21A778B50008864D /* ZambTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZambTableViewController.swift; sourceTree = "<group>"; };
+		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		3AB389E321D4FC48000D1C4F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		3AEEB38821CD150300C7C9E3 /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB39021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AEEB39221CD150300C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AEEB39521CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AEEB39721CD150300C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iZambomba WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB3A021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AEEB3A421CD150400C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AEEB3B621CD150500C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AEEB3B721CD150500C7C9E3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3AEEB3C721CD156500C7C9E3 /* Zamb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zamb.swift; sourceTree = "<group>"; };
+		3AEEB3C821CD156500C7C9E3 /* NewZambViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewZambViewController.swift; sourceTree = "<group>"; };
+		3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZambViewController.swift; sourceTree = "<group>"; };
+		3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZambTableViewCell.swift; sourceTree = "<group>"; };
+		3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZambTableViewController.swift; sourceTree = "<group>"; };
+		3AEEB3D821CD162500C7C9E3 /* WKZambListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKZambListInterfaceController.swift; sourceTree = "<group>"; };
+		3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKZambRowController.swift; sourceTree = "<group>"; };
+		3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstInterfaceController.swift; sourceTree = "<group>"; };
+		3AEEB3E021CD174F00C7C9E3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
+		3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		84C67E0721A742950008864D /* Frameworks */ = {
+		3AEEB38521CD150300C7C9E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84C67E2821A742990008864D /* Frameworks */ = {
+		3AEEB3A621CD150400C7C9E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ACA9B1121B6AFB2009B7A90 /* HealthKit.framework in Frameworks */,
+				3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3ACA9B0F21B6AFB2009B7A90 /* Frameworks */ = {
+		3AEEB37F21CD150200C7C9E3 = {
 			isa = PBXGroup;
 			children = (
-				3ACA9B1021B6AFB2009B7A90 /* HealthKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3ADADC1E21CA712000090EE3 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				3ADADC2321CA715000090EE3 /* Lato-Black.ttf */,
-				3ADADC2021CA715000090EE3 /* Lato-BlackItalic.ttf */,
-				3ADADC2721CA715100090EE3 /* Lato-Bold.ttf */,
-				3ADADC1F21CA715000090EE3 /* Lato-BoldItalic.ttf */,
-				3ADADC2121CA715000090EE3 /* Lato-Hairline.ttf */,
-				3ADADC2221CA715000090EE3 /* Lato-HairlineItalic.ttf */,
-				3ADADC2621CA715100090EE3 /* Lato-Italic.ttf */,
-				3ADADC2421CA715000090EE3 /* Lato-Light.ttf */,
-				3ADADC2821CA715100090EE3 /* Lato-LightItalic.ttf */,
-				3ADADC2521CA715100090EE3 /* Lato-Regular.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		84C67E0121A742950008864D = {
-			isa = PBXGroup;
-			children = (
-				84C67E0C21A742950008864D /* iZambomba */,
-				84C67E2021A742990008864D /* iZambomba WatchKit App */,
-				84C67E2F21A742990008864D /* iZambomba WatchKit Extension */,
-				84C67E0B21A742950008864D /* Products */,
-				3ACA9B0F21B6AFB2009B7A90 /* Frameworks */,
+				3AB389E321D4FC48000D1C4F /* Fonts */,
+				3AEEB38A21CD150300C7C9E3 /* iZambomba */,
+				3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */,
+				3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */,
+				3AEEB38921CD150300C7C9E3 /* Products */,
+				3AEEB3E121CD174F00C7C9E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		84C67E0B21A742950008864D /* Products */ = {
+		3AEEB38921CD150300C7C9E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84C67E0A21A742950008864D /* iZambomba.app */,
-				84C67E1C21A742990008864D /* iZambomba WatchKit App.app */,
-				84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */,
+				3AEEB38821CD150300C7C9E3 /* iZambomba.app */,
+				3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */,
+				3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84C67E0C21A742950008864D /* iZambomba */ = {
+		3AEEB38A21CD150300C7C9E3 /* iZambomba */ = {
 			isa = PBXGroup;
 			children = (
-				3ADADC1E21CA712000090EE3 /* Fonts */,
-				8424D53721AD780D00BBFDA3 /* iZambomba.entitlements */,
-				84C67E0D21A742950008864D /* AppDelegate.swift */,
-				3A9EC04721AFFE50009E450B /* NewZambViewController.swift */,
-				84C67E0F21A742950008864D /* ZambViewController.swift */,
-				84C67E4D21A771CB0008864D /* ZambTableViewCell.swift */,
-				84C67E4F21A778B50008864D /* ZambTableViewController.swift */,
-				3A9EC04B21B028B9009E450B /* MotionManager.swift */,
-				3A9EC04921B027E5009E450B /* WorkoutManager.swift */,
-				84C67E4B21A771970008864D /* Zamb.swift */,
-				84C67E1121A742950008864D /* Main.storyboard */,
-				84C67E1421A742980008864D /* Assets.xcassets */,
-				84C67E1621A742980008864D /* LaunchScreen.storyboard */,
-				84C67E1921A742980008864D /* Info.plist */,
+				3AEEB3E021CD174F00C7C9E3 /* iZambomba.entitlements */,
+				3A712DF021CD36EB00CBE815 /* AppDelegate.swift */,
+				3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */,
+				3AEEB3C821CD156500C7C9E3 /* NewZambViewController.swift */,
+				3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */,
+				3AEEB3C721CD156500C7C9E3 /* Zamb.swift */,
+				3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */,
+				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
+				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
+				3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */,
+				3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */,
+				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
+				3AEEB39221CD150300C7C9E3 /* Assets.xcassets */,
+				3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */,
+				3AEEB39721CD150300C7C9E3 /* Info.plist */,
 			);
 			path = iZambomba;
 			sourceTree = "<group>";
 		};
-		84C67E2021A742990008864D /* iZambomba WatchKit App */ = {
+		3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				8424D53621AD780700BBFDA3 /* iZambomba WatchKit App.entitlements */,
-				84C67E2121A742990008864D /* Interface.storyboard */,
-				84C67E2421A742990008864D /* Assets.xcassets */,
-				84C67E2621A742990008864D /* Info.plist */,
+				3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */,
+				3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */,
+				3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */,
+				3AEEB3A421CD150400C7C9E3 /* Info.plist */,
 			);
 			path = "iZambomba WatchKit App";
 			sourceTree = "<group>";
 		};
-		84C67E2F21A742990008864D /* iZambomba WatchKit Extension */ = {
+		3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8424D53521AD77F700BBFDA3 /* iZambomba WatchKit Extension.entitlements */,
-				3A5AD13A21CB9EDB006DAD44 /* FirstInterfaceController.swift */,
-				84C67E3021A742990008864D /* InterfaceController.swift */,
-				3A6A0C5421B17701001B47B3 /* WKZambListInterfaceController.swift */,
-				3A2FA1AD21C1449A00B1042B /* WKZambRowController.swift */,
-				84C67E3221A742990008864D /* ExtensionDelegate.swift */,
-				84C67E3421A742990008864D /* NotificationController.swift */,
-				84C67E3621A7429A0008864D /* Assets.xcassets */,
-				84C67E3821A7429A0008864D /* Info.plist */,
-				84C67E3921A7429A0008864D /* PushNotificationPayload.apns */,
+				3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */,
+				3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */,
+				3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */,
+				3AEEB3D821CD162500C7C9E3 /* WKZambListInterfaceController.swift */,
+				3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */,
+				3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */,
+				3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */,
+				3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */,
+				3AEEB3B621CD150500C7C9E3 /* Info.plist */,
+				3AEEB3B721CD150500C7C9E3 /* PushNotificationPayload.apns */,
 			);
 			path = "iZambomba WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		3AEEB3E121CD174F00C7C9E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */,
+				3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84C67E0921A742950008864D /* iZambomba */ = {
+		3AEEB38721CD150300C7C9E3 /* iZambomba */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84C67E4421A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba" */;
+			buildConfigurationList = 3AEEB3C221CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba" */;
 			buildPhases = (
-				84C67E0621A742950008864D /* Sources */,
-				84C67E0721A742950008864D /* Frameworks */,
-				84C67E0821A742950008864D /* Resources */,
-				84C67E4321A7429A0008864D /* Embed Watch Content */,
+				3AEEB38421CD150300C7C9E3 /* Sources */,
+				3AEEB38521CD150300C7C9E3 /* Frameworks */,
+				3AEEB38621CD150300C7C9E3 /* Resources */,
+				3AEEB3C121CD150500C7C9E3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				84C67E1F21A742990008864D /* PBXTargetDependency */,
+				3AEEB39D21CD150300C7C9E3 /* PBXTargetDependency */,
 			);
 			name = iZambomba;
 			productName = iZambomba;
-			productReference = 84C67E0A21A742950008864D /* iZambomba.app */;
+			productReference = 3AEEB38821CD150300C7C9E3 /* iZambomba.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84C67E1B21A742990008864D /* iZambomba WatchKit App */ = {
+		3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84C67E4021A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */;
+			buildConfigurationList = 3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */;
 			buildPhases = (
-				84C67E1A21A742990008864D /* Resources */,
-				84C67E3F21A7429A0008864D /* Embed App Extensions */,
+				3AEEB39821CD150300C7C9E3 /* Resources */,
+				3AEEB3BD21CD150500C7C9E3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				84C67E2E21A742990008864D /* PBXTargetDependency */,
+				3AEEB3AC21CD150400C7C9E3 /* PBXTargetDependency */,
 			);
 			name = "iZambomba WatchKit App";
 			productName = "iZambomba WatchKit App";
-			productReference = 84C67E1C21A742990008864D /* iZambomba WatchKit App.app */;
+			productReference = 3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		84C67E2A21A742990008864D /* iZambomba WatchKit Extension */ = {
+		3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84C67E3C21A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */;
+			buildConfigurationList = 3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */;
 			buildPhases = (
-				84C67E2721A742990008864D /* Sources */,
-				84C67E2821A742990008864D /* Frameworks */,
-				84C67E2921A742990008864D /* Resources */,
+				3AEEB3A521CD150400C7C9E3 /* Sources */,
+				3AEEB3A621CD150400C7C9E3 /* Frameworks */,
+				3AEEB3A721CD150400C7C9E3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -308,40 +274,43 @@
 			);
 			name = "iZambomba WatchKit Extension";
 			productName = "iZambomba WatchKit Extension";
-			productReference = 84C67E2B21A742990008864D /* iZambomba WatchKit Extension.appex */;
+			productReference = 3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		84C67E0221A742950008864D /* Project object */ = {
+		3AEEB38021CD150200C7C9E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = singularfactory;
+				ORGANIZATIONNAME = SingularNet;
 				TargetAttributes = {
-					84C67E0921A742950008864D = {
+					3AEEB38721CD150300C7C9E3 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
 								enabled = 1;
 							};
 						};
 					};
-					84C67E1B21A742990008864D = {
+					3AEEB39921CD150300C7C9E3 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
-					84C67E2A21A742990008864D = {
+					3AEEB3A821CD150400C7C9E3 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.HealthKit.watchos = {
 								enabled = 1;
@@ -350,144 +319,128 @@
 					};
 				};
 			};
-			buildConfigurationList = 84C67E0521A742950008864D /* Build configuration list for PBXProject "iZambomba" */;
-			compatibilityVersion = "Xcode 10.0";
+			buildConfigurationList = 3AEEB38321CD150200C7C9E3 /* Build configuration list for PBXProject "iZambomba" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 84C67E0121A742950008864D;
-			productRefGroup = 84C67E0B21A742950008864D /* Products */;
+			mainGroup = 3AEEB37F21CD150200C7C9E3;
+			productRefGroup = 3AEEB38921CD150300C7C9E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84C67E0921A742950008864D /* iZambomba */,
-				84C67E1B21A742990008864D /* iZambomba WatchKit App */,
-				84C67E2A21A742990008864D /* iZambomba WatchKit Extension */,
+				3AEEB38721CD150300C7C9E3 /* iZambomba */,
+				3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */,
+				3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		84C67E0821A742950008864D /* Resources */ = {
+		3AEEB38621CD150300C7C9E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ADADC3121CA715100090EE3 /* Lato-Black.ttf in Resources */,
-				3ADADC2D21CA715100090EE3 /* Lato-Hairline.ttf in Resources */,
-				3ADADC2F21CA715100090EE3 /* Lato-HairlineItalic.ttf in Resources */,
-				84C67E1821A742980008864D /* LaunchScreen.storyboard in Resources */,
-				3ADADC3921CA715100090EE3 /* Lato-Bold.ttf in Resources */,
-				3ADADC3321CA715100090EE3 /* Lato-Light.ttf in Resources */,
-				3ADADC2B21CA715100090EE3 /* Lato-BlackItalic.ttf in Resources */,
-				84C67E1521A742980008864D /* Assets.xcassets in Resources */,
-				84C67E1321A742950008864D /* Main.storyboard in Resources */,
-				3ADADC2921CA715100090EE3 /* Lato-BoldItalic.ttf in Resources */,
-				3ADADC3721CA715100090EE3 /* Lato-Italic.ttf in Resources */,
-				3ADADC3521CA715100090EE3 /* Lato-Regular.ttf in Resources */,
-				3ADADC3B21CA715100090EE3 /* Lato-LightItalic.ttf in Resources */,
+				3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */,
+				3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */,
+				3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */,
+				3AB389E421D4FC48000D1C4F /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84C67E1A21A742990008864D /* Resources */ = {
+		3AEEB39821CD150300C7C9E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C67E2521A742990008864D /* Assets.xcassets in Resources */,
-				84C67E2321A742990008864D /* Interface.storyboard in Resources */,
+				3AEEB3A321CD150400C7C9E3 /* Assets.xcassets in Resources */,
+				3AEEB3A121CD150300C7C9E3 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84C67E2921A742990008864D /* Resources */ = {
+		3AEEB3A721CD150400C7C9E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ADADC3A21CA715100090EE3 /* Lato-Bold.ttf in Resources */,
-				3ADADC3821CA715100090EE3 /* Lato-Italic.ttf in Resources */,
-				3ADADC3221CA715100090EE3 /* Lato-Black.ttf in Resources */,
-				3ADADC2C21CA715100090EE3 /* Lato-BlackItalic.ttf in Resources */,
-				3ADADC2E21CA715100090EE3 /* Lato-Hairline.ttf in Resources */,
-				3ADADC3021CA715100090EE3 /* Lato-HairlineItalic.ttf in Resources */,
-				3ADADC3621CA715100090EE3 /* Lato-Regular.ttf in Resources */,
-				3ADADC3C21CA715100090EE3 /* Lato-LightItalic.ttf in Resources */,
-				3ADADC2A21CA715100090EE3 /* Lato-BoldItalic.ttf in Resources */,
-				84C67E3721A7429A0008864D /* Assets.xcassets in Resources */,
-				3ADADC3421CA715100090EE3 /* Lato-Light.ttf in Resources */,
+				3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */,
+				3AB389E521D4FC48000D1C4F /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		84C67E0621A742950008864D /* Sources */ = {
+		3AEEB38421CD150300C7C9E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C67E4C21A771970008864D /* Zamb.swift in Sources */,
-				3A9EC04A21B027E5009E450B /* WorkoutManager.swift in Sources */,
-				84C67E1021A742950008864D /* ZambViewController.swift in Sources */,
-				84C67E0E21A742950008864D /* AppDelegate.swift in Sources */,
-				84C67E4E21A771CB0008864D /* ZambTableViewCell.swift in Sources */,
-				84C67E5021A778B50008864D /* ZambTableViewController.swift in Sources */,
-				3A9EC04821AFFE50009E450B /* NewZambViewController.swift in Sources */,
-				3A9EC04C21B028B9009E450B /* MotionManager.swift in Sources */,
+				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
+				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
+				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
+				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
+				3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */,
+				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
+				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
+				3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */,
+				3AB389EB21D502AB000D1C4F /* WebKitViewController.swift in Sources */,
+				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84C67E2721A742990008864D /* Sources */ = {
+		3AEEB3A521CD150400C7C9E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6A0C5521B17701001B47B3 /* WKZambListInterfaceController.swift in Sources */,
-				84C67E3521A742990008864D /* NotificationController.swift in Sources */,
-				3A6AB83321B14D7600EE3B17 /* MotionManager.swift in Sources */,
-				84C67E3321A742990008864D /* ExtensionDelegate.swift in Sources */,
-				3A2FA1AE21C1449A00B1042B /* WKZambRowController.swift in Sources */,
-				84C67E3121A742990008864D /* InterfaceController.swift in Sources */,
-				84C8942E21A8229E000ED015 /* Zamb.swift in Sources */,
-				3A6AB83421B14D7A00EE3B17 /* WorkoutManager.swift in Sources */,
-				3A5AD13B21CB9EDB006DAD44 /* FirstInterfaceController.swift in Sources */,
+				3AEEB3B321CD150400C7C9E3 /* NotificationController.swift in Sources */,
+				3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */,
+				3AEEB3D721CD158200C7C9E3 /* MotionManager.swift in Sources */,
+				3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */,
+				3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */,
+				3AEEB3B121CD150400C7C9E3 /* ExtensionDelegate.swift in Sources */,
+				3AEEB3D621CD157F00C7C9E3 /* WorkoutManager.swift in Sources */,
+				3AEEB3D521CD156800C7C9E3 /* Zamb.swift in Sources */,
+				3AEEB3DC21CD162500C7C9E3 /* WKZambListInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		84C67E1F21A742990008864D /* PBXTargetDependency */ = {
+		3AEEB39D21CD150300C7C9E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84C67E1B21A742990008864D /* iZambomba WatchKit App */;
-			targetProxy = 84C67E1E21A742990008864D /* PBXContainerItemProxy */;
+			target = 3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */;
+			targetProxy = 3AEEB39C21CD150300C7C9E3 /* PBXContainerItemProxy */;
 		};
-		84C67E2E21A742990008864D /* PBXTargetDependency */ = {
+		3AEEB3AC21CD150400C7C9E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84C67E2A21A742990008864D /* iZambomba WatchKit Extension */;
-			targetProxy = 84C67E2D21A742990008864D /* PBXContainerItemProxy */;
+			target = 3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */;
+			targetProxy = 3AEEB3AB21CD150400C7C9E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84C67E1121A742950008864D /* Main.storyboard */ = {
+		3AEEB38F21CD150300C7C9E3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84C67E1221A742950008864D /* Base */,
+				3AEEB39021CD150300C7C9E3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		84C67E1621A742980008864D /* LaunchScreen.storyboard */ = {
+		3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84C67E1721A742980008864D /* Base */,
+				3AEEB39521CD150300C7C9E3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		84C67E2121A742990008864D /* Interface.storyboard */ = {
+		3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84C67E2221A742990008864D /* Base */,
+				3AEEB3A021CD150300C7C9E3 /* Base */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -495,7 +448,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		84C67E3A21A7429A0008864D /* Debug */ = {
+		3AEEB3B821CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -530,7 +483,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -557,7 +509,7 @@
 			};
 			name = Debug;
 		};
-		84C67E3B21A7429A0008864D /* Release */ = {
+		3AEEB3B921CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -592,7 +544,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -613,12 +564,11 @@
 			};
 			name = Release;
 		};
-		84C67E3D21A7429A0008864D /* Debug */ = {
+		3AEEB3BB21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
@@ -627,23 +577,21 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
-		84C67E3E21A7429A0008864D /* Release */ = {
+		3AEEB3BC21CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
@@ -652,67 +600,59 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
-		84C67E4121A7429A0008864D /* Debug */ = {
+		3AEEB3BF21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit App/iZambomba WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
-		84C67E4221A7429A0008864D /* Release */ = {
+		3AEEB3C021CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit App/iZambomba WatchKit App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
-		84C67E4521A7429A0008864D /* Debug */ = {
+		3AEEB3C321CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = iZambomba/Info.plist;
@@ -722,18 +662,16 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		84C67E4621A7429A0008864D /* Release */ = {
+		3AEEB3C421CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEL27HMZ9Z;
 				INFOPLIST_FILE = iZambomba/Info.plist;
@@ -743,7 +681,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -752,43 +689,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84C67E0521A742950008864D /* Build configuration list for PBXProject "iZambomba" */ = {
+		3AEEB38321CD150200C7C9E3 /* Build configuration list for PBXProject "iZambomba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84C67E3A21A7429A0008864D /* Debug */,
-				84C67E3B21A7429A0008864D /* Release */,
+				3AEEB3B821CD150500C7C9E3 /* Debug */,
+				3AEEB3B921CD150500C7C9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84C67E3C21A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */ = {
+		3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84C67E3D21A7429A0008864D /* Debug */,
-				84C67E3E21A7429A0008864D /* Release */,
+				3AEEB3BB21CD150500C7C9E3 /* Debug */,
+				3AEEB3BC21CD150500C7C9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84C67E4021A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */ = {
+		3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84C67E4121A7429A0008864D /* Debug */,
-				84C67E4221A7429A0008864D /* Release */,
+				3AEEB3BF21CD150500C7C9E3 /* Debug */,
+				3AEEB3C021CD150500C7C9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84C67E4421A7429A0008864D /* Build configuration list for PBXNativeTarget "iZambomba" */ = {
+		3AEEB3C221CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84C67E4521A7429A0008864D /* Debug */,
-				84C67E4621A7429A0008864D /* Release */,
+				3AEEB3C321CD150500C7C9E3 /* Debug */,
+				3AEEB3C421CD150500C7C9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 84C67E0221A742950008864D /* Project object */;
+	rootObject = 3AEEB38021CD150200C7C9E3 /* Project object */;
 }

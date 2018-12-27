@@ -2,8 +2,8 @@
 //  NotificationController.swift
 //  iZambomba WatchKit Extension
 //
-//  Created by admin on 22/11/2018.
-//  Copyright © 2018 singularfactory. All rights reserved.
+//  Created by SingularNet on 21/12/18.
+//  Copyright © 2018 SingularNet. All rights reserved.
 //
 
 import WatchKit
