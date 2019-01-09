@@ -12,8 +12,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newPageVC(viewController: "FirstPageVC"),
-                self.newPageVC(viewController: "SecondPageVC"),
-                self.newPageVC(viewController: "ThirdPageVC")]
+                self.newPageVC(viewController: "SecondPageVC")]
     }()
 
     override func viewDidLoad() {

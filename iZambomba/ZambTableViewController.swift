@@ -84,25 +84,32 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         topView.isHidden = true
         emptyView.isHidden = false
         
+        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: self.view.bounds.height)
+        emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.67)
+        
         //Creamos las labels y mierdas para la nueva vista
-        let startNOW = UILabel()
+        let startNOW = UILabel(frame: CGRect(x: 0, y: emptyView.bounds.height/4, width: self.view.bounds.width, height: 90))
         startNOW.text = "Start NOW!"
-        startNOW.font = UIFont(name: "Lato-Black", size: 25)
+        startNOW.font = UIFont(name: "Lato-Black", size: 31)
         startNOW.textAlignment = .center
         startNOW.textColor = .white
         
-        let description = UILabel()
+        let description = UILabel(frame: CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 180))
         description.text = "Millions of people are waiting\n for your first ZAMB!"
-        description.font = UIFont(name: "Lato-Regular", size: 19)
+        description.numberOfLines = 2
+        description.font = UIFont(name: "Lato-Light", size: 20)
         description.textAlignment = .center
         description.textColor = .white
-        
-        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: self.view.bounds.height)
-        emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.67)
         
         //Añadimos a la vista
         emptyView.addSubview(description)
         emptyView.addSubview(startNOW)
+        emptyView.isUserInteractionEnabled = false
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
     }
     
     private func saveZambs() {

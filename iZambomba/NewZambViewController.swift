@@ -19,6 +19,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var darkBackground: UIView!
     
     var currentZambAmount: Int = 0
     var startedZambSession: Bool = false
@@ -48,6 +49,10 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .none
+        navigationController?.hidesBarsOnSwipe = false
+        
+        let navBarHeight = navigationController!.navigationBar.frame.height
+        darkBackground.frame = CGRect(x:0, y: navBarHeight, width: self.view.bounds.width, height: (self.view.bounds.height - (self.view.safeAreaInsets.bottom + navBarHeight)))
         
         //Not working
         view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
