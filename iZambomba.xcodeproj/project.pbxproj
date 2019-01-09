@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
 		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
-		3AB389E421D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
-		3AB389E521D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
+		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
+		3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
+		3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
+		3AD034CB21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
+		3AD034CC21E61F3900819003 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C621E61F3900819003 /* Lato-Light.ttf */; };
+		3AD034CD21E61F3900819003 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C621E61F3900819003 /* Lato-Light.ttf */; };
+		3AD034CE21E61F3900819003 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C721E61F3900819003 /* Lato-Regular.ttf */; };
+		3AD034CF21E61F3900819003 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C721E61F3900819003 /* Lato-Regular.ttf */; };
 		3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB38F21CD150300C7C9E3 /* Main.storyboard */; };
 		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
 		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
@@ -27,7 +34,6 @@
 		3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
 		3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */; };
 		3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
-		3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
 		3AEEB3D521CD156800C7C9E3 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C721CD156500C7C9E3 /* Zamb.swift */; };
 		3AEEB3D621CD157F00C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
 		3AEEB3D721CD158200C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
@@ -84,7 +90,10 @@
 /* Begin PBXFileReference section */
 		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		3AB389E321D4FC48000D1C4F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3AD034C521E61F3900819003 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		3AD034C621E61F3900819003 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3AD034C721E61F3900819003 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		3AEEB38821CD150300C7C9E3 /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB39021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AEEB39221CD150300C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,10 +147,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AD034C321E61EFB00819003 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3AD034C521E61F3900819003 /* Lato-Black.ttf */,
+				3AD034C421E61F3800819003 /* Lato-Bold.ttf */,
+				3AD034C621E61F3900819003 /* Lato-Light.ttf */,
+				3AD034C721E61F3900819003 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3AEEB37F21CD150200C7C9E3 = {
 			isa = PBXGroup;
 			children = (
-				3AB389E321D4FC48000D1C4F /* Fonts */,
+				3AD034C321E61EFB00819003 /* Fonts */,
 				3AEEB38A21CD150300C7C9E3 /* iZambomba */,
 				3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */,
 				3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */,
@@ -344,7 +364,10 @@
 				3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */,
 				3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */,
 				3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */,
-				3AB389E421D4FC48000D1C4F /* Fonts in Resources */,
+				3AD034CC21E61F3900819003 /* Lato-Light.ttf in Resources */,
+				3AD034CE21E61F3900819003 /* Lato-Regular.ttf in Resources */,
+				3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */,
+				3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +385,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */,
-				3AB389E521D4FC48000D1C4F /* Fonts in Resources */,
+				3AD034CB21E61F3900819003 /* Lato-Black.ttf in Resources */,
+				3AD034CF21E61F3900819003 /* Lato-Regular.ttf in Resources */,
+				3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */,
+				3AD034CD21E61F3900819003 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,9 +404,9 @@
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
 				3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */,
+				3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */,
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
 				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
-				3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */,
 				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
