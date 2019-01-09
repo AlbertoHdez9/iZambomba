@@ -50,6 +50,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             handleSwitches(hand: zamb.hand!)
             dateLabel.text = convertDateToString(date: zamb.date)
             locationLabel.text = zamb.location
+            locationTextField.text = zamb.location
             sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
         }
     }

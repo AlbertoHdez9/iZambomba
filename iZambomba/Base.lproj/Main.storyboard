@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wzh-aj-VPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FvO-KK-SQo">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,32 +36,47 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
-                                    <rect key="frame" x="85" y="13" width="244" height="54"/>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-hN-Jco">
+                                    <rect key="frame" x="0.0" y="35" width="414" height="9"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-Ne-dND">
-                                            <rect key="frame" x="93.5" y="0.0" width="57" height="37"/>
-                                            <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="23"/>
-                                            <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-eR-bmX">
-                                            <rect key="frame" x="104.5" y="37" width="35" height="17"/>
-                                            <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="14"/>
-                                            <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
+                                            <rect key="frame" x="50" y="18" width="314" height="45"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-Ne-dND">
+                                                    <rect key="frame" x="128.5" y="0.0" width="57" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="23"/>
+                                                    <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-eR-bmX">
+                                                    <rect key="frame" x="139.5" y="28" width="35" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="14"/>
+                                                    <color key="textColor" red="0.99966329340000004" green="0.64120775460000001" blue="0.31644397969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xhh-eR-bmX" firstAttribute="top" secondItem="3XC-Ne-dND" secondAttribute="bottom" id="iEv-Vg-nkE"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="xhh-eR-bmX" firstAttribute="top" secondItem="3XC-Ne-dND" secondAttribute="bottom" id="iEv-Vg-nkE"/>
+                                        <constraint firstAttribute="bottom" secondItem="caT-NQ-OCZ" secondAttribute="bottom" constant="17" id="MbR-Ag-eNo"/>
+                                        <constraint firstItem="caT-NQ-OCZ" firstAttribute="leading" secondItem="dXA-Om-4El" secondAttribute="leading" constant="50" id="XvO-B4-bkg"/>
+                                        <constraint firstItem="caT-NQ-OCZ" firstAttribute="top" secondItem="dXA-Om-4El" secondAttribute="top" constant="18" id="g0F-Pz-4w5"/>
+                                        <constraint firstAttribute="trailing" secondItem="caT-NQ-OCZ" secondAttribute="trailing" constant="50" id="rLr-Cf-nZD"/>
                                     </constraints>
-                                </stackView>
+                                </view>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="caT-NQ-OCZ" firstAttribute="leading" secondItem="ckV-DU-RDR" secondAttribute="leading" constant="85" id="A4q-It-lbo"/>
-                                <constraint firstAttribute="trailing" secondItem="caT-NQ-OCZ" secondAttribute="trailing" constant="85" id="H0Q-iS-DOo"/>
-                                <constraint firstItem="caT-NQ-OCZ" firstAttribute="top" secondItem="ckV-DU-RDR" secondAttribute="top" constant="13" id="RdR-eK-veE"/>
-                                <constraint firstAttribute="bottom" secondItem="caT-NQ-OCZ" secondAttribute="bottom" constant="13" id="tHA-BA-wcl"/>
+                                <constraint firstItem="dXA-Om-4El" firstAttribute="width" secondItem="ckV-DU-RDR" secondAttribute="width" id="Eyg-ab-lbL"/>
+                                <constraint firstItem="dXA-Om-4El" firstAttribute="height" secondItem="ckV-DU-RDR" secondAttribute="height" id="Iz8-aB-j6B"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -76,11 +91,11 @@
                                             <rect key="frame" x="334" y="15" width="60" height="60"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALIDATION REQUIRED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9A-d9-6zP">
-                                                    <rect key="frame" x="0.0" y="7.5" width="60" height="45"/>
+                                                    <rect key="frame" x="-3" y="7.5" width="66" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="LqX-un-b4B"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -104,7 +119,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JpK-yl-FH3">
                                                     <rect key="frame" x="0.0" y="35" width="130" height="28"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-UN-Elg">
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIconOp" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-UN-Elg">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="kAI-UN-Elg" secondAttribute="height" id="NVq-gn-ChF"/>
@@ -182,7 +197,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="topView" destination="ckV-DU-RDR" id="6qf-oB-xsX"/>
+                        <outlet property="emptyView" destination="eW8-hN-Jco" id="Jn5-Ee-EB9"/>
+                        <outlet property="topView" destination="dXA-Om-4El" id="gW7-6p-CcC"/>
                         <outlet property="weekDate" destination="xhh-eR-bmX" id="fio-i8-l2E"/>
                         <outlet property="weeklyZambs" destination="3XC-Ne-dND" id="Qfi-9z-lUI"/>
                     </connections>
@@ -205,51 +221,48 @@
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No zambs yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-p0-ayc">
-                                <rect key="frame" x="98" y="233" width="218" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="5Am-kw-HMx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-da-ARP">
-                                <rect key="frame" x="69" y="738" width="276" height="36"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeSessionStatus:" destination="DOs-0y-Ekr" eventType="touchUpInside" id="qK7-0m-S63"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session has not started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF4-WM-cdB">
-                                <rect key="frame" x="93" y="147" width="228" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-W9-r9Z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No zambs yet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-p0-ayc">
+                                        <rect key="frame" x="11" y="34" width="218" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="5Am-kw-HMx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-da-ARP">
+                                        <rect key="frame" x="-18" y="46" width="276" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeSessionStatus:" destination="DOs-0y-Ekr" eventType="touchUpInside" id="qK7-0m-S63"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Session has not started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF4-WM-cdB">
+                                        <rect key="frame" x="6" y="53" width="228" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Q8z-uN-60y" firstAttribute="trailing" secondItem="fr5-p0-ayc" secondAttribute="trailing" constant="98" id="3N4-6c-SJf"/>
-                            <constraint firstItem="TF4-WM-cdB" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="93" id="91M-nE-BEq"/>
                             <constraint firstItem="Uc8-fE-RNx" firstAttribute="leading" secondItem="yoe-6T-CDE" secondAttribute="leading" id="9Db-Qi-mHR"/>
-                            <constraint firstItem="TF4-WM-cdB" firstAttribute="top" secondItem="Q8z-uN-60y" secondAttribute="top" constant="59" id="CJn-vB-pLK"/>
-                            <constraint firstItem="OyL-da-ARP" firstAttribute="centerX" secondItem="Q8z-uN-60y" secondAttribute="centerX" id="D6q-kp-x2h"/>
-                            <constraint firstItem="TF4-WM-cdB" firstAttribute="centerX" secondItem="yoe-6T-CDE" secondAttribute="centerX" id="EEA-7C-vhK"/>
                             <constraint firstAttribute="bottom" secondItem="Uc8-fE-RNx" secondAttribute="bottom" id="JQh-Ok-Vjh"/>
-                            <constraint firstItem="TF4-WM-cdB" firstAttribute="centerX" secondItem="Q8z-uN-60y" secondAttribute="centerX" id="Off-Uf-Mnv"/>
-                            <constraint firstItem="Q8z-uN-60y" firstAttribute="bottom" secondItem="OyL-da-ARP" secondAttribute="bottom" constant="39" id="XNj-SD-n9n"/>
-                            <constraint firstItem="Q8z-uN-60y" firstAttribute="trailing" secondItem="TF4-WM-cdB" secondAttribute="trailing" constant="93" id="XoB-gn-amy"/>
-                            <constraint firstItem="fr5-p0-ayc" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="98" id="daB-SL-oRc"/>
-                            <constraint firstItem="Q8z-uN-60y" firstAttribute="trailing" secondItem="OyL-da-ARP" secondAttribute="trailing" constant="69" id="goq-Gx-qWd"/>
                             <constraint firstAttribute="trailing" secondItem="Uc8-fE-RNx" secondAttribute="trailing" id="ias-5D-7AP"/>
-                            <constraint firstItem="fr5-p0-ayc" firstAttribute="top" secondItem="TF4-WM-cdB" secondAttribute="bottom" constant="65" id="nUO-PU-tnr"/>
                             <constraint firstAttribute="top" secondItem="Uc8-fE-RNx" secondAttribute="top" id="p2F-kh-ZJ2"/>
-                            <constraint firstItem="TF4-WM-cdB" firstAttribute="centerX" secondItem="fr5-p0-ayc" secondAttribute="centerX" id="pN3-9T-kGS"/>
-                            <constraint firstItem="OyL-da-ARP" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="69" id="sWo-vn-Obr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q8z-uN-60y"/>
                     </view>
@@ -994,6 +1007,7 @@
         <image name="iZambombaLogo" width="196" height="203"/>
         <image name="iZambombaTypo" width="189" height="48"/>
         <image name="locationIcon" width="11" height="15"/>
+        <image name="locationIconOp" width="11" height="15"/>
         <image name="mostRecent" width="12" height="12"/>
         <image name="mostViewed" width="11" height="11"/>
         <image name="rightHand" width="24" height="30"/>

@@ -28,6 +28,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var restView: UIView!
+    @IBOutlet weak var emptyView: UIView!
     
     
     @IBOutlet weak var weeklyZambs: UILabel!
@@ -40,11 +41,11 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         setNavBarAndBackground()
         
-        //If there are saved zambs, load'em, if not, load sample data
+        //If there are saved zambs, load'em, if not, load empty list view
         if let savedZambs = loadZambs() {
             zambs += savedZambs
         } else {
-            loadSampleZambs()
+            loadEmptyListView()
         }
         
         //Watch Connectivity
@@ -61,6 +62,14 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             weekDate.text = "since \(formatter.string(from: aWeekAgo))"
             weekDate.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
         }
+        updateWeeklyZambs()
+        
+        print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
+    }
+    
+    //MARK: Private Methods
+    
+    private func updateWeeklyZambs() {
         weeklyZambCount = getWeeklyZambs()
         if !zambs.isEmpty || weeklyZambCount != 0 {
             weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
@@ -68,18 +77,32 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             weeklyZambs.text = "No zambs"
         }
         weeklyZambs.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
-        
-        print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
     }
     
-    //MARK: Private Methods
-    
-    private func loadSampleZambs() {
-        guard let zamb1 = Zamb(amount: 275, hand: "Other", location: "Home", date: Date(), sessionTime: 345) else {
-            fatalError("Unable to instantiate zamb1")
-        }
-        zambs += [zamb1]
-        saveZambs()
+    private func loadEmptyListView() {
+        //Primero eliminamos la vista anterior del superview, para luego recuperarla cuando se añada un zamb
+        topView.isHidden = true
+        emptyView.isHidden = false
+        
+        //Creamos las labels y mierdas para la nueva vista
+        let startNOW = UILabel()
+        startNOW.text = "Start NOW!"
+        startNOW.font = UIFont(name: "Lato-Black", size: 25)
+        startNOW.textAlignment = .center
+        startNOW.textColor = .white
+        
+        let description = UILabel()
+        description.text = "Millions of people are waiting\n for your first ZAMB!"
+        description.font = UIFont(name: "Lato-Regular", size: 19)
+        description.textAlignment = .center
+        description.textColor = .white
+        
+        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: self.view.bounds.height)
+        emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.67)
+        
+        //Añadimos a la vista
+        emptyView.addSubview(description)
+        emptyView.addSubview(startNOW)
     }
     
     private func saveZambs() {
@@ -108,21 +131,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         //Nav bar
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .none
         navigationController?.hidesBarsOnSwipe = true
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundImage")!)
-        
-        
-        //Table view
-        //restView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        //restView.heightAnchor.constraint(equalToConstant: 400.0).isActive = true
-        //self.tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        //restView.translatesAutoresizingMaskIntoConstraints = false
-        //restView.topAnchor.constraint(equalTo: tableContent.topAnchor, constant: 10).isActive = true
-        //restView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
         
         let bgView = UIImageView(frame: tableView.bounds)
         bgView.image = UIImage(named: "backgroundImage")
@@ -133,10 +144,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         let footerView = UIView()
         footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.tableFooterView = footerView
-        
-        //THIS DOES NOT WORK, PARA MOSTRAR EL PRIMER SEPARATOR
-        //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
         
         //Top view background
         topView.backgroundColor = UIColor.black.withAlphaComponent(0.67)
@@ -208,8 +215,22 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         cell.dateLabel.text = zambVC.convertDateToString(date: zamb.date)
         cell.sessionTimeLabel.text = zambVC.secondsProcessor(inputSeconds: zamb.sessionTime)
         
+        if (zambs.count > 0) {
+            topView.isHidden = false
+            emptyView.isHidden = true
+        }
         
-        if(zamb.hand != "No hand") {
+        if(zamb.hand == "No hand" && zamb.location == "No location") {
+            
+            //Change label colors and location icon
+            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+            
+        }
+        
+        if(zamb.hand != "No hand" && zamb.location != "No location") {
             
             //Remove previous label
             cell.validationLabel.removeFromSuperview()
@@ -220,15 +241,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             imageView.contentMode = .scaleAspectFit
             cell.viewForImage.addSubview(imageView)
             
-            //Change label colors and location icon
-            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.3)
-            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.3)
-            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.3)
-            cell.locationIcon.image = UIImage(named: "locationIconOp")
+            cell.locationIcon.image = UIImage(named: "locationIcon")
         }
+        
         cell.separatorInset = .zero
         cell.selectionStyle = .none
+        
+        updateWeeklyZambs()
 
         return cell
     }
@@ -344,6 +363,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             weeklyZambCount = weeklyZambCount! + zamb!.amount
             weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            saveZambs()
         }
     }
 }

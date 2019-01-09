@@ -46,7 +46,6 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     
     private func setNavBarAndBackground() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .none
         
@@ -119,7 +118,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             return
         }
         
-        let amount = currentZambAmount
+        //let amount = currentZambAmount
+        let amount = 200
         let hand = "No hand"
         let location = "No location"
         let date = Date()
