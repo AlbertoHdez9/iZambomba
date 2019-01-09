@@ -221,8 +221,8 @@
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-W9-r9Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-W9-r9Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" updatesFrequently="YES"/>
@@ -268,7 +268,7 @@
                             <constraint firstItem="WfD-W9-r9Z" firstAttribute="top" secondItem="Q8z-uN-60y" secondAttribute="top" id="LA0-QG-PVU"/>
                             <constraint firstItem="OyL-da-ARP" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="69" id="M9f-Mp-ObJ"/>
                             <constraint firstAttribute="trailing" secondItem="Uc8-fE-RNx" secondAttribute="trailing" id="ias-5D-7AP"/>
-                            <constraint firstItem="WfD-W9-r9Z" firstAttribute="bottom" secondItem="Q8z-uN-60y" secondAttribute="bottom" id="k6v-zE-WiC"/>
+                            <constraint firstItem="WfD-W9-r9Z" firstAttribute="bottom" secondItem="yoe-6T-CDE" secondAttribute="bottom" id="k6v-zE-WiC"/>
                             <constraint firstItem="WfD-W9-r9Z" firstAttribute="trailing" secondItem="Q8z-uN-60y" secondAttribute="trailing" id="o2s-Pz-lIy"/>
                             <constraint firstAttribute="top" secondItem="Uc8-fE-RNx" secondAttribute="top" id="p2F-kh-ZJ2"/>
                             <constraint firstItem="TF4-WM-cdB" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="93" id="pL0-0M-J6u"/>
@@ -306,7 +306,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m44-Lp-8vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Z6z-nk-aZi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2757.5999999999999" y="-268.51574212893553"/>
+            <point key="canvasLocation" x="2756.521739130435" y="-268.52678571428572"/>
         </scene>
         <!--Zamb View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -645,7 +645,7 @@
         <!--Your activity-->
         <scene sceneID="7kY-xK-zTC">
             <objects>
-                <navigationController title="Your activity" automaticallyAdjustsScrollViewInsets="NO" id="8wD-nj-HH5" sceneMemberID="viewController">
+                <navigationController title="Your activity" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="8wD-nj-HH5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Your activity" image="mostRecent" id="vPF-n0-2RQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="XNq-dX-npj">
@@ -733,6 +733,9 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iZambombaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-tf-Ddg">
                                 <rect key="frame" x="134" y="524" width="146" height="203"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lGq-tf-Ddg" secondAttribute="height" multiplier="146:203" id="A7B-Ey-6kx"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -863,6 +866,6 @@
         <image name="rightHand" width="24" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nRB-Q5-G5n"/>
+        <segue reference="2Yb-DL-Mmj"/>
     </inferredMetricsTieBreakers>
 </document>

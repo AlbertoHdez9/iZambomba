@@ -46,10 +46,6 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     }
     
     private func setNavBarAndBackground() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.tintColor = .none
-        navigationController?.hidesBarsOnSwipe = false
         
         let navBarHeight = navigationController!.navigationBar.frame.height
         darkBackground.frame = CGRect(x:0, y: navBarHeight, width: self.view.bounds.width, height: (self.view.bounds.height - (self.view.safeAreaInsets.bottom + navBarHeight)))

@@ -84,7 +84,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         topView.isHidden = true
         emptyView.isHidden = false
         
-        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: self.view.bounds.height)
+        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: self.view.bounds.height - (navigationController?.navigationBar.bounds.height)!)
         emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         //Creamos las labels y mierdas para la nueva vista
@@ -132,10 +132,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     private func setNavBarAndBackground() {
         
         //Nav bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "backgroundImage"), for: UIBarMetrics.default)
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .none
-        navigationController?.hidesBarsOnSwipe = true
         
         let bgView = UIImageView(frame: tableView.bounds)
         bgView.image = UIImage(named: "backgroundImage")
@@ -145,23 +144,36 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         let guide = view.safeAreaLayoutGuide
         let safeAreaHeight = guide.layoutFrame.size.height
-
+        
         var height = (navigationController?.navigationBar.bounds.height)! + topView.bounds.height + CGFloat(90*zambs.count) + (self.view.bounds.height - safeAreaHeight)
-        print("Altura de las cosas: \(height), altura de la vista: \(self.view.bounds.height)")
+        let metrallaHeight = height
         
-        let firstHeight = height
-        
-        if self.view.bounds.height - height < 0 {
-            height = 0
+        if (zambs.count != 0) {
+            
+            print("Altura de las cosas: \(height), altura de la vista: \(self.view.bounds.height)")
+            print("Altura de las cosas: \(tableView.contentSize.height)")
+            
+            if self.view.bounds.height - height < 0 {
+                height = 0
+            } else {
+                height = self.view.bounds.height - height
+            }
+            print("Altura resultante: \(height)")
+            print("Diferencia de alturas: \(self.view.bounds.height - (metrallaHeight + height) )")
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 0))
+            footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+            tableView.tableFooterView = footerView
+
         } else {
-            height = self.view.bounds.height - height
+            //tableView.tableFooterView = UIView()
         }
-        print("Altura resultante: \(height)")
-        print("Diferencia de alturas: \(self.view.bounds.height - (firstHeight + height) )")
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
-        footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        tableView.tableFooterView = footerView
-        
+
+        if (metrallaHeight <= tableView.frame.size.height) {
+            tableView.isScrollEnabled = false;
+        }
+        else {
+            tableView.isScrollEnabled = true;
+        }
         //Top view background
         topView.backgroundColor = UIColor.black.withAlphaComponent(0.67)
     }
@@ -189,31 +201,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return zambs.count
     }
-    
-//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//
-//        let result = UIView()
-//
-//        // recreate insets from existing ones in the table view
-//        let width = tableView.bounds.width
-//        let sepFrame = CGRect(x: 0, y: -0.5, width: width, height: 0.5)
-//
-//        // create layer with separator, setting color
-//        let sep = CALayer()
-//        sep.frame = sepFrame
-//        sep.backgroundColor = tableView.separatorColor?.cgColor
-//        result.layer.addSublayer(sep)
-//
-//        result.frame = CGRect(x:0, y:0, width: width, height: 200)
-//        result.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-//        result.translatesAutoresizingMaskIntoConstraints = false
-////        let inset = CGFloat(zambs.count) * 90.0
-////        result.heightAnchor.constraint(equalTo: tableView.heightAnchor, multiplier: 0, constant: inset).isActive = true
-//        result.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//
-//        return result
-//    }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -352,6 +339,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 zambs[selectedIndexPath.row] = zamb
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
+            setNavBarAndBackground()
             saveZambs()
         }
     }
@@ -363,6 +351,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             zambs.append(zamb)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            setNavBarAndBackground()
             saveZambs()
         }
     }

@@ -167,6 +167,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //Disable the Save button while editing
+        textField.text = ""
         acceptButton.isEnabled = false
     }
     

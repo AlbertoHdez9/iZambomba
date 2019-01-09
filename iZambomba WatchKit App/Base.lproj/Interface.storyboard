@@ -25,9 +25,9 @@
             <objects>
                 <controller identifier="First Interface Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="FirstInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" radius="0.0" spacing="0.0" id="uuV-57-pf1">
+                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" radius="15" spacing="0.0" id="uuV-57-pf1">
                             <items>
-                                <imageView width="16" alignment="center" verticalAlignment="center" image="iZambombaTypo" id="0pT-ZB-JK8"/>
+                                <imageView width="1" alignment="center" verticalAlignment="center" image="iZambombaTypo" id="0pT-ZB-JK8"/>
                                 <button alignment="center" verticalAlignment="bottom" title="Tap to start" backgroundImage="buttonTapWatch" id="btG-JL-mKi">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
@@ -56,10 +56,10 @@
                         </button>
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
-                                <imageView width="46" height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
+                                <imageView width="46" height="82" alignment="left" verticalAlignment="center" image="zambombaWatch" id="DYd-hg-zKL"/>
                                 <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
                                     <items>
-                                        <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv"/>
+                                        <label alignment="center" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv"/>
                                         <label alignment="center" verticalAlignment="bottom" text="00:00" id="pLD-NC-OXM"/>
                                     </items>
                                 </group>
