@@ -24,8 +24,17 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     var currentZambAmount: Int = 0
     var startedZambSession: Bool = false
     var timer: Timer?
+    var timerForFrecuencyArray: Timer?
     var timerSeconds: Int = 0
+    
     var zamb: Zamb?
+    
+    struct zambsPerSec {
+        var zambs: Int
+        var seconds: Int
+    }
+    var frecuencyArray: [zambsPerSec] = [zambsPerSec]()
+    var finalFrecuencyArray: [zambsPerSec] = [zambsPerSec]()
     
     var manager = WorkoutManager()
     
@@ -67,6 +76,12 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         timerLabel.text = secondsProcessor(inputSeconds: timerSeconds)
     }
     
+    @objc private func buildFrecuencyArray() {
+        frecuencyArray.append(
+            zambsPerSec(zambs: currentZambAmount, seconds: timerSeconds)
+        )
+    }
+    
     private func secondsProcessor(inputSeconds: Int) -> String {
         let secondsInt = ((inputSeconds % 3600) % 60)
         var secondsString: String = "\(secondsInt)"
@@ -74,6 +89,23 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             secondsString = "0\((inputSeconds % 3600) % 60)"
         }
         return "\((inputSeconds % 3600) / 60):\(secondsString)"
+    }
+    
+    private func processFrecuencyArray() {
+        var intervalFloat = (Float(timerSeconds)/10.0)
+        intervalFloat.round()
+        var interval = Int(intervalFloat)
+        let increment = interval
+
+        for zambPerSec in frecuencyArray.enumerated() {
+            if (zambPerSec.element.seconds >= interval) {
+                finalFrecuencyArray.append(zambPerSec.element)
+                interval = interval + increment
+            }
+        }
+        for z in finalFrecuencyArray.enumerated() {
+            print("Zambs: \(z.element.zambs) in \(z.element.seconds) seconds")
+        }
     }
 
     
@@ -88,6 +120,9 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             
             //Timer start
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
+            //Frecuency array trigger
+            timerForFrecuencyArray = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(buildFrecuencyArray), userInfo: nil, repeats: true)
+
 
             
         } else {
@@ -98,6 +133,9 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             //Timer stops
             timer?.invalidate()
             timer = nil
+            
+            timerForFrecuencyArray?.invalidate()
+            timerForFrecuencyArray = nil
         }
     }
     
@@ -107,7 +145,6 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         }
     }
     
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -119,12 +156,15 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             return
         }
         
-        //let amount = currentZambAmount
-        let amount = 200
+        processFrecuencyArray()
+        
+        let amount = currentZambAmount
+        //let amount = 200
         let hand = "No hand"
         let location = "No location"
         let date = Date()
         let sessionTime = timerSeconds
+        let frecuencyArray = finalFrecuencyArray
         
         zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
     }

@@ -28,7 +28,7 @@
         <scene sceneID="M6L-dD-L1c">
             <objects>
                 <tableViewController id="qYi-Uq-aJ9" customClass="ZambTableViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uEX-RG-SPC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uEX-RG-SPC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,11 +37,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-hN-Jco">
-                                    <rect key="frame" x="0.0" y="35" width="414" height="9"/>
+                                    <rect key="frame" x="0.0" y="35" width="414" height="10"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
@@ -77,6 +77,8 @@
                             <constraints>
                                 <constraint firstItem="dXA-Om-4El" firstAttribute="width" secondItem="ckV-DU-RDR" secondAttribute="width" id="Eyg-ab-lbL"/>
                                 <constraint firstItem="dXA-Om-4El" firstAttribute="height" secondItem="ckV-DU-RDR" secondAttribute="height" id="Iz8-aB-j6B"/>
+                                <constraint firstItem="dXA-Om-4El" firstAttribute="top" secondItem="ckV-DU-RDR" secondAttribute="top" id="Wxh-rU-lKn"/>
+                                <constraint firstItem="dXA-Om-4El" firstAttribute="leading" secondItem="ckV-DU-RDR" secondAttribute="leading" id="zuf-CV-EhU"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -221,7 +223,7 @@
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-W9-r9Z">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-W9-r9Z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -264,7 +266,6 @@
                             <constraint firstItem="TF4-WM-cdB" firstAttribute="top" secondItem="fr5-p0-ayc" secondAttribute="bottom" constant="50" id="DnC-LB-dzL"/>
                             <constraint firstItem="Q8z-uN-60y" firstAttribute="trailing" secondItem="OyL-da-ARP" secondAttribute="trailing" constant="69" id="GjS-S5-VBc"/>
                             <constraint firstAttribute="bottom" secondItem="Uc8-fE-RNx" secondAttribute="bottom" id="JQh-Ok-Vjh"/>
-                            <constraint firstItem="WfD-W9-r9Z" firstAttribute="bottom" secondItem="Q8z-uN-60y" secondAttribute="bottom" id="KuJ-Ma-ELZ"/>
                             <constraint firstItem="WfD-W9-r9Z" firstAttribute="top" secondItem="Q8z-uN-60y" secondAttribute="top" id="LA0-QG-PVU"/>
                             <constraint firstItem="OyL-da-ARP" firstAttribute="leading" secondItem="Q8z-uN-60y" secondAttribute="leading" constant="69" id="M9f-Mp-ObJ"/>
                             <constraint firstAttribute="trailing" secondItem="Uc8-fE-RNx" secondAttribute="trailing" id="ias-5D-7AP"/>

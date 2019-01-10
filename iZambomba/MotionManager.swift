@@ -78,9 +78,9 @@ class MotionManager {
     //      1 -> iWatch
     func processDeviceMotion(_ deviceMotion: CMDeviceMotion, type: Int) {
         if type == 0 {
-            if deviceMotion.userAcceleration.x < -2 {
+            if deviceMotion.userAcceleration.x < -1 {
                 countOnePhone = true
-            } else if countOnePhone && deviceMotion.userAcceleration.x > 2 {
+            } else if countOnePhone && deviceMotion.userAcceleration.x > 1 {
                 countOnePhone = false
                 zambAmount += 1
                 updateZambAmountDelegate()
