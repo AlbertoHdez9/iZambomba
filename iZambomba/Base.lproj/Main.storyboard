@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="ckV-DU-RDR">
+                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" id="ckV-DU-RDR">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -42,7 +42,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
                                             <rect key="frame" x="50" y="18" width="314" height="45"/>
@@ -495,12 +495,31 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vMr-ga-IBv" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="160" width="382" height="250"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-hs-jh6">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstItem="N7n-hs-jh6" firstAttribute="width" secondItem="vMr-ga-IBv" secondAttribute="width" id="liQ-j8-90K"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vMr-ga-IBv" secondAttribute="trailing" id="1OM-8p-Sdc"/>
                                     <constraint firstItem="evl-m7-6a1" firstAttribute="top" secondItem="cbK-7t-UyU" secondAttribute="bottom" constant="16" id="25E-5Z-9B7"/>
+                                    <constraint firstItem="uLk-iK-tu2" firstAttribute="top" secondItem="vMr-ga-IBv" secondAttribute="bottom" constant="35" id="61l-eE-HlP"/>
                                     <constraint firstAttribute="bottom" secondItem="Epk-CE-nxV" secondAttribute="bottom" constant="19" id="6uk-Py-Tex"/>
                                     <constraint firstItem="dnK-sX-uJC" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="44" id="7tk-QC-aHr"/>
+                                    <constraint firstItem="vMr-ga-IBv" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" id="EPL-TL-Isi"/>
                                     <constraint firstItem="cbK-7t-UyU" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="15" id="IJm-Kh-Rdk"/>
                                     <constraint firstItem="Epk-CE-nxV" firstAttribute="top" secondItem="ino-Lu-4qX" secondAttribute="bottom" constant="34" id="NFi-hI-pBl"/>
                                     <constraint firstItem="dnK-sX-uJC" firstAttribute="top" secondItem="q6P-um-0wV" secondAttribute="top" constant="43" id="OCO-AQ-oh8"/>
@@ -515,6 +534,7 @@
                                     <constraint firstItem="Epk-CE-nxV" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="51" id="lE8-qk-kMx"/>
                                     <constraint firstItem="cbK-7t-UyU" firstAttribute="top" secondItem="dnK-sX-uJC" secondAttribute="bottom" constant="20" id="lfq-zR-Dhs"/>
                                     <constraint firstAttribute="trailing" secondItem="ino-Lu-4qX" secondAttribute="trailing" constant="34" id="oE5-Jf-u5W"/>
+                                    <constraint firstItem="vMr-ga-IBv" firstAttribute="top" secondItem="evl-m7-6a1" secondAttribute="bottom" constant="7.5" id="q7F-eR-CNe"/>
                                     <constraint firstItem="m4o-CZ-Rtl" firstAttribute="top" secondItem="q6P-um-0wV" secondAttribute="top" constant="12" id="reG-XP-Ien"/>
                                     <constraint firstItem="evl-m7-6a1" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="44" id="sm5-Kn-JJe"/>
                                 </constraints>
@@ -541,6 +561,7 @@
                     <connections>
                         <outlet property="acceptButton" destination="Epk-CE-nxV" id="lQC-G9-g6f"/>
                         <outlet property="amountLabel" destination="dnK-sX-uJC" id="gor-Qc-mlT"/>
+                        <outlet property="chartView" destination="vMr-ga-IBv" id="6jB-A2-7iS"/>
                         <outlet property="dateLabel" destination="2do-uF-Wlr" id="LXt-4Q-p0s"/>
                         <outlet property="dismissButton" destination="m4o-CZ-Rtl" id="Jcn-AB-UV7"/>
                         <outlet property="leftHandSwitch" destination="8P4-az-DN7" id="T1F-Ts-CBX"/>

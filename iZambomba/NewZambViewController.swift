@@ -29,12 +29,12 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     
     var zamb: Zamb?
     
-    struct zambsPerSec {
-        var zambs: Int
-        var seconds: Int
-    }
-    var frecuencyArray: [zambsPerSec] = [zambsPerSec]()
-    var finalFrecuencyArray: [zambsPerSec] = [zambsPerSec]()
+//    struct zambsPerSec {
+//        var zambs: Int
+//        var seconds: Int
+//    }
+    var frecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
+    var finalFrecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
     
     var manager = WorkoutManager()
     
@@ -78,7 +78,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     
     @objc private func buildFrecuencyArray() {
         frecuencyArray.append(
-            zambsPerSec(zambs: currentZambAmount, seconds: timerSeconds)
+            Zamb.zambsPerSec(zambs: currentZambAmount, seconds: timerSeconds)
         )
     }
     
@@ -166,7 +166,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         let sessionTime = timerSeconds
         let frecuencyArray = finalFrecuencyArray
         
-        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime)
+        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
     }
     
 

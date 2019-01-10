@@ -108,27 +108,27 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     }
     
     //MARK: Navigation
-    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-        switch(segueIdentifier) {
-            case "addZamb":
-                //let amount = 2500 //for simulation purposes
-                let amount = currentZambAmount
-                let hand = "No hand"
-                let location = "No location"
-                let date = Date()
-                let sessionTime = timerSeconds
-                
-                if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime) {
-                    zambs += [zamb]
-                }
-                
-                os_log("Adding a new zamb", log: OSLog.default, type: .debug)
-                return zambs
-            
-            default:
-                os_log("This shouldn't be printing", log: OSLog.default, type: .debug)
-                return nil
-        }
-    }
+//    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+//        switch(segueIdentifier) {
+//            case "addZamb":
+//                //let amount = 2500 //for simulation purposes
+//                let amount = currentZambAmount
+//                let hand = "No hand"
+//                let location = "No location"
+//                let date = Date()
+//                let sessionTime = timerSeconds
+//
+//                if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime) {
+//                    zambs += [zamb]
+//                }
+//
+//                os_log("Adding a new zamb", log: OSLog.default, type: .debug)
+//                return zambs
+//
+//            default:
+//                os_log("This shouldn't be printing", log: OSLog.default, type: .debug)
+//                return nil
+//        }
+//    }
 
 }

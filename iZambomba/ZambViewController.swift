@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Charts
 
 class ZambViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,6 +29,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var otherHandSwitch: UISwitch!
     
     @IBOutlet weak var modalView: UIView!
+    @IBOutlet weak var chartView: LineChartView!
+    
     
     var zamb: Zamb?
     var locationChanged = false
@@ -53,6 +56,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             locationTextField.text = zamb.location
             sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
         }
+        displayChart()
     }
     
     //MARK: Keyboard show
@@ -95,6 +99,30 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         // Disable the Save button if the text field is empty.
         let text = locationLabel.text ?? ""
         acceptButton.isEnabled = !text.isEmpty
+    }
+    
+    var previousZamb: Double = 0
+    
+    private func displayChart() {
+        //View
+        chartView.gridBackgroundColor = UIColor.darkGray
+        chartView.backgroundColor = .darkGray
+        
+        
+        var aux : Double = 0
+        let values = zamb?.frecuencyArray.map { (zambPerSec) -> ChartDataEntry in
+            aux = Double(zambPerSec.zambs)
+            return ChartDataEntry(x: Double(zambPerSec.seconds), y: Double(zambPerSec.zambs) - previousZamb)
+        }
+        previousZamb = aux
+        let set = LineChartDataSet(values: values, label: "")
+        set.setColor(.white)
+        set.setCircleColor(.white)
+        set.lineWidth = 2.0
+        set.circleRadius = 1.0
+        let data = LineChartData(dataSet: set)
+        
+        chartView.data = data
     }
     
     //MARK: Switches control
@@ -196,8 +224,9 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         let location = locationChanged ? locationTextField.text : zamb!.location
         let date = zamb!.date
         let sessionTime = zamb!.sessionTime
+        let frecuencyArray = zamb!.frecuencyArray
         
-        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime)
+        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
         
         locationChanged = false
     }

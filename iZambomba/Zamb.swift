@@ -17,6 +17,11 @@ class Zamb: NSObject, NSCoding {
     var date: Date
     var sessionTime: Int
     var frecuency: Float
+    struct zambsPerSec {
+        var zambs: Int
+        var seconds: Int
+    }
+    var frecuencyArray: [zambsPerSec]
     
     //MARK: Archiving paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -29,22 +34,22 @@ class Zamb: NSObject, NSCoding {
         static let location = "location"
         static let date = "date"
         static let sessionTime = "sessionTime"
+        static let frecuencyArray = "frecuencyArray"
     }
     
     //Initialization
-    init?(amount: Int, hand: String?, location: String?, date: Date, sessionTime: Int) {
+    init?(amount: Int, hand: String?, location: String?, date: Date, sessionTime: Int, frecuencyArray: [zambsPerSec]) {
         guard amount != 0 else {
             return nil
         }
-        /*guard date > Date() else {
-            return nil
-        }*/
+
         self.amount = amount
         self.hand = hand ?? "No hand"
         self.location = location ?? "No location"
         self.date = date
         self.sessionTime = sessionTime
         self.frecuency = Float(amount/(sessionTime == 0 ? 1 : sessionTime))
+        self.frecuencyArray = frecuencyArray
     }
     
     //MARK: NSCoding
@@ -59,6 +64,7 @@ class Zamb: NSObject, NSCoding {
             let dateString = formatter.string(from: date)
         aCoder.encode(dateString, forKey: PropertyKey.date)
         aCoder.encode(sessionTime, forKey: PropertyKey.sessionTime)
+        aCoder.encode(frecuencyArray, forKey: PropertyKey.frecuencyArray)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -75,7 +81,9 @@ class Zamb: NSObject, NSCoding {
         let date = formatter.date(from: dateString!)
         let sessionTime = aDecoder.decodeInteger(forKey: PropertyKey.sessionTime)
         
+        let frecuencyArray = aDecoder.decodeObject(forKey: PropertyKey.frecuencyArray) as? [zambsPerSec]
+        
         //Must call designated initializer
-        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime)
+        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime, frecuencyArray: frecuencyArray!)
     }
 }

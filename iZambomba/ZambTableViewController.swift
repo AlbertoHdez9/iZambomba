@@ -165,7 +165,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     private func updateBottomView() {
         //Contenido de la tabla + nº de filas por su altura
-        //var height = tableView.contentSize.height + CGFloat(90*zambs.count)
         var height = topView.bounds.height + CGFloat(90*zambs.count)
         
         //Si el contenido es mayor que lo que cabe en la pantalla, no ponemos footer
@@ -369,22 +368,22 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         print("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
-        if (message["amount"] is Int) {
-            let newIndexPath = IndexPath(row: zambs.count, section: 0)
-            
-            let zamb = Zamb(
-                amount: message["amount"] as! Int,
-                hand: message["hand"] as? String,
-                location: message["location"] as? String,
-                date: message["date"] as! Date,
-                sessionTime: message["sessionTime"] as! Int)
-            
-            zambs.append(zamb!)
-            weeklyZambCount = weeklyZambCount! + zamb!.amount
-            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            saveZambs()
-        }
-    }
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
+//        if (message["amount"] is Int) {
+//            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+//            
+//            let zamb = Zamb(
+//                amount: message["amount"] as! Int,
+//                hand: message["hand"] as? String,
+//                location: message["location"] as? String,
+//                date: message["date"] as! Date,
+//                sessionTime: message["sessionTime"] as! Int)
+//            
+//            zambs.append(zamb!)
+//            weeklyZambCount = weeklyZambCount! + zamb!.amount
+//            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            saveZambs()
+//        }
+//    }
 }
