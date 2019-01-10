@@ -27,11 +27,11 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         super.awake(withContext: context)
 
         if let contextZambs = context as? [Zamb] {
-            print(contextZambs.count)
-            
-            // Configure interface objects here.
-            zambs = contextZambs
-            print("amount: \(zambs[0].amount), hand: \(String(describing: zambs[0].hand)), location: \(String(describing: zambs[0].location)), date: \(zambs[0].date), sessionTime: \(zambs[0].sessionTime)")
+            if (contextZambs.count > 0) {
+                // Configure interface objects here.
+                zambs = contextZambs
+                print("amount: \(zambs[0].amount), hand: \(String(describing: zambs[0].hand)), location: \(String(describing: zambs[0].location)), date: \(zambs[0].date), sessionTime: \(zambs[0].sessionTime)")
+            }
         }
         
         loadTableCells()

@@ -40,8 +40,8 @@ class Zamb: NSObject, NSCoding {
             return nil
         }*/
         self.amount = amount
-        self.hand = hand ?? nil
-        self.location = location ?? nil
+        self.hand = hand ?? "No hand"
+        self.location = location ?? "No location"
         self.date = date
         self.sessionTime = sessionTime
         self.frecuency = Float(amount/(sessionTime == 0 ? 1 : sessionTime))

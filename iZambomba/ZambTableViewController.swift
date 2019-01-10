@@ -165,7 +165,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             tableView.tableFooterView = footerView
 
         } else {
-            //tableView.tableFooterView = UIView()
+            tableView.tableFooterView = UIView()
         }
 
         if (metrallaHeight <= tableView.frame.size.height) {
