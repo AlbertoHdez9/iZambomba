@@ -108,7 +108,8 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                     "hand"          : zamb.hand ?? "",
                     "location"      : zamb.location ?? "",
                     "date"          : zamb.date,
-                    "sessionTime"   : zamb.sessionTime ]
+                    "sessionTime"   : zamb.sessionTime,
+                    "frecuencyArray": zamb.frecuencyArray]
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")

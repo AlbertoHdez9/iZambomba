@@ -17,7 +17,7 @@ class Zamb: NSObject, NSCoding {
     var date: Date
     var sessionTime: Int
     var frecuency: Float
-    struct zambsPerSec {
+    struct zambsPerSec: Codable {
         var zambs: Int
         var seconds: Int
     }

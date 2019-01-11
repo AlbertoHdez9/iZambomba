@@ -25,7 +25,7 @@
             <objects>
                 <controller identifier="First Interface Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="FirstInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" radius="16" spacing="0.0" id="uuV-57-pf1">
+                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" spacing="0.0" id="uuV-57-pf1">
                             <items>
                                 <imageView width="150" alignment="center" verticalAlignment="center" image="iZambombaTypo" contentMode="scaleAspectFit" id="0pT-ZB-JK8"/>
                                 <group height="40" alignment="center" verticalAlignment="bottom" id="Czd-I7-FJS">

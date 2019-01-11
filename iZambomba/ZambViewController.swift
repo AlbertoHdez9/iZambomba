@@ -101,20 +101,21 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         acceptButton.isEnabled = !text.isEmpty
     }
     
-    var previousZamb: Double = 0
+    
     
     private func displayChart() {
         //View
-        chartView.gridBackgroundColor = UIColor.darkGray
+        chartView.gridBackgroundColor = UIColor()
         chartView.backgroundColor = .darkGray
         
+        var previousZamb: Double = 0
         
-        var aux : Double = 0
         let values = zamb?.frecuencyArray.map { (zambPerSec) -> ChartDataEntry in
-            aux = Double(zambPerSec.zambs)
-            return ChartDataEntry(x: Double(zambPerSec.seconds), y: Double(zambPerSec.zambs) - previousZamb)
+            let chartDataEntry = ChartDataEntry(x: Double(zambPerSec.seconds), y: Double(zambPerSec.zambs) - previousZamb)
+            previousZamb = Double(zambPerSec.zambs)
+            return chartDataEntry
         }
-        previousZamb = aux
+
         let set = LineChartDataSet(values: values, label: "")
         set.setColor(.white)
         set.setCircleColor(.white)
@@ -123,6 +124,11 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         let data = LineChartData(dataSet: set)
         
         chartView.data = data
+        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawLabelsEnabled = false
+        chartView.chartDescription?.enabled = false
+        chartView.legend.enabled = false
     }
     
     //MARK: Switches control

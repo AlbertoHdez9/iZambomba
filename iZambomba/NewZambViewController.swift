@@ -28,11 +28,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     var timerSeconds: Int = 0
     
     var zamb: Zamb?
-    
-//    struct zambsPerSec {
-//        var zambs: Int
-//        var seconds: Int
-//    }
+
     var frecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
     var finalFrecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
     
@@ -158,8 +154,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         processFrecuencyArray()
         
-        let amount = currentZambAmount
-        //let amount = 200
+        //let amount = currentZambAmount
+        let amount = 200
         let hand = "No hand"
         let location = "No location"
         let date = Date()

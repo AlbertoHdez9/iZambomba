@@ -112,7 +112,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
             try data.write(to: Zamb.ArchiveURL)
         } catch {
-            print("Couldn't write file")
+            print("Couldn't write file: " + error.localizedDescription)
         }
     }
     
@@ -124,7 +124,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 savedZambs = archivedZambs
             }
         } catch {
-            print("Couldn't read file.")
+            print("Couldn't read file: " + error.localizedDescription)
         }
         return savedZambs
     }
@@ -175,10 +175,15 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             height = tableView.bounds.height - height + 10
             tableView.isScrollEnabled = false;
         }
-        print(height)
-        print("ContentSize: \(tableView.contentSize.height)")
-        print("Filas: \(CGFloat(90*zambs.count))")
-        print("Total: \(self.view.bounds.height)")
+//        print(height)
+//        print("ContentSize: \(tableView.contentSize.height)")
+//        print("Filas: \(CGFloat(90*zambs.count))")
+//        print("Total: \(self.view.bounds.height)")
+//        print("Total: \(self.view.safeAreaInsets.bottom)")
+        let compare = height + 80.0 + CGFloat(90*zambs.count)
+        if (compare < (self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top)) {
+            height = height + ((self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top) - compare)
+        }
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
         footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.tableFooterView = footerView
@@ -368,22 +373,23 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         print("activationDidCompleteWith activationState:\(activationState) error:\(String(describing: error))")
     }
     
-//    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
-//        if (message["amount"] is Int) {
-//            let newIndexPath = IndexPath(row: zambs.count, section: 0)
-//            
-//            let zamb = Zamb(
-//                amount: message["amount"] as! Int,
-//                hand: message["hand"] as? String,
-//                location: message["location"] as? String,
-//                date: message["date"] as! Date,
-//                sessionTime: message["sessionTime"] as! Int)
-//            
-//            zambs.append(zamb!)
-//            weeklyZambCount = weeklyZambCount! + zamb!.amount
-//            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
-//            tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            saveZambs()
-//        }
-//    }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
+        if (message["amount"] is Int) {
+            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            
+            let zamb = Zamb(
+                amount: message["amount"] as! Int,
+                hand: message["hand"] as? String,
+                location: message["location"] as? String,
+                date: message["date"] as! Date,
+                sessionTime: message["sessionTime"] as! Int,
+                frecuencyArray: (message["frecuencyArray"] as! [Zamb.zambsPerSec]))
+            
+            zambs.append(zamb!)
+            weeklyZambCount = weeklyZambCount! + zamb!.amount
+            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            saveZambs()
+        }
+    }
 }
