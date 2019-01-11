@@ -57,9 +57,9 @@
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
                                 <imageView width="47" height="89" alignment="left" verticalAlignment="center" image="zambombaWatch" id="DYd-hg-zKL"/>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
+                                <group alignment="right" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
                                     <items>
-                                        <label alignment="center" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv">
+                                        <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv">
                                             <fontDescription key="font" name="Lato-Black" family="Lato" pointSize="19"/>
                                         </label>
                                         <label alignment="center" verticalAlignment="bottom" text="00:00" id="pLD-NC-OXM">
@@ -89,7 +89,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="622.3478260869565" y="198.83928571428572"/>
+            <point key="canvasLocation" x="622.07407407407413" y="198.04568527918781"/>
         </scene>
         <!--backgroundImageOp-->
         <scene sceneID="Q3H-Yf-3hS">
@@ -99,25 +99,25 @@
                         <table alignment="center" spacing="1" id="K3z-75-XdB">
                             <items>
                                 <tableRow identifier="WKZambRowController" selectable="NO" id="Pfd-gh-TWh" customClass="WKZambRowController" customModule="iZambomba_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="H3x-D0-UCX">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="H3x-D0-UCX">
                                         <items>
-                                            <group width="62" height="36" alignment="left" layout="vertical" id="m4w-dW-fcI">
+                                            <group width="60" alignment="left" verticalAlignment="center" layout="vertical" id="m4w-dW-fcI">
                                                 <items>
-                                                    <label alignment="left" text="Label" numberOfLines="2" id="yrx-hp-Jdj">
-                                                        <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                    <label width="1" alignment="left" text="Label" numberOfLines="2" id="yrx-hp-Jdj">
+                                                        <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="10"/>
                                                     </label>
-                                                    <group width="1" alignment="left" id="bwV-s1-kaf">
+                                                    <group width="1" alignment="left" verticalAlignment="center" id="bwV-s1-kaf">
                                                         <items>
-                                                            <imageView alignment="left" image="locationIconWatch" id="Be1-lW-bQ2"/>
-                                                            <label alignment="center" text="Label" id="CGb-NS-NWY">
-                                                                <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                            <imageView width="9" height="11" alignment="left" verticalAlignment="center" image="locationIconWatch" id="Be1-lW-bQ2"/>
+                                                            <label alignment="left" verticalAlignment="center" text="Label" id="CGb-NS-NWY">
+                                                                <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="9"/>
                                                             </label>
                                                         </items>
                                                     </group>
                                                 </items>
                                             </group>
-                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
-                                                <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
+                                                <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="13"/>
                                             </label>
                                         </items>
                                     </group>
@@ -155,7 +155,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="815" y="544"/>
+            <point key="canvasLocation" x="814" y="543"/>
         </scene>
     </scenes>
 </document>

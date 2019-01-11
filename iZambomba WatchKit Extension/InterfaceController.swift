@@ -74,7 +74,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         startedZambSession = false
         
         manager.stopWorkout()
-        WKExtension.shared().isAutorotating = true
+        WKExtension.shared().isAutorotating = false
         
         //Timer
         timer?.invalidate()
@@ -88,7 +88,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     //MARK: Private methods
     private func updateZambLabel() {
         if startedZambSession {
-            zambAmount.setText("\(self.currentZambAmount) ZAMBS!!!")
+            zambAmount.setText("\(self.currentZambAmount) ZAMBS!")
         }
     }
     
@@ -146,12 +146,13 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch(segueIdentifier) {
             case "addZamb":
-                let amount = 2500 //for simulation purposes
-                //let amount = currentZambAmount
+                //let amount = 2500 //for simulation purposes
+                let amount = currentZambAmount
                 let hand = "No hand"
                 let location = "No location"
                 let date = Date()
                 let sessionTime = timerSeconds
+                processFrecuencyArray()
                 let frecuencyArray = finalFrecuencyArray
 
                     if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {

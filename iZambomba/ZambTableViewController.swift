@@ -191,10 +191,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     private func processFrecArrayMessage(_ frecArrayFromMessage: [[String:Int]]) -> [Zamb.zambsPerSec] {
         var processedArrayFromMessage =  [Zamb.zambsPerSec]()
-        var i = 0
         for zambPerSec in frecArrayFromMessage.enumerated() {
-            processedArrayFromMessage[i] = dictionaryToZambsPerSec(zambPerSec.element)
-            i = i+1
+            processedArrayFromMessage.append(dictionaryToZambsPerSec(zambPerSec.element))
         }
         return processedArrayFromMessage
     }
@@ -391,19 +389,24 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         if (message["amount"] is Int) {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             
-            let zamb = Zamb(
+            if let zamb = Zamb(
                 amount: message["amount"] as! Int,
                 hand: message["hand"] as? String,
                 location: message["location"] as? String,
                 date: message["date"] as! Date,
                 sessionTime: message["sessionTime"] as! Int,
-                frecuencyArray: processFrecArrayMessage(message["frecuencyArray"] as! [[String:Int]]))
+                frecuencyArray: processFrecArrayMessage(message["frecuencyArray"] as! [[String : Int]])
+                ) {
+                zambs.append(zamb)
+                weeklyZambCount = weeklyZambCount! + zamb.amount
+                weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                saveZambs()
+                updateBottomView()
+            }
             
-            zambs.append(zamb!)
-            weeklyZambCount = weeklyZambCount! + zamb!.amount
-            weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            saveZambs()
+            
+            
         }
     }
 }
