@@ -20,6 +20,13 @@ class Zamb: NSObject, NSCoding {
     struct zambsPerSec: Codable {
         var zambs: Int
         var seconds: Int
+        
+        func toDictionary()->[String:Int]{
+            var dict = [String:Int]()
+            dict["zambs"] = self.zambs
+            dict["seconds"] = self.seconds
+            return dict
+        }
     }
     var frecuencyArray: [zambsPerSec]
     
@@ -64,7 +71,12 @@ class Zamb: NSObject, NSCoding {
             let dateString = formatter.string(from: date)
         aCoder.encode(dateString, forKey: PropertyKey.date)
         aCoder.encode(sessionTime, forKey: PropertyKey.sessionTime)
-        aCoder.encode(frecuencyArray, forKey: PropertyKey.frecuencyArray)
+        
+        var processedArray =  [[String:Int]]()
+        for zambPerSec in frecuencyArray.enumerated() {
+            processedArray.append(zambPerSec.element.toDictionary())
+        }
+        aCoder.encode(processedArray, forKey: PropertyKey.frecuencyArray)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -81,9 +93,14 @@ class Zamb: NSObject, NSCoding {
         let date = formatter.date(from: dateString!)
         let sessionTime = aDecoder.decodeInteger(forKey: PropertyKey.sessionTime)
         
-        let frecuencyArray = aDecoder.decodeObject(forKey: PropertyKey.frecuencyArray) as? [zambsPerSec]
-        
+        var frecuencyArray = [zambsPerSec]()
+        if let decodedFrecuencyArray = aDecoder.decodeObject(forKey: PropertyKey.frecuencyArray) as? [[String:Int]] {
+            for zambPerSec in decodedFrecuencyArray.enumerated() {
+                frecuencyArray.append(zambsPerSec(zambs: zambPerSec.element["zambs"]!, seconds: zambPerSec.element["seconds"]!))
+            }
+        }
+
         //Must call designated initializer
-        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime, frecuencyArray: frecuencyArray!)
+        self.init(amount: amount, hand: hand, location: location, date: date!, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
     }
 }

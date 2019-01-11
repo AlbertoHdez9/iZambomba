@@ -55,8 +55,9 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         let navBarHeight = navigationController!.navigationBar.frame.height
         darkBackground.frame = CGRect(x:0, y: navBarHeight, width: self.view.bounds.width, height: (self.view.bounds.height - (self.view.safeAreaInsets.bottom + navBarHeight)))
         
-        //Not working
-        view.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1 / 1.0)
+        startButton.layer.cornerRadius = 5
+        startButton.layer.borderColor = UIColor.white.cgColor
+        startButton.layer.borderWidth = 1
     }
     
     
@@ -100,7 +101,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
             }
         }
         for z in finalFrecuencyArray.enumerated() {
-            print("Zambs: \(z.element.zambs) in \(z.element.seconds) seconds")
+            print("zambsPerSec.toDictionary: \(z.element.toDictionary())")
         }
     }
 
@@ -154,8 +155,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         processFrecuencyArray()
         
-        //let amount = currentZambAmount
-        let amount = 200
+        let amount = currentZambAmount
+        //let amount = 200
         let hand = "No hand"
         let location = "No location"
         let date = Date()

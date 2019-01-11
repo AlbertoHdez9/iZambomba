@@ -189,6 +189,20 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         tableView.tableFooterView = footerView
     }
     
+    private func processFrecArrayMessage(_ frecArrayFromMessage: [[String:Int]]) -> [Zamb.zambsPerSec] {
+        var processedArrayFromMessage =  [Zamb.zambsPerSec]()
+        var i = 0
+        for zambPerSec in frecArrayFromMessage.enumerated() {
+            processedArrayFromMessage[i] = dictionaryToZambsPerSec(zambPerSec.element)
+            i = i+1
+        }
+        return processedArrayFromMessage
+    }
+    
+    private func dictionaryToZambsPerSec(_ tuple: [String:Int]) -> Zamb.zambsPerSec {
+        return Zamb.zambsPerSec(zambs: tuple["zambs"]!, seconds: tuple["seconds"]!)
+    }
+    
     private func getWeeklyZambs() -> Int{
         var sumatory = 0
         for zamb in zambs {
@@ -383,7 +397,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 location: message["location"] as? String,
                 date: message["date"] as! Date,
                 sessionTime: message["sessionTime"] as! Int,
-                frecuencyArray: (message["frecuencyArray"] as! [Zamb.zambsPerSec]))
+                frecuencyArray: processFrecArrayMessage(message["frecuencyArray"] as! [[String:Int]]))
             
             zambs.append(zamb!)
             weeklyZambCount = weeklyZambCount! + zamb!.amount

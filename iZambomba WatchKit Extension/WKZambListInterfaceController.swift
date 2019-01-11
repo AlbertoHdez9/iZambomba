@@ -109,7 +109,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                     "location"      : zamb.location ?? "",
                     "date"          : zamb.date,
                     "sessionTime"   : zamb.sessionTime,
-                    "frecuencyArray": zamb.frecuencyArray]
+                    "frecuencyArray": processFrecArray(zamb.frecuencyArray)]
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")
@@ -128,6 +128,16 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     private func isReachable() -> Bool {
         return session.isReachable
         
+    }
+    
+    private func processFrecArray(_ frecArray: [Zamb.zambsPerSec]) -> [[String:Int]] {
+        var processedArray =  [[String:Int]]()
+        var i = 0
+        for zambPerSec in frecArray.enumerated() {
+            processedArray[i] = zambPerSec.element.toDictionary()
+            i = i+1
+        }
+        return processedArray
     }
     
     //MARK: Helpers

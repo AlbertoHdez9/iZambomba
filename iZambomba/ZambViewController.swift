@@ -101,12 +101,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         acceptButton.isEnabled = !text.isEmpty
     }
     
-    
-    
     private func displayChart() {
-        //View
-        chartView.gridBackgroundColor = UIColor()
-        chartView.backgroundColor = .darkGray
         
         var previousZamb: Double = 0
         
@@ -123,12 +118,25 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         set.circleRadius = 1.0
         let data = LineChartData(dataSet: set)
         
+        //View
+        chartView.backgroundColor = .darkGray
         chartView.data = data
         chartView.leftAxis.drawLabelsEnabled = false
         chartView.rightAxis.drawLabelsEnabled = false
         chartView.xAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.rightAxis.drawAxisLineEnabled = false
+        
         chartView.chartDescription?.enabled = false
         chartView.legend.enabled = false
+        
+        //Separators
+        let topSeparator = UIView(frame: CGRect(x: 0, y: 0, width: chartView.bounds.width, height: 1))
+        topSeparator.backgroundColor = .white
+        chartView.addSubview(topSeparator)
     }
     
     //MARK: Switches control
@@ -163,8 +171,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         } else {
             rightHandSwitch.setOn(true, animated: true)
             selectedHand = "Right"
-            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
-            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+            leftHandSwitch.setOn(false, animated: true)
+            otherHandSwitch.setOn(false, animated: true)
         }
     }
     
@@ -173,10 +181,10 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             selectedHand = "No hand"
             leftHandSwitch.setOn(false, animated: true)
         } else {
-            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
+            rightHandSwitch.setOn(false, animated: true)
             selectedHand = "Left"
             leftHandSwitch.setOn(true, animated: true)
-            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+            otherHandSwitch.setOn(false, animated: true)
         }
     }
     
@@ -185,8 +193,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             selectedHand = "No hand"
             otherHandSwitch.setOn(false, animated: true)
         } else {
-            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
-            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
+            rightHandSwitch.setOn(false, animated: true)
+            leftHandSwitch.setOn(false, animated: true)
             otherHandSwitch.setOn(true, animated: true)
             selectedHand = "Other"
         }
