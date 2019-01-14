@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
+		3A18AA9521E79340007C99D8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A18AA9421E79340007C99D8 /* Charts.framework */; };
+		3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */; };
 		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
-		3AB389E421D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
-		3AB389E521D4FC48000D1C4F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 3AB389E321D4FC48000D1C4F /* Fonts */; };
-		3AB389EB21D502AB000D1C4F /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */; };
-		3AB389ED21D50DE0000D1C4F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */; };
+		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
+		3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
+		3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
+		3AD034CB21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
+		3AD034CC21E61F3900819003 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C621E61F3900819003 /* Lato-Light.ttf */; };
+		3AD034CD21E61F3900819003 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C621E61F3900819003 /* Lato-Light.ttf */; };
+		3AD034CE21E61F3900819003 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C721E61F3900819003 /* Lato-Regular.ttf */; };
+		3AD034CF21E61F3900819003 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C721E61F3900819003 /* Lato-Regular.ttf */; };
 		3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB38F21CD150300C7C9E3 /* Main.storyboard */; };
 		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
 		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
@@ -29,7 +36,6 @@
 		3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
 		3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */; };
 		3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
-		3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
 		3AEEB3D521CD156800C7C9E3 /* Zamb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3C721CD156500C7C9E3 /* Zamb.swift */; };
 		3AEEB3D621CD157F00C7C9E3 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */; };
 		3AEEB3D721CD158200C7C9E3 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */; };
@@ -39,6 +45,8 @@
 		3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
 		3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */; };
 		3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */; };
+		4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */; };
+		63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +92,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05570EE5C7FF90D580FA41A2 /* Pods-iZambomba WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit App/Pods-iZambomba WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		0E8FBF2742DD394390061970 /* Pods-iZambomba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba.debug.xcconfig"; sourceTree = "<group>"; };
+		354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit Extension/Pods-iZambomba WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		3A18AA9421E79340007C99D8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		3AB389E321D4FC48000D1C4F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
-		3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3AD034C521E61F3900819003 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		3AD034C621E61F3900819003 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3AD034C721E61F3900819003 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		3AEEB38821CD150300C7C9E3 /* iZambomba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZambomba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB39021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AEEB39221CD150300C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +135,11 @@
 		3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
+		98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba.release.xcconfig"; sourceTree = "<group>"; };
+		C00EDAC236B613078B65424C /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit App/Pods-iZambomba WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit Extension/Pods-iZambomba WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */,
+				3A18AA9521E79340007C99D8 /* Charts.framework in Frameworks */,
 				3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,21 +158,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */,
+				4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90F87298CB8C47E9DF4BD8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AD034C321E61EFB00819003 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3AD034C521E61F3900819003 /* Lato-Black.ttf */,
+				3AD034C421E61F3800819003 /* Lato-Bold.ttf */,
+				3AD034C621E61F3900819003 /* Lato-Light.ttf */,
+				3AD034C721E61F3900819003 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3AEEB37F21CD150200C7C9E3 = {
 			isa = PBXGroup;
 			children = (
-				3AB389E321D4FC48000D1C4F /* Fonts */,
+				3AD034C321E61EFB00819003 /* Fonts */,
 				3AEEB38A21CD150300C7C9E3 /* iZambomba */,
 				3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */,
 				3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */,
 				3AEEB38921CD150300C7C9E3 /* Products */,
 				3AEEB3E121CD174F00C7C9E3 /* Frameworks */,
+				4147B0224E37DCB6A42B219E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,8 +220,6 @@
 				3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */,
 				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
-				3AB389EA21D502AB000D1C4F /* WebKitViewController.swift */,
-				3AB389EC21D50DE0000D1C4F /* StatsViewController.swift */,
 				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
 				3AEEB39221CD150300C7C9E3 /* Assets.xcassets */,
 				3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */,
@@ -218,10 +259,28 @@
 		3AEEB3E121CD174F00C7C9E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */,
+				3A18AA9421E79340007C99D8 /* Charts.framework */,
 				3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */,
 				3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */,
+				C00EDAC236B613078B65424C /* Pods_iZambomba.framework */,
+				98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */,
+				0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4147B0224E37DCB6A42B219E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FBF2742DD394390061970 /* Pods-iZambomba.debug.xcconfig */,
+				A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */,
+				05570EE5C7FF90D580FA41A2 /* Pods-iZambomba WatchKit App.debug.xcconfig */,
+				D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */,
+				354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */,
+				DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,10 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AEEB3C221CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba" */;
 			buildPhases = (
+				6885A4B7FDDE371F26C5F1AC /* [CP] Check Pods Manifest.lock */,
 				3AEEB38421CD150300C7C9E3 /* Sources */,
 				3AEEB38521CD150300C7C9E3 /* Frameworks */,
 				3AEEB38621CD150300C7C9E3 /* Resources */,
 				3AEEB3C121CD150500C7C9E3 /* Embed Watch Content */,
+				06CAF5364895397AD4165E49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,8 +311,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */;
 			buildPhases = (
+				A32B6AC3D988FC9A1832BAF8 /* [CP] Check Pods Manifest.lock */,
 				3AEEB39821CD150300C7C9E3 /* Resources */,
 				3AEEB3BD21CD150500C7C9E3 /* Embed App Extensions */,
+				C90F87298CB8C47E9DF4BD8C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,6 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */;
 			buildPhases = (
+				2169FC613159AC6462EEA3E4 /* [CP] Check Pods Manifest.lock */,
 				3AEEB3A521CD150400C7C9E3 /* Sources */,
 				3AEEB3A621CD150400C7C9E3 /* Frameworks */,
 				3AEEB3A721CD150400C7C9E3 /* Resources */,
@@ -350,7 +414,10 @@
 				3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */,
 				3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */,
 				3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */,
-				3AB389E421D4FC48000D1C4F /* Fonts in Resources */,
+				3AD034CC21E61F3900819003 /* Lato-Light.ttf in Resources */,
+				3AD034CE21E61F3900819003 /* Lato-Regular.ttf in Resources */,
+				3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */,
+				3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,11 +435,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */,
-				3AB389E521D4FC48000D1C4F /* Fonts in Resources */,
+				3AD034CB21E61F3900819003 /* Lato-Black.ttf in Resources */,
+				3AD034CF21E61F3900819003 /* Lato-Regular.ttf in Resources */,
+				3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */,
+				3AD034CD21E61F3900819003 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06CAF5364895397AD4165E49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2169FC613159AC6462EEA3E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iZambomba WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6885A4B7FDDE371F26C5F1AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iZambomba-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A32B6AC3D988FC9A1832BAF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iZambomba WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AEEB38421CD150300C7C9E3 /* Sources */ = {
@@ -380,15 +525,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
-				3AB389ED21D50DE0000D1C4F /* StatsViewController.swift in Sources */,
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
 				3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */,
+				3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */,
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
 				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
-				3AEEB3D421CD156500C7C9E3 /* ZambTableViewController.swift in Sources */,
-				3AB389EB21D502AB000D1C4F /* WebKitViewController.swift in Sources */,
 				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +713,7 @@
 		};
 		3AEEB3BB21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
@@ -593,6 +737,7 @@
 		};
 		3AEEB3BC21CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
@@ -616,6 +761,7 @@
 		};
 		3AEEB3BF21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05570EE5C7FF90D580FA41A2 /* Pods-iZambomba WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -635,6 +781,7 @@
 		};
 		3AEEB3C021CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -654,6 +801,7 @@
 		};
 		3AEEB3C321CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E8FBF2742DD394390061970 /* Pods-iZambomba.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
@@ -673,6 +821,7 @@
 		};
 		3AEEB3C421CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;

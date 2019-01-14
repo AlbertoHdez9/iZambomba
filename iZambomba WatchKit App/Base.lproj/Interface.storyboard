@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch44" orientation="portrait">
+    <device id="watch40" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -25,15 +25,21 @@
             <objects>
                 <controller identifier="First Interface Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="FirstInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" radius="0.0" spacing="0.0" id="uuV-57-pf1">
+                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" backgroundImage="backgroundImage" layout="vertical" spacing="0.0" id="uuV-57-pf1">
                             <items>
-                                <imageView width="16" alignment="center" verticalAlignment="center" image="iZambombaTypo" id="0pT-ZB-JK8"/>
-                                <button alignment="center" verticalAlignment="bottom" title="Tap to start" backgroundImage="buttonTapWatch" id="btG-JL-mKi">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <connections>
-                                        <segue destination="080-Xi-N2g" kind="push" identifier="newZamb" id="FgL-Zk-ol9"/>
-                                    </connections>
-                                </button>
+                                <imageView width="150" alignment="center" verticalAlignment="center" image="iZambombaTypo" contentMode="scaleAspectFit" id="0pT-ZB-JK8"/>
+                                <group height="40" alignment="center" verticalAlignment="bottom" id="Czd-I7-FJS">
+                                    <items>
+                                        <button height="37" alignment="center" verticalAlignment="center" title="Tap to start" backgroundImage="buttonTapWatch" id="btG-JL-mKi">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                            <connections>
+                                                <segue destination="080-Xi-N2g" kind="push" identifier="newZamb" id="FgL-Zk-ol9"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                    <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="5"/>
+                                </group>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
@@ -48,22 +54,32 @@
             <objects>
                 <controller id="080-Xi-N2g" customClass="InterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" backgroundImage="buttonPrimaryWatch" id="z1h-Ls-d44">
-                            <connections>
-                                <action selector="doneButtonAction" destination="080-Xi-N2g" id="MZy-Lp-OKi"/>
-                                <segue destination="KeC-oM-SqC" kind="push" identifier="addZamb" id="ovD-oJ-LQ7"/>
-                            </connections>
-                        </button>
                         <group width="1" alignment="left" id="OSz-rF-9Cp">
                             <items>
-                                <imageView width="46" height="82" alignment="left" image="zambomba" id="DYd-hg-zKL"/>
-                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
+                                <imageView width="47" height="89" alignment="left" verticalAlignment="center" image="zambombaWatch" id="DYd-hg-zKL"/>
+                                <group alignment="right" verticalAlignment="center" layout="vertical" id="bPO-Nk-CAs">
                                     <items>
-                                        <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv"/>
-                                        <label alignment="center" verticalAlignment="bottom" text="00:00" id="pLD-NC-OXM"/>
+                                        <label alignment="left" verticalAlignment="center" text="NO ZAMBS!!" textAlignment="center" numberOfLines="2" id="rTb-Am-0Iv">
+                                            <fontDescription key="font" name="Lato-Black" family="Lato" pointSize="19"/>
+                                        </label>
+                                        <label alignment="center" verticalAlignment="bottom" text="00:00" id="pLD-NC-OXM">
+                                            <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        </label>
                                     </items>
                                 </group>
                             </items>
+                        </group>
+                        <group height="40" alignment="center" verticalAlignment="bottom" radius="5" id="kNA-B7-FuV">
+                            <items>
+                                <button width="165" height="37" alignment="center" verticalAlignment="bottom" title="Done" backgroundImage="buttonPrimaryWatch" id="z1h-Ls-d44">
+                                    <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="19"/>
+                                    <connections>
+                                        <action selector="doneButtonAction" destination="080-Xi-N2g" id="MZy-Lp-OKi"/>
+                                        <segue destination="KeC-oM-SqC" kind="push" identifier="addZamb" id="ovD-oJ-LQ7"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="5"/>
                         </group>
                     </items>
                     <connections>
@@ -73,35 +89,35 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="623" y="199"/>
+            <point key="canvasLocation" x="622.07407407407413" y="198.04568527918781"/>
         </scene>
         <!--backgroundImageOp-->
         <scene sceneID="Q3H-Yf-3hS">
             <objects>
-                <controller backgroundImage="backgroundImageOp" spacing="0.0" id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
+                <controller backgroundImage="backgroundImageOp" id="KeC-oM-SqC" customClass="WKZambListInterfaceController" customModule="iZambomba_WatchKit_Extension">
                     <items>
-                        <table alignment="center" id="K3z-75-XdB">
+                        <table alignment="center" spacing="1" id="K3z-75-XdB">
                             <items>
                                 <tableRow identifier="WKZambRowController" selectable="NO" id="Pfd-gh-TWh" customClass="WKZambRowController" customModule="iZambomba_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="H3x-D0-UCX">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="H3x-D0-UCX">
                                         <items>
-                                            <group width="62" height="36" alignment="left" layout="vertical" id="m4w-dW-fcI">
+                                            <group width="60" alignment="left" verticalAlignment="center" layout="vertical" id="m4w-dW-fcI">
                                                 <items>
-                                                    <label alignment="left" text="Label" numberOfLines="2" id="yrx-hp-Jdj">
-                                                        <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                    <label width="1" alignment="left" text="Label" numberOfLines="2" id="yrx-hp-Jdj">
+                                                        <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="10"/>
                                                     </label>
-                                                    <group width="1" alignment="left" id="bwV-s1-kaf">
+                                                    <group width="1" alignment="left" verticalAlignment="center" id="bwV-s1-kaf">
                                                         <items>
-                                                            <imageView alignment="left" image="locationIconWatch" id="Be1-lW-bQ2"/>
-                                                            <label alignment="center" text="Label" id="CGb-NS-NWY">
-                                                                <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                            <imageView width="9" height="11" alignment="left" verticalAlignment="center" image="locationIconWatch" id="Be1-lW-bQ2"/>
+                                                            <label alignment="left" verticalAlignment="center" text="Label" id="CGb-NS-NWY">
+                                                                <fontDescription key="font" name="Lato-Regular" family="Lato" pointSize="9"/>
                                                             </label>
                                                         </items>
                                                     </group>
                                                 </items>
                                             </group>
-                                            <label alignment="right" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
-                                                <fontDescription key="font" name="Lato-Black" family="Lato" pointSize="20"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
+                                                <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="13"/>
                                             </label>
                                         </items>
                                     </group>
@@ -113,19 +129,25 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <button alignment="center" verticalAlignment="bottom" id="3os-hE-kHr">
-                            <group key="contentGroup" width="1" alignment="left" backgroundImage="buttonPrimaryWatch" id="9k4-rY-vT0">
-                                <items>
-                                    <imageView width="31" height="34" alignment="center" verticalAlignment="center" image="syncIcon" id="8La-ew-L7I"/>
-                                    <label alignment="center" verticalAlignment="center" text="  Sync" textAlignment="center" id="jqo-Yz-jBf">
-                                        <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="19"/>
-                                    </label>
-                                </items>
-                            </group>
-                            <connections>
-                                <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
-                            </connections>
-                        </button>
+                        <group width="1" height="40" alignment="center" verticalAlignment="bottom" id="2GI-Pz-YIX">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" id="3os-hE-kHr">
+                                    <group key="contentGroup" width="1" height="37" alignment="left" backgroundImage="buttonPrimaryWatch" radius="5" spacing="5" id="9k4-rY-vT0">
+                                        <items>
+                                            <imageView width="31" height="31" alignment="center" verticalAlignment="center" image="syncIcon" contentMode="scaleAspectFit" id="8La-ew-L7I"/>
+                                            <label alignment="center" verticalAlignment="center" text="  Sync" textAlignment="center" id="jqo-Yz-jBf">
+                                                <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="19"/>
+                                            </label>
+                                        </items>
+                                        <edgeInsets key="margins" left="0.0" right="2" top="3" bottom="3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="syncZamb" destination="KeC-oM-SqC" id="Yay-Sz-57G"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="5"/>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                     <connections>
@@ -133,7 +155,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="815" y="544"/>
+            <point key="canvasLocation" x="814" y="543"/>
         </scene>
     </scenes>
 </document>

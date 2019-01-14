@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Charts
 
 class ZambViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,6 +29,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var otherHandSwitch: UISwitch!
     
     @IBOutlet weak var modalView: UIView!
+    @IBOutlet weak var chartView: LineChartView!
+    
     
     var zamb: Zamb?
     var locationChanged = false
@@ -53,6 +56,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             locationTextField.text = zamb.location
             sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
         }
+        displayChart()
     }
     
     //MARK: Keyboard show
@@ -97,6 +101,44 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         acceptButton.isEnabled = !text.isEmpty
     }
     
+    private func displayChart() {
+        
+        var previousZamb: Double = 0
+        
+        let values = zamb?.frecuencyArray.map { (zambPerSec) -> ChartDataEntry in
+            let chartDataEntry = ChartDataEntry(x: Double(zambPerSec.seconds), y: Double(zambPerSec.zambs) - previousZamb)
+            previousZamb = Double(zambPerSec.zambs)
+            return chartDataEntry
+        }
+
+        let set = LineChartDataSet(values: values, label: "")
+        set.setColor(.white)
+        set.setCircleColor(.white)
+        set.lineWidth = 2.0
+        set.circleRadius = 1.0
+        let data = LineChartData(dataSet: set)
+        
+        //View
+        chartView.backgroundColor = .darkGray
+        chartView.data = data
+        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.rightAxis.drawAxisLineEnabled = false
+        
+        chartView.chartDescription?.enabled = false
+        chartView.legend.enabled = false
+        
+        //Separators
+        let topSeparator = UIView(frame: CGRect(x: 0, y: 0, width: chartView.bounds.width, height: 1))
+        topSeparator.backgroundColor = .white
+        chartView.addSubview(topSeparator)
+    }
+    
     //MARK: Switches control
     
     private func handleSwitches(hand: String) {
@@ -129,8 +171,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         } else {
             rightHandSwitch.setOn(true, animated: true)
             selectedHand = "Right"
-            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
-            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+            leftHandSwitch.setOn(false, animated: true)
+            otherHandSwitch.setOn(false, animated: true)
         }
     }
     
@@ -139,10 +181,10 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             selectedHand = "No hand"
             leftHandSwitch.setOn(false, animated: true)
         } else {
-            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
+            rightHandSwitch.setOn(false, animated: true)
             selectedHand = "Left"
             leftHandSwitch.setOn(true, animated: true)
-            otherHandSwitch.setOn(otherHandSwitch.isOn ? false : false, animated: true)
+            otherHandSwitch.setOn(false, animated: true)
         }
     }
     
@@ -151,8 +193,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             selectedHand = "No hand"
             otherHandSwitch.setOn(false, animated: true)
         } else {
-            rightHandSwitch.setOn(rightHandSwitch.isOn ? false : false, animated: true)
-            leftHandSwitch.setOn(leftHandSwitch.isOn ? false : false, animated: true)
+            rightHandSwitch.setOn(false, animated: true)
+            leftHandSwitch.setOn(false, animated: true)
             otherHandSwitch.setOn(true, animated: true)
             selectedHand = "Other"
         }
@@ -167,6 +209,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //Disable the Save button while editing
+        textField.text = ""
         acceptButton.isEnabled = false
     }
     
@@ -195,8 +238,9 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         let location = locationChanged ? locationTextField.text : zamb!.location
         let date = zamb!.date
         let sessionTime = zamb!.sessionTime
+        let frecuencyArray = zamb!.frecuencyArray
         
-        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime)
+        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
         
         locationChanged = false
     }

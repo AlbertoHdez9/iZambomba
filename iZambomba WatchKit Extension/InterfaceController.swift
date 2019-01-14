@@ -25,9 +25,14 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     //Zambs for controller and context
     var zambs = [Zamb]()
     
+    //Frecuency Array
+    var frecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
+    var finalFrecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
+    
     //Timer
     var timer: Timer?
     var timerSeconds: Int = 0
+    var timerForFrecuencyArray: Timer?
     
     var manager = WorkoutManager()
     
@@ -54,26 +59,36 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         startedZambSession = true
         
         manager.startWorkout(type: 1) //type: 1 -> Watch
+        WKExtension.shared().isAutorotating = true
         
         //Timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
+        
+        //Frecuency array trigger
+        timerForFrecuencyArray = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(buildFrecuencyArray), userInfo: nil, repeats: true)
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         startedZambSession = false
+        
         manager.stopWorkout()
+        WKExtension.shared().isAutorotating = false
         
         //Timer
         timer?.invalidate()
         timer = nil
+        
+        timerForFrecuencyArray?.invalidate()
+        timerForFrecuencyArray = nil
+        
     }
     
     //MARK: Private methods
     private func updateZambLabel() {
         if startedZambSession {
-            zambAmount.setText("\(self.currentZambAmount) ZAMBS!!!")
+            zambAmount.setText("\(self.currentZambAmount) ZAMBS!")
         }
     }
     
@@ -89,6 +104,12 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         timerLabel.setText(secondsProcessor(inputSeconds: timerSeconds))
     }
     
+    @objc private func buildFrecuencyArray() {
+        frecuencyArray.append(
+            Zamb.zambsPerSec(zambs: currentZambAmount, seconds: timerSeconds)
+        )
+    }
+    
     private func secondsProcessor(inputSeconds: Int) -> String {
         let secondsInt = ((inputSeconds % 3600) % 60)
         var secondsString: String = "\(secondsInt)"
@@ -96,6 +117,20 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
             secondsString = "0\((inputSeconds % 3600) % 60)"
         }
         return "\((inputSeconds % 3600) / 60):\(secondsString)"
+    }
+    
+    private func processFrecuencyArray() {
+        var intervalFloat = (Float(timerSeconds)/10.0)
+        intervalFloat.round()
+        var interval = Int(intervalFloat)
+        let increment = interval
+        
+        for zambPerSec in frecuencyArray.enumerated() {
+            if (zambPerSec.element.seconds >= interval) {
+                finalFrecuencyArray.append(zambPerSec.element)
+                interval = interval + increment
+            }
+        }
     }
     
     //MARK: Actions
@@ -117,14 +152,16 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
                 let location = "No location"
                 let date = Date()
                 let sessionTime = timerSeconds
-                
-                if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime) {
+                processFrecuencyArray()
+                let frecuencyArray = finalFrecuencyArray
+
+                    if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {
                     zambs += [zamb]
                 }
-                
+
                 os_log("Adding a new zamb", log: OSLog.default, type: .debug)
                 return zambs
-            
+
             default:
                 os_log("This shouldn't be printing", log: OSLog.default, type: .debug)
                 return nil

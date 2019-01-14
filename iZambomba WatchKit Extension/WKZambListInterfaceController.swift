@@ -27,11 +27,11 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         super.awake(withContext: context)
 
         if let contextZambs = context as? [Zamb] {
-            print(contextZambs.count)
-            
-            // Configure interface objects here.
-            zambs = contextZambs
-            print("amount: \(zambs[0].amount), hand: \(String(describing: zambs[0].hand)), location: \(String(describing: zambs[0].location)), date: \(zambs[0].date), sessionTime: \(zambs[0].sessionTime)")
+            if (contextZambs.count > 0) {
+                // Configure interface objects here.
+                zambs = contextZambs
+                print("amount: \(zambs[0].amount), hand: \(String(describing: zambs[0].hand)), location: \(String(describing: zambs[0].location)), date: \(zambs[0].date), sessionTime: \(zambs[0].sessionTime)")
+            }
         }
         
         loadTableCells()
@@ -80,7 +80,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         
         for (index, zamb) in zambs.enumerated() {
             if let zambListRowController = tableView.rowController(at: index) as? WKZambRowController {
-                zambListRowController.amountLabel.setText("\(zamb.amount)\nZAMBS!")
+                zambListRowController.amountLabel.setText("\(zamb.amount)\nZAMBS!!")
                 zambListRowController.dateLabel.setText(convertDateToString(date: zamb.date))
                 zambListRowController.locationLabel.setText(zamb.location)
             }
@@ -108,10 +108,12 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                     "hand"          : zamb.hand ?? "",
                     "location"      : zamb.location ?? "",
                     "date"          : zamb.date,
-                    "sessionTime"   : zamb.sessionTime ]
+                    "sessionTime"   : zamb.sessionTime,
+                    "frecuencyArray": processFrecArray(zamb.frecuencyArray)]
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")
+                print(message)
             }
         } else {
             print("Phone is not reachable")
@@ -127,6 +129,14 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
     private func isReachable() -> Bool {
         return session.isReachable
         
+    }
+    
+    private func processFrecArray(_ frecArray: [Zamb.zambsPerSec]) -> [[String:Int]] {
+        var processedArray =  [[String:Int]]()
+        for zambPerSec in frecArray.enumerated() {
+            processedArray.append(zambPerSec.element.toDictionary())
+        }
+        return processedArray
     }
     
     //MARK: Helpers
