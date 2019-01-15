@@ -232,7 +232,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ZambTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ZambTableViewCell.")
         }
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate zamb for the data source layout.
         let zamb = zambs[indexPath.row]
         let zambVC = ZambViewController() //Zamb VC instance to use its methods
         

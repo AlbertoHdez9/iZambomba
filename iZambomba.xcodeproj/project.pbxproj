@@ -12,6 +12,8 @@
 		3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */; };
 		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
+		3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C821EC882B0040692A /* WebKitViewController.swift */; };
+		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
@@ -100,6 +102,8 @@
 		3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		3AC375C821EC882B0040692A /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebKitViewController.swift; path = ../../../../Pictures/WebKitViewController.swift; sourceTree = "<group>"; };
+		3AC375C921EC882C0040692A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../../../../Pictures/StatsViewController.swift; sourceTree = "<group>"; };
 		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		3AD034C521E61F3900819003 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		3AD034C621E61F3900819003 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				3AEEB3C821CD156500C7C9E3 /* NewZambViewController.swift */,
 				3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */,
 				3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */,
+				3AC375C921EC882C0040692A /* StatsViewController.swift */,
+				3AC375C821EC882B0040692A /* WebKitViewController.swift */,
 				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
 				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
@@ -525,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
+				3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */,
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
@@ -532,6 +539,7 @@
 				3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */,
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
 				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
+				3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */,
 				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
