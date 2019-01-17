@@ -22,8 +22,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     
     //MARK: Properties
+    var user: Int = 0
     
     var zambs = [Zamb]()
+    let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
     
     @IBOutlet weak var topView: UIView!
@@ -38,13 +40,14 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        //If there are saved zambs, load'em, if not, load empty list view
-        if let savedZambs = loadZambs() {
-            zambs += savedZambs
+        //Load user ID
+        if let userID = loadUser() {
+            user = userID
         } else {
-            loadEmptyListView()
+            print("wtf")
         }
+        //Load zambs if there are, if not load empty view
+        loadZambs()
         
         setNavBarAndBackground()
         
@@ -55,7 +58,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         //Weekly zambs
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy"
+        formatter.dateFormat = "dd MMMM yyyy H:mm"
         let userCalendar = NSCalendar.current
         if let aWeekAgo = userCalendar.date(byAdding: Calendar.Component.day, value: -7, to: Date()) {
             aboutAWeekAgo = aWeekAgo
@@ -107,26 +110,160 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         emptyView.isUserInteractionEnabled = false
     }
     
-    private func saveZambs() {
+    public func getUser() {
+        let url = URL(string: Constants.buildUserCreate())
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print ("getUser() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                    print("User got correctly")
+
+            } else {
+                    print ("server error")
+                    return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+                self.transformUserReceivedIntoUserSaved(data)
+            }
+        }.resume()
+        
+    }
+    
+    private func saveUser(_ user: Int) {
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: zambs, requiringSecureCoding: false)
-            try data.write(to: Zamb.ArchiveURL)
+            let data = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
+            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
         } catch {
             print("Couldn't write file: " + error.localizedDescription)
         }
     }
     
-    func loadZambs() -> [Zamb]? {
-        var savedZambs: [Zamb]? = nil
+    func loadUser() -> Int? {
+        var savedUser: Int = 0
         do {
-            let rawdata = try Data(contentsOf: Zamb.ArchiveURL)
-            if let archivedZambs = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as! [Zamb]? {
-                savedZambs = archivedZambs
+            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
+            if let archivedUser = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Int {
+                savedUser = archivedUser
             }
         } catch {
             print("Couldn't read file: " + error.localizedDescription)
         }
-        return savedZambs
+        return savedUser
+    }
+    
+    private func transformUserReceivedIntoUserSaved(_ data: Data) {
+        do {
+            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+            if let jsonArray = jsonResponse as? [String: Any] {
+                if let id = jsonArray["id"] as? Int {
+                    saveUser(id)
+                }
+            } else {
+                print(jsonResponse)
+                return
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func saveZambs(_ zamb: Zamb) {
+        let url = URL(string: Constants.buildZambCreate())
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        guard let uploadData = try? JSONEncoder().encode(zamb) else {
+            return
+        }
+        print("DICKS \(uploadData)")
+        URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
+            if let error = error {
+                print ("postZamb() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print("Zamb posted correctly")
+            } else {
+                print ("Server error in post Zamb")
+                return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+                //self.transformUserReceivedIntoUserSaved(data)
+            }
+            }.resume()
+    }
+    
+    private func loadZambs()  {
+        var savedZambs: Bool = false
+        let url = URL(string: Constants.buildGetStats() + "\(user)/w")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        
+        dispatchGroup.enter()
+        DispatchQueue.main.async {
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print ("getUser() error: \(error)")
+                    return
+                }
+                if let response = response as? HTTPURLResponse,
+                    response.statusCode == 200 {
+                    print("Zambs got correctly")
+                    savedZambs = true
+                } else {
+                    print ("Server error")
+                    return
+                }
+                if let data = data,
+                    let dataString = String(data: data, encoding: .utf8) {
+                    print ("got data: \(dataString)")
+                    self.processZambReceived(data)
+                }
+                print("dentro \(savedZambs)")
+                
+                }.resume()
+            self.dispatchGroup.leave()
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main, execute: {
+            print("fuera \(savedZambs)")
+            
+            if self.zambs.isEmpty {
+                self.loadEmptyListView()
+            }
+        })
+    }
+    
+    private func processZambReceived(_ data: Data) {
+        do {
+            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+            guard let jsonArray = jsonResponse as? [[String: Any]] else {
+                return
+            }
+            for zamb in jsonArray {
+                zambs.append(Zamb(
+                    user: zamb["user"] as! Int,
+                    amount: zamb["amount"] as! Int,
+                    hand: zamb["hand"] as? String,
+                    location: zamb["location"] as? String,
+                    date: convertStringToDate(date: zamb["date"] as! String),
+                    sessionTime: zamb["sessionTime"] as! Int,
+                    frecuencyArray: zamb["frecuencyArray"] as! [[String:Int]])!)
+            }
+        } catch {
+            print(error)
+        }
     }
     
     private func setNavBarAndBackground() {
@@ -201,10 +338,28 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         return Zamb.zambsPerSec(zambs: tuple["zambs"]!, seconds: tuple["seconds"]!)
     }
     
+    private func convertStringToDate(date: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy H:mm"
+        formatter.locale = Locale(identifier: "en_US")
+        
+        let dateString = formatter.date(from: date)
+        return dateString!
+    }
+    
+    private func convertDateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy H:mm"
+        formatter.locale = Locale(identifier: "en_US")
+        
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
+    
     private func getWeeklyZambs() -> Int{
         var sumatory = 0
         for zamb in zambs {
-            if(zamb.date > aboutAWeekAgo!) {
+            if(convertStringToDate(date: zamb.date) > aboutAWeekAgo!) {
                 sumatory += zamb.amount
             }
         }
@@ -239,7 +394,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         //Cell config
         cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!!"
         cell.locationLabel.text = zamb.location
-        cell.dateLabel.text = zambVC.convertDateToString(date: zamb.date)
+        cell.dateLabel.text = zamb.date
         cell.sessionTimeLabel.text = zambVC.secondsProcessor(inputSeconds: zamb.sessionTime)
         
         if (zambs.count > 0) {
@@ -345,8 +500,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                     
                 let selectedZamb = zambs[indexPath.row]
                 zambDetailViewController.zamb = selectedZamb
+                zambDetailViewController.user = user
             
         case "addZamb":
+            guard let newZambViewController = segue.destination as? NewZambViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            newZambViewController.user = user
             os_log("Adding a new zamb", log: OSLog.default, type: .debug)
             
         default:
@@ -360,10 +520,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 //Update selected Meal
                 zambs[selectedIndexPath.row] = zamb
+                //updateZamb(zamb.hand, zamb.location)
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             updateBottomView()
-            saveZambs()
         }
     }
     
@@ -375,7 +535,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             zambs.append(zamb)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             updateBottomView()
-            saveZambs()
+            saveZambs(zamb)
         }
     }
     
@@ -390,18 +550,19 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             
             if let zamb = Zamb(
+                user: user,
                 amount: message["amount"] as! Int,
                 hand: message["hand"] as? String,
                 location: message["location"] as? String,
                 date: message["date"] as! Date,
                 sessionTime: message["sessionTime"] as! Int,
-                frecuencyArray: processFrecArrayMessage(message["frecuencyArray"] as! [[String : Int]])
+                frecuencyArray: message["frecuencyArray"] as! [[String : Int]]
                 ) {
                 zambs.append(zamb)
                 weeklyZambCount = weeklyZambCount! + zamb.amount
                 weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
-                saveZambs()
+                saveZambs(zamb)
                 updateBottomView()
             }
             

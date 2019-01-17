@@ -31,7 +31,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var chartView: LineChartView!
     
-    
+    var user: Int?
     var zamb: Zamb?
     var locationChanged = false
     var selectedHand: String?
@@ -51,7 +51,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             amountLabel.text = "\(zamb.amount) ZAMBS!"
             //botones de los switches = zamb.hand
             handleSwitches(hand: zamb.hand!)
-            dateLabel.text = convertDateToString(date: zamb.date)
+            dateLabel.text = zamb.date
             locationLabel.text = zamb.location
             locationTextField.text = zamb.location
             sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
@@ -77,13 +77,13 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Helpers
-    func convertDateToString(date: Date) -> String {
+    private func convertStringToDate(date: String) -> Date {
         let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM yy, hh:mm a"
+        formatter.dateFormat = "dd-MM-yyyy H:mm"
         formatter.locale = Locale(identifier: "en_US")
         
-        let dateString = formatter.string(from: date)
-        return dateString
+        let dateString = formatter.date(from: date)
+        return dateString!
     }
     
     func secondsProcessor(inputSeconds: Int) -> String {
@@ -106,8 +106,8 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         var previousZamb: Double = 0
         
         let values = zamb?.frecuencyArray.map { (zambPerSec) -> ChartDataEntry in
-            let chartDataEntry = ChartDataEntry(x: Double(zambPerSec.seconds), y: Double(zambPerSec.zambs) - previousZamb)
-            previousZamb = Double(zambPerSec.zambs)
+            let chartDataEntry = ChartDataEntry(x: Double(zambPerSec["seconds"]!), y: Double(zambPerSec["zambs"]!) - previousZamb)
+            previousZamb = Double(zambPerSec["zambs"]!)
             return chartDataEntry
         }
 
@@ -234,13 +234,14 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        
         let amount = zamb!.amount
         let location = locationChanged ? locationTextField.text : zamb!.location
-        let date = zamb!.date
+        let date = convertStringToDate(date: zamb!.date)
         let sessionTime = zamb!.sessionTime
         let frecuencyArray = zamb!.frecuencyArray
         
-        zamb = Zamb(amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
+        zamb = Zamb(user: user!, amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
         
         locationChanged = false
     }

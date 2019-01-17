@@ -27,7 +27,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
     
     //Frecuency Array
     var frecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
-    var finalFrecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
+    var finalFrecuencyArray: [[String:Int]] = [[String:Int]]()
     
     //Timer
     var timer: Timer?
@@ -127,7 +127,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
         
         for zambPerSec in frecuencyArray.enumerated() {
             if (zambPerSec.element.seconds >= interval) {
-                finalFrecuencyArray.append(zambPerSec.element)
+                finalFrecuencyArray.append(["zambs": zambPerSec.element.zambs, "seconds" : zambPerSec.element.seconds])
                 interval = interval + increment
             }
         }
@@ -155,7 +155,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
                 processFrecuencyArray()
                 let frecuencyArray = finalFrecuencyArray
 
-                    if let zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {
+                if let zamb = Zamb(user: 1, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {
                     zambs += [zamb]
                 }
 

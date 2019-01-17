@@ -81,7 +81,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         for (index, zamb) in zambs.enumerated() {
             if let zambListRowController = tableView.rowController(at: index) as? WKZambRowController {
                 zambListRowController.amountLabel.setText("\(zamb.amount)\nZAMBS!!")
-                zambListRowController.dateLabel.setText(convertDateToString(date: zamb.date))
+                zambListRowController.dateLabel.setText(zamb.date)
                 zambListRowController.locationLabel.setText(zamb.location)
             }
         }
@@ -109,7 +109,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                     "location"      : zamb.location ?? "",
                     "date"          : zamb.date,
                     "sessionTime"   : zamb.sessionTime,
-                    "frecuencyArray": processFrecArray(zamb.frecuencyArray)]
+                    "frecuencyArray": zamb.frecuencyArray]
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")

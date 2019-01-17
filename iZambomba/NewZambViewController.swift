@@ -28,9 +28,11 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
     var timerSeconds: Int = 0
     
     var zamb: Zamb?
+    
+    var user: Int?
 
     var frecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
-    var finalFrecuencyArray: [Zamb.zambsPerSec] = [Zamb.zambsPerSec]()
+    var finalFrecuencyArray: [[String:Int]] = [[String:Int]]()
     
     var manager = WorkoutManager()
     
@@ -96,12 +98,9 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
 
         for zambPerSec in frecuencyArray.enumerated() {
             if (zambPerSec.element.seconds >= interval) {
-                finalFrecuencyArray.append(zambPerSec.element)
+                finalFrecuencyArray.append(["zambs": zambPerSec.element.zambs, "seconds" : zambPerSec.element.seconds])
                 interval = interval + increment
             }
-        }
-        for z in finalFrecuencyArray.enumerated() {
-            print("zambsPerSec.toDictionary: \(z.element.toDictionary())")
         }
     }
 
@@ -155,15 +154,15 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         processFrecuencyArray()
         
-        let amount = currentZambAmount
-        //let amount = 200
+        //let amount = currentZambAmount
+        let amount = 200
         let hand = "No hand"
         let location = "No location"
         let date = Date()
         let sessionTime = timerSeconds
         let frecuencyArray = finalFrecuencyArray
         
-        zamb = Zamb(amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
+        zamb = Zamb(user: user!, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
     }
     
 
