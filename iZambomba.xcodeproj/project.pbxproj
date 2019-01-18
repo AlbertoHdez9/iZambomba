@@ -14,6 +14,7 @@
 		3AB2784121F085A40035C4B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2784021F085A40035C4B1 /* Constants.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
 		3AB3C56221F1C3F000E84E10 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56121F1C3F000E84E10 /* WebServices.swift */; };
+		3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */; };
 		3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C821EC882B0040692A /* WebKitViewController.swift */; };
 		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
@@ -106,6 +107,7 @@
 		3AB2784021F085A40035C4B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3AB3C56121F1C3F000E84E10 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		3AC375C821EC882B0040692A /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebKitViewController.swift; path = ../../../../Pictures/WebKitViewController.swift; sourceTree = "<group>"; };
 		3AC375C921EC882C0040692A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../../../../Pictures/StatsViewController.swift; sourceTree = "<group>"; };
 		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -220,14 +222,15 @@
 			children = (
 				3AEEB3E021CD174F00C7C9E3 /* iZambomba.entitlements */,
 				3AB2784021F085A40035C4B1 /* Constants.swift */,
-				3A712DF021CD36EB00CBE815 /* AppDelegate.swift */,
 				3AEEB3CA21CD156500C7C9E3 /* MotionManager.swift */,
+				3A712DF021CD36EB00CBE815 /* AppDelegate.swift */,
 				3AEEB3CC21CD156500C7C9E3 /* WorkoutManager.swift */,
 				3AEEB3C721CD156500C7C9E3 /* Zamb.swift */,
 				3AEEB3C821CD156500C7C9E3 /* NewZambViewController.swift */,
 				3AEEB3C921CD156500C7C9E3 /* ZambViewController.swift */,
 				3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */,
 				3AC375C921EC882C0040692A /* StatsViewController.swift */,
+				3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */,
 				3AC375C821EC882B0040692A /* WebKitViewController.swift */,
 				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
@@ -539,6 +542,7 @@
 				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
 				3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */,
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
+				3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */,
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
 				3AB3C56221F1C3F000E84E10 /* WebServices.swift in Sources */,

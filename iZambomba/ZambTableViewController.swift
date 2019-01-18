@@ -20,17 +20,17 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         print("sessionDidDeactivate: \(session)")
     }
     
-    
     //MARK: Properties
     var user: Int = 0
     
     var zambs = [Zamb]()
     let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    let loadingView = UIView()
+    let emptyView = UIView()
     
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var emptyView: UIView!
-    
     
     @IBOutlet weak var weeklyZambs: UILabel!
     @IBOutlet weak var weekDate: UILabel!
@@ -43,13 +43,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         //Load user ID
         if let userID = loadUser() {
             user = userID
-        } else {
-            print("wtf")
         }
+        setNavBarAndBackground()
+        setLoadingScreen()
+        
         //Load zambs if there are, if not load empty view
         loadZambs()
-        
-        setNavBarAndBackground()
         
         //Watch Connectivity
         if isSuported() {
@@ -85,9 +84,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     private func loadEmptyListView() {
         //Primero eliminamos la vista anterior del superview, para luego recuperarla cuando se añada un zamb
         topView.isHidden = true
-        emptyView.isHidden = false
+        loadingView.isHidden = true
         
-        emptyView.frame = CGRect(x:0, y:0, width: self.view.bounds.width, height: tableView.bounds.height)
+        let bottomInset = (self.tabBarController?.tabBar.bounds.height)! + self.view.safeAreaInsets.bottom
+        emptyView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height - bottomInset)
         emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         //Creamos las labels y mierdas para la nueva vista
@@ -108,6 +108,35 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         emptyView.addSubview(description)
         emptyView.addSubview(startNOW)
         emptyView.isUserInteractionEnabled = false
+        self.view.addSubview(emptyView)
+    }
+    
+    private func setLoadingScreen() {
+        //Loader
+        topView.isHidden = true
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .gray
+        activityIndicator.isHidden = false
+        
+        loadingView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height)
+        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        
+        //Creamos las labels y mierdas para la nueva vista
+        let description = UILabel(frame: CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 90))
+        description.text = "Loading list items"
+        description.font = UIFont(name: "Lato-Light", size: 20)
+        description.textAlignment = .center
+        description.textColor = .white
+        
+        //Añadimos a la vista
+        loadingView.addSubview(activityIndicator)
+        loadingView.addSubview(description)
+        self.view.addSubview(loadingView)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     public func getUser() {
@@ -183,7 +212,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         guard let uploadData = try? JSONEncoder().encode(zamb) else {
             return
         }
-        print("DICKS \(uploadData)")
         URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
             if let error = error {
                 print ("postZamb() error: \(error)")
@@ -199,28 +227,24 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             if let data = data,
                 let dataString = String(data: data, encoding: .utf8) {
                 print ("got data: \(dataString)")
-                //self.transformUserReceivedIntoUserSaved(data)
             }
             }.resume()
     }
     
     private func loadZambs()  {
-        var savedZambs: Bool = false
         let url = URL(string: Constants.buildGetStats() + "\(user)/w")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         
-        
         dispatchGroup.enter()
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
-                    print ("getUser() error: \(error)")
+                    print ("getZambs() error: \(error)")
                     return
                 }
                 if let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
                     print("Zambs got correctly")
-                    savedZambs = true
                 } else {
                     print ("Server error")
                     return
@@ -234,18 +258,21 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                     }
                     
                 }
-                print("dentro \(savedZambs)")
-                
                 }.resume()
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            print("fuera \(savedZambs)")
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            self.activityIndicator.isHidden = true
             
             if self.zambs.isEmpty {
                 self.loadEmptyListView()
             } else {
+                self.emptyView.isHidden = true
+                self.loadingView.isHidden = true
                 self.tableView.reloadData()
                 self.updateBottomView()
+                
             }
         })
     }
@@ -275,9 +302,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     private func setNavBarAndBackground() {
         
         //Nav bar
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "backgroundImage"), for: UIBarMetrics.default)
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.tintColor = .none
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = .none
         
         let bgView = UIImageView(frame: tableView.bounds)
         bgView.image = UIImage(named: "backgroundImage")
@@ -314,18 +342,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
         footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.tableFooterView = footerView
-    }
-    
-    private func processFrecArrayMessage(_ frecArrayFromMessage: [[String:Int]]) -> [Zamb.zambsPerSec] {
-        var processedArrayFromMessage =  [Zamb.zambsPerSec]()
-        for zambPerSec in frecArrayFromMessage.enumerated() {
-            processedArrayFromMessage.append(dictionaryToZambsPerSec(zambPerSec.element))
-        }
-        return processedArrayFromMessage
-    }
-    
-    private func dictionaryToZambsPerSec(_ tuple: [String:Int]) -> Zamb.zambsPerSec {
-        return Zamb.zambsPerSec(zambs: tuple["zambs"]!, seconds: tuple["seconds"]!)
     }
     
     private func convertStringToDate(date: String) -> Date {
@@ -389,7 +405,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         if (zambs.count > 0) {
             topView.isHidden = false
-            emptyView.isHidden = true
         }
         
         if zambs.count - 1 == indexPath.row {

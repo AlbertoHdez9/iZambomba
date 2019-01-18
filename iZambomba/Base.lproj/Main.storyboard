@@ -32,17 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" id="ckV-DU-RDR">
+                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="ckV-DU-RDR">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW8-hN-Jco">
-                                    <rect key="frame" x="0.0" y="35" width="414" height="10"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
                                             <rect key="frame" x="50" y="18" width="314" height="45"/>
@@ -197,9 +192,11 @@
                                 <segue destination="DOs-0y-Ekr" kind="show" identifier="addZamb" id="EfT-IQ-0bR"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="userOptions" style="plain" id="pIq-nA-utx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emptyView" destination="eW8-hN-Jco" id="Jn5-Ee-EB9"/>
                         <outlet property="topView" destination="dXA-Om-4El" id="gW7-6p-CcC"/>
                         <outlet property="weekDate" destination="xhh-eR-bmX" id="fio-i8-l2E"/>
                         <outlet property="weeklyZambs" destination="3XC-Ne-dND" id="Qfi-9z-lUI"/>
@@ -827,20 +824,20 @@
                                 </accessibility>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-LS-opm">
-                                <rect key="frame" x="42" y="231" width="330" height="266"/>
+                                <rect key="frame" x="42" y="232" width="330" height="274"/>
                                 <string key="text">It consists of a hollow cylinder that can be made of different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod, made of wood or other materials.  This rod, sometimes, is replaced by a rope. By rubbing the rod with one or both hands, the vibration roduced by the rod is transmitted to the leather, producing a serious and special sound.</string>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How is it made?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-jQ-mGP">
-                                <rect key="frame" x="43" y="164" width="328" height="27"/>
+                                <rect key="frame" x="43" y="164" width="328" height="28"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spb-zG-HDU">
-                                <rect key="frame" x="36" y="786" width="342" height="39"/>
+                                <rect key="frame" x="36" y="785" width="342" height="40"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="23"/>
                                 <state key="normal" title="Let's go!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -897,15 +894,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.94281208520000004" green="0.34766316409999998" blue="0.35063299539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="8wD-nj-HH5" kind="relationship" relationship="viewControllers" id="iQy-8H-4qC"/>
                         <segue destination="E72-Nv-3Uq" kind="relationship" relationship="viewControllers" id="SWm-qc-dED"/>
+                        <segue destination="3VK-4G-0gd" kind="relationship" relationship="viewControllers" id="plo-dN-mhy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ent-Z4-iYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696" y="658"/>
+        </scene>
+        <!--Ranking-->
+        <scene sceneID="7uz-ZV-15M">
+            <objects>
+                <viewController id="3VK-4G-0gd" customClass="RankingViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="br5-dL-Asl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PB-NN-wX2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Ranking" id="JeR-SZ-FTR">
+                                        <barButtonItem key="rightBarButtonItem" image="userOptions" id="WtV-0A-6Qk">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgZ-w4-gKA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="35"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QcE-am-cSb">
+                                        <rect key="frame" x="25" y="7" width="364" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Today"/>
+                                            <segment title="Last week"/>
+                                            <segment title="Last month"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="timeSpanControl:" destination="E72-Nv-3Uq" eventType="valueChanged" id="Hvv-eR-LEL"/>
+                                            <action selector="timeSpanHandler:" destination="3VK-4G-0gd" eventType="valueChanged" id="AW0-eT-CDP"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QcE-am-cSb" secondAttribute="trailing" constant="25" id="AZk-Mf-hnZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="QcE-am-cSb" secondAttribute="bottom" id="NT8-U3-fwj"/>
+                                    <constraint firstAttribute="height" constant="35" id="WAp-qp-JcR"/>
+                                    <constraint firstItem="QcE-am-cSb" firstAttribute="leading" secondItem="ZgZ-w4-gKA" secondAttribute="leading" constant="25" id="gom-9r-Z71"/>
+                                    <constraint firstItem="QcE-am-cSb" firstAttribute="top" secondItem="ZgZ-w4-gKA" secondAttribute="top" constant="7" id="yMw-19-xYp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI4-yR-8Ic">
+                                <rect key="frame" x="0.0" y="123" width="414" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="es0-yv-Tjo"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83A-sh-pYT">
+                                <rect key="frame" x="0.0" y="123" width="414" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZgZ-w4-gKA" firstAttribute="leading" secondItem="2PB-NN-wX2" secondAttribute="leading" id="4qA-0w-Eee"/>
+                            <constraint firstItem="UI4-yR-8Ic" firstAttribute="leading" secondItem="Vqg-Ic-Fzy" secondAttribute="leading" id="5F6-l1-aew"/>
+                            <constraint firstItem="83A-sh-pYT" firstAttribute="bottom" secondItem="Vqg-Ic-Fzy" secondAttribute="bottom" id="HOn-fe-jKa"/>
+                            <constraint firstItem="ZgZ-w4-gKA" firstAttribute="leading" secondItem="Vqg-Ic-Fzy" secondAttribute="leading" id="IWt-lP-UKw"/>
+                            <constraint firstItem="UI4-yR-8Ic" firstAttribute="trailing" secondItem="Vqg-Ic-Fzy" secondAttribute="trailing" id="Ls5-qJ-9fj"/>
+                            <constraint firstItem="ZgZ-w4-gKA" firstAttribute="trailing" secondItem="Vqg-Ic-Fzy" secondAttribute="trailing" id="MNd-ai-HiP"/>
+                            <constraint firstItem="UI4-yR-8Ic" firstAttribute="top" secondItem="ZgZ-w4-gKA" secondAttribute="bottom" id="OOJ-lj-Bzp"/>
+                            <constraint firstItem="83A-sh-pYT" firstAttribute="top" secondItem="ZgZ-w4-gKA" secondAttribute="bottom" id="Oa6-ey-WBh"/>
+                            <constraint firstItem="Vqg-Ic-Fzy" firstAttribute="bottom" secondItem="ZgZ-w4-gKA" secondAttribute="bottom" constant="690" id="eSO-Ug-HhT"/>
+                            <constraint firstItem="ZgZ-w4-gKA" firstAttribute="top" secondItem="2PB-NN-wX2" secondAttribute="bottom" id="qAe-qg-40b"/>
+                            <constraint firstItem="ZgZ-w4-gKA" firstAttribute="trailing" secondItem="2PB-NN-wX2" secondAttribute="trailing" id="tWl-8j-4xp"/>
+                            <constraint firstItem="83A-sh-pYT" firstAttribute="trailing" secondItem="Vqg-Ic-Fzy" secondAttribute="trailing" id="uzl-Cc-J9L"/>
+                            <constraint firstItem="83A-sh-pYT" firstAttribute="leading" secondItem="Vqg-Ic-Fzy" secondAttribute="leading" id="z0t-Bv-0pH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vqg-Ic-Fzy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="rank" id="cno-YC-bVh">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="navBar" destination="2PB-NN-wX2" id="NYI-qj-xLk"/>
+                        <outlet property="tableView" destination="83A-sh-pYT" id="m4h-8g-ZT6"/>
+                        <outlet property="timeSpan" destination="QcE-am-cSb" id="9tp-FC-sXg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZl-TJ-V9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="1393.5267857142856"/>
         </scene>
         <!--Stats-->
         <scene sceneID="7PH-we-Vdl">
@@ -918,7 +1005,11 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elB-5g-Rit">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Stats" id="9CJ-1M-rCQ"/>
+                                    <navigationItem title="Stats" id="9CJ-1M-rCQ">
+                                        <barButtonItem key="rightBarButtonItem" image="userOptions" style="plain" id="zJm-fF-R6F">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8y-sv-klo">
@@ -1061,7 +1152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mx-hv-OTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="1214.7321428571429"/>
+            <point key="canvasLocation" x="1765" y="767"/>
         </scene>
     </scenes>
     <resources>
@@ -1072,9 +1163,11 @@
         <image name="iZambombaTypo" width="189" height="48"/>
         <image name="locationIcon" width="11" height="15"/>
         <image name="locationIconOp" width="11" height="15"/>
-        <image name="mostRecent" width="12" height="12"/>
-        <image name="mostViewed" width="11" height="11"/>
+        <image name="mostRecent" width="25" height="25"/>
+        <image name="mostViewed" width="25" height="25"/>
+        <image name="rank" width="25" height="25"/>
         <image name="rightHand" width="24" height="30"/>
+        <image name="userOptions" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Yb-DL-Mmj"/>
