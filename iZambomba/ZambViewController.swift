@@ -34,6 +34,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     var user: Int?
     var zamb: Zamb?
     var locationChanged = false
+    var handChanged = false
     var selectedHand: String?
     
     override func viewDidLoad() {
@@ -139,6 +140,42 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         chartView.addSubview(topSeparator)
     }
     
+    //MARK: Web service
+    private func updateZamb(_ zambID: Int, _ location: String, _ hand: String) {
+        let url = URL(string: Constants.buildZambUpdate())
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        let uploadData: [String:String] = [
+            "zamb"      : "\(zambID)",
+            "location"  : location,
+            "hand"      : hand
+        ]
+        
+        guard let data = try? JSONEncoder().encode(uploadData) else {
+            return
+        }
+        print(data)
+        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
+            if let error = error {
+                print ("updateZamb() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print("Zamb updated correctly")
+            } else {
+                print ("Server error in update Zamb")
+                return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+                //self.transformUserReceivedIntoUserSaved(data)
+            }
+            }.resume()
+    }
+    
     //MARK: Switches control
     
     private func handleSwitches(hand: String) {
@@ -174,6 +211,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             leftHandSwitch.setOn(false, animated: true)
             otherHandSwitch.setOn(false, animated: true)
         }
+        handChanged = true
     }
     
     @IBAction func leftHandSwitchTouch(_ sender: UISwitch) {
@@ -186,6 +224,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             leftHandSwitch.setOn(true, animated: true)
             otherHandSwitch.setOn(false, animated: true)
         }
+        handChanged = true
     }
     
     @IBAction func otherHandSwitchTouch(_ sender: UISwitch) {
@@ -198,6 +237,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             otherHandSwitch.setOn(true, animated: true)
             selectedHand = "Other"
         }
+        handChanged = true
     }
     
     //MARK: UITextFieldDelegate
@@ -222,6 +262,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     //MARK: Actions
     @IBAction func dismissAction(_ sender: UIButton) {
         locationChanged = false
+        handChanged = false
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -234,16 +275,19 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
+        let id = zamb!.id
         let amount = zamb!.amount
         let location = locationChanged ? locationTextField.text : zamb!.location
         let date = convertStringToDate(date: zamb!.date)
         let sessionTime = zamb!.sessionTime
         let frecuencyArray = zamb!.frecuencyArray
         
-        zamb = Zamb(user: user!, amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
+        zamb = Zamb(id: id, user: user!, amount: amount, hand: selectedHand, location: location!, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
+        
+        if(locationChanged || handChanged) {updateZamb(id, location!, selectedHand!)}
         
         locationChanged = false
+        handChanged = false
     }
 }
 

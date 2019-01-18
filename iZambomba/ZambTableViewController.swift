@@ -212,7 +212,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         
         dispatchGroup.enter()
-        DispatchQueue.main.async {
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     print ("getUser() error: \(error)")
@@ -229,18 +228,24 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 if let data = data,
                     let dataString = String(data: data, encoding: .utf8) {
                     print ("got data: \(dataString)")
-                    self.processZambReceived(data)
+                    DispatchQueue.main.async {
+                        self.processZambReceived(data)
+                        self.dispatchGroup.leave()
+                    }
+                    
                 }
                 print("dentro \(savedZambs)")
                 
                 }.resume()
-            self.dispatchGroup.leave()
-        }
+        
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
             print("fuera \(savedZambs)")
             
             if self.zambs.isEmpty {
                 self.loadEmptyListView()
+            } else {
+                self.tableView.reloadData()
+                self.updateBottomView()
             }
         })
     }
@@ -253,6 +258,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             }
             for zamb in jsonArray {
                 zambs.append(Zamb(
+                    id: zamb["id"] as! Int,
                     user: zamb["user"] as! Int,
                     amount: zamb["amount"] as! Int,
                     hand: zamb["hand"] as? String,
@@ -279,23 +285,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.separatorColor = UIColor.white
         
-//        let guide = view.safeAreaLayoutGuide
-//        let safeAreaHeight = guide.layoutFrame.size.height
-        
         if (zambs.count != 0) {
-//            print("Altura nav: \((navigationController?.navigationBar.bounds.height)!), altura topView: \(topView.bounds.height), altura celdas: \(CGFloat(90*zambs.count)), altura safeArea: \(safeAreaHeight)")
-//            print("Altura de las cosas: \(height), altura de la vista: \(self.view.bounds.height)")
-//            print("Altura del safeArea a pelo: \(self.view.bounds.height - safeAreaHeight)")
-//            print("Altura del contentSize: \(tableView.contentSize.height)")
-//            print("Altura de todo: \(self.view.bounds.height)")
-//            print("Altura de la movida: \(tableView.contentSize.height + CGFloat(90*zambs.count))")
-            
             updateBottomView()
 
         } else {
             tableView.tableFooterView = UIView()
         }
-        
         //Top view background
         topView.backgroundColor = UIColor.black.withAlphaComponent(0.67)
     }
@@ -312,11 +307,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             height = tableView.bounds.height - height + 10
             tableView.isScrollEnabled = false;
         }
-//        print(height)
-//        print("ContentSize: \(tableView.contentSize.height)")
-//        print("Filas: \(CGFloat(90*zambs.count))")
-//        print("Total: \(self.view.bounds.height)")
-//        print("Total: \(self.view.safeAreaInsets.bottom)")
         let compare = height + 80.0 + CGFloat(90*zambs.count)
         if (compare < (self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top)) {
             height = height + ((self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top) - compare)
@@ -520,7 +510,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 //Update selected Meal
                 zambs[selectedIndexPath.row] = zamb
-                //updateZamb(zamb.hand, zamb.location)
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             updateBottomView()
@@ -550,6 +539,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             
             if let zamb = Zamb(
+                id: 0,
                 user: user,
                 amount: message["amount"] as! Int,
                 hand: message["hand"] as? String,

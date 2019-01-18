@@ -155,7 +155,7 @@ class InterfaceController: WKInterfaceController, WorkoutManagerDelegate {
                 processFrecuencyArray()
                 let frecuencyArray = finalFrecuencyArray
 
-                if let zamb = Zamb(user: 1, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {
+                if let zamb = Zamb(id: 0, user: 1, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray) {
                     zambs += [zamb]
                 }
 

@@ -162,7 +162,7 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         let sessionTime = timerSeconds
         let frecuencyArray = finalFrecuencyArray
         
-        zamb = Zamb(user: user!, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
+        zamb = Zamb(id: 0, user: user!, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
     }
     
 
