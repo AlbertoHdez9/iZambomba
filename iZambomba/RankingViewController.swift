@@ -19,15 +19,27 @@ class RankingViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     let loadingView = UIView()
+    let paymentSetupView = UIView()
     
     var zambs = [Zamb]()
+    var user: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Get user from table VC
+        let zambTableNC = self.tabBarController?.viewControllers![0] as! UINavigationController
+        let zambTableVC = zambTableNC.topViewController as! ZambTableViewController
+        user = zambTableVC.user
+        
         setNavBarAndBackground()
-        setLoadingScreen()
-        loadRankingZambs("d")
+        if user != 0 {
+            setPaymentSetupScreen()
+        } else {
+            setLoadingScreen()
+            loadRankingZambs("d")
+        }
+        
     }
     
     //MARK: Private methods
@@ -167,6 +179,48 @@ class RankingViewController: UIViewController {
         
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    private func setPaymentSetupScreen() {
+        //Loader
+        tableView.isHidden = true
+        loadingView.isHidden = true
+        
+        //let topInset = self.view.safeAreaInsets.top + self.navBar.bounds.height + 35
+        paymentSetupView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        
+        //Creamos las labels y mierdas para la nueva vista
+        let startNOW = UILabel(frame: CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 120))
+        startNOW.text = "Would you like to\nbe here?"
+        startNOW.numberOfLines = 2
+        startNOW.font = UIFont(name: "Lato-Bold", size: 31)
+        startNOW.textAlignment = .center
+        startNOW.textColor = .black
+        
+        let description = UILabel(frame: CGRect(x: 0, y: self.view.bounds.height/2, width: self.view.bounds.width, height: 180))
+        description.text = "Keeping this dream is everyone's\nbusiness. Join our cause and challenge\n your friends!"
+        description.numberOfLines = 3
+        description.font = UIFont(name: "Lato-Light", size: 20)
+        description.textAlignment = .center
+        description.textColor = .black
+        
+        let backgroundImage = UIImageView(frame: self.view.bounds)
+        backgroundImage.image = UIImage(named: "whiteGradient")
+        paymentSetupView.addSubview(backgroundImage)
+        paymentSetupView.sendSubviewToBack(backgroundImage)
+        
+        let paymentButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.bounds.width*(0.5/6), y: self.view.bounds.height*(6/8)), size: CGSize(width: self.view.bounds.width*(5/6), height: 60.0)))
+        //let paymentButton = UIButton(frame: CGRect(x: self.view.bounds.width/2, y: self.view.bounds.height*(5/6), width: self.view.bounds.width*(4/6), height: 90.0))
+        paymentButton.setBackgroundImage(UIImage(named: "buttonPrimary"), for: .normal)
+        paymentButton.setTitle("Participate with 1$", for: .normal)
+        paymentButton.titleLabel?.font = UIFont(name: "Lato-Black", size: 22)
+        
+        //Añadimos a la vista
+        paymentSetupView.addSubview(description)
+        paymentSetupView.addSubview(startNOW)
+        paymentSetupView.addSubview(paymentButton)
+        
+        self.view.addSubview(paymentSetupView)
     }
     
     private func convertStringToDate(date: String) -> Date {
