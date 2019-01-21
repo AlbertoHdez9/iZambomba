@@ -534,6 +534,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     @IBAction func unwindFromNewZamb(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewZambViewController, let zamb = sourceViewController.zamb {
             
+            emptyView.isHidden = true
             //Add a new zamb
             let newIndexPath = IndexPath(row: zambs.count, section: 0)
             zambs.append(zamb)
