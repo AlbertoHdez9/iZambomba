@@ -13,11 +13,11 @@
 		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
 		3AB2784121F085A40035C4B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2784021F085A40035C4B1 /* Constants.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
-		3AB3C56221F1C3F000E84E10 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56121F1C3F000E84E10 /* WebServices.swift */; };
 		3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */; };
 		3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C821EC882B0040692A /* WebKitViewController.swift */; };
 		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3ACD2B1421F723F300D08FF0 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */; };
+		3ACD2B1621F74B0200D08FF0 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */; };
 		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
@@ -107,11 +107,11 @@
 		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB2784021F085A40035C4B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		3AB3C56121F1C3F000E84E10 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		3AC375C821EC882B0040692A /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebKitViewController.swift; path = ../../../../Pictures/WebKitViewController.swift; sourceTree = "<group>"; };
 		3AC375C921EC882C0040692A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../../../../Pictures/StatsViewController.swift; sourceTree = "<group>"; };
 		3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		3AD034C521E61F3900819003 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		3AD034C621E61F3900819003 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -233,15 +233,15 @@
 				3AEEB3CB21CD156500C7C9E3 /* ZambTableViewCell.swift */,
 				3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */,
 				3AC375C921EC882C0040692A /* StatsViewController.swift */,
+				3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */,
 				3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */,
+				3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */,
 				3AC375C821EC882B0040692A /* WebKitViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
 				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
 				3AEEB39221CD150300C7C9E3 /* Assets.xcassets */,
 				3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */,
 				3AEEB39721CD150300C7C9E3 /* Info.plist */,
-				3AB3C56121F1C3F000E84E10 /* WebServices.swift */,
-				3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */,
 			);
 			path = iZambomba;
 			sourceTree = "<group>";
@@ -547,8 +547,8 @@
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
 				3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */,
 				3AEEB3CE21CD156500C7C9E3 /* Zamb.swift in Sources */,
+				3ACD2B1621F74B0200D08FF0 /* StatsTableViewCell.swift in Sources */,
 				3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */,
-				3AB3C56221F1C3F000E84E10 /* WebServices.swift in Sources */,
 				3AEEB3D221CD156500C7C9E3 /* ZambTableViewCell.swift in Sources */,
 				3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */,
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,

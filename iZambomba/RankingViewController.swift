@@ -94,6 +94,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print ("got data: \(dataString)")
                 DispatchQueue.main.async {
                     self.processZambReceived(data)
+                    sleep(1)
                     self.dispatchGroup.leave()
                 }
             }
@@ -173,7 +174,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.isHidden = true
         loadingView.isHidden = true
         
-        let topInset = self.view.safeAreaInsets.top + self.navBar.bounds.height + 35
+        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 35
         emptyView.frame = CGRect(x:0, y: topInset, width: self.view.bounds.width, height: tableView.bounds.height)
         emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
@@ -207,7 +208,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         activityIndicator.style = .gray
         activityIndicator.isHidden = false
         
-        let topInset = self.view.safeAreaInsets.top + self.navBar.bounds.height + 35
+        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 35
         loadingView.frame = CGRect(x:0, y: topInset, width: self.view.bounds.width, height: tableView.bounds.height)
         loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
@@ -352,6 +353,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.zambsLabel.text = zamb.zambs
         cell.index.text = "\(indexPath.row + 1)"
         cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
     
