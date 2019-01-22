@@ -87,7 +87,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         return dateString!
     }
     
-    func secondsProcessor(inputSeconds: Int) -> String {
+    private func secondsProcessor(inputSeconds: Int) -> String {
         let secondsInt = ((inputSeconds % 3600) % 60)
         var secondsString: String = "\(secondsInt)"
         if secondsInt < 10 {

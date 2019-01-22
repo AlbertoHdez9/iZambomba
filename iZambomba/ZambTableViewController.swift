@@ -22,7 +22,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     //MARK: Properties
     var user: Int = 0
-    
+    var userRanking: Bool = false
     var zambs = [Zamb]()
     let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
@@ -43,6 +43,9 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         //Load user ID
         if let userID = loadUser() {
             user = userID
+        }
+        if let ranking = loadUserRanking() {
+            userRanking = ranking
         }
         setNavBarAndBackground()
         setLoadingScreen()
@@ -175,6 +178,15 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
     }
     
+    func saveUserRanking(_ ranking: Bool) {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: ranking, requiringSecureCoding: false)
+            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
+        } catch {
+            print("Couldn't write file: " + error.localizedDescription)
+        }
+    }
+    
     func loadUser() -> Int? {
         var savedUser: Int = 0
         do {
@@ -188,12 +200,28 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         return savedUser
     }
     
+    func loadUserRanking() -> Bool? {
+        var savedUserRanking: Bool = false
+        do {
+            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
+            if let archivedUserRanking = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Bool {
+                savedUserRanking = archivedUserRanking
+            }
+        } catch {
+            print("Couldn't read file: " + error.localizedDescription)
+        }
+        return savedUserRanking
+    }
+    
     private func transformUserReceivedIntoUserSaved(_ data: Data) {
         do {
             let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
             if let jsonArray = jsonResponse as? [String: Any] {
                 if let id = jsonArray["id"] as? Int {
                     saveUser(id)
+                }
+                if let ranking = jsonArray["ranking"] as? Bool {
+                    saveUserRanking(ranking)
                 }
             } else {
                 print(jsonResponse)
@@ -362,6 +390,15 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         return dateString
     }
     
+    private func secondsProcessor(inputSeconds: Int) -> String {
+        let secondsInt = ((inputSeconds % 3600) % 60)
+        var secondsString: String = "\(secondsInt)"
+        if secondsInt < 10 {
+            secondsString = "0\((inputSeconds % 3600) % 60)"
+        }
+        return "\((inputSeconds % 3600) / 60):\(secondsString)"
+    }
+    
     private func getWeeklyZambs() -> Int{
         var sumatory = 0
         for zamb in zambs {
@@ -395,13 +432,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         // Fetches the appropriate zamb for the data source layout.
         let zamb = zambs[indexPath.row]
-        let zambVC = ZambViewController() //Zamb VC instance to use its methods
         
         //Cell config
         cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!!"
         cell.locationLabel.text = zamb.location
         cell.dateLabel.text = zamb.date
-        cell.sessionTimeLabel.text = zambVC.secondsProcessor(inputSeconds: zamb.sessionTime)
+        cell.sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
         
         if (zambs.count > 0) {
             topView.isHidden = false
