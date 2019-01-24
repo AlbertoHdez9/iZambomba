@@ -273,8 +273,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 if let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
                     print("Zambs got correctly")
-                } else {
-                    print ("Server error")
+                } else if let response = response as? HTTPURLResponse {
+                    print ("Server error \(response.statusCode)")
                     return
                 }
                 if let data = data,

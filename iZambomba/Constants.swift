@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let BASEURL = "http://localhost:8000"
+    static let BASEURL = "https://izambomba.singularfactory.com"
     
     struct User {
         static let create = "/user"
