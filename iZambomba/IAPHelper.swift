@@ -25,6 +25,8 @@ open class IAPHelper: NSObject  {
     public init(productId: Set<ProductIdentifier>) {
         productIdentifier = productId
         super.init()
+        
+        SKPaymentQueue.default().add(self)
     }
 }
 
@@ -42,17 +44,21 @@ extension IAPHelper {
     }
     
     public func buyProduct(_ product: SKProduct) {
+        print("Buying \(product.productIdentifier)...")
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
     }
     
     public func isProductPurchased(_ productIdentifier: ProductIdentifier) -> Bool {
-        return false
+        return purchasedProductIdentifiers.contains(productIdentifier)
     }
     
     public class func canMakePayments() -> Bool {
-        return true
+        return SKPaymentQueue.canMakePayments()
     }
     
     public func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
 
@@ -81,5 +87,65 @@ extension IAPHelper: SKProductsRequestDelegate {
     private func clearRequestAndHandler() {
         productsRequest = nil
         productsRequestCompletionHandler = nil
+    }
+}
+
+// MARK: - SKPaymentTransactionObserver
+
+extension IAPHelper: SKPaymentTransactionObserver {
+    
+    public func paymentQueue(_ queue: SKPaymentQueue,
+                             updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                complete(transaction: transaction)
+                break
+            case .failed:
+                fail(transaction: transaction)
+                break
+            case .restored:
+                restore(transaction: transaction)
+                break
+            case .deferred:
+                break
+            case .purchasing:
+                break
+            }
+        }
+    }
+    
+    private func complete(transaction: SKPaymentTransaction) {
+        print("complete...")
+        deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func restore(transaction: SKPaymentTransaction) {
+        guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
+        
+        print("restore... \(productIdentifier)")
+        deliverPurchaseNotificationFor(identifier: productIdentifier)
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func fail(transaction: SKPaymentTransaction) {
+        print("fail...")
+        if let transactionError = transaction.error as NSError?,
+            let localizedDescription = transaction.error?.localizedDescription,
+            transactionError.code != SKError.paymentCancelled.rawValue {
+            print("Transaction Error: \(localizedDescription)")
+        }
+        
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func deliverPurchaseNotificationFor(identifier: String?) {
+        guard let identifier = identifier else { return }
+        
+        purchasedProductIdentifiers.append(identifier)
+        //UserDefaults.standard.set(true, forKey: identifier)
+        //Aqui llamamos al webservice de ranking para ponerlo a true, y luego al principio de la app pedimos este parametro
+        NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
     }
 }

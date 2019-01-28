@@ -24,6 +24,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     var user: Int = 0
     var userRanking: Bool = false
     var zambs = [Zamb]()
+    
     let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -68,13 +69,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             weekDate.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
         }
         updateWeeklyZambs()
-        
-        RankingProduct.store.requestProducts{ [weak self] success, products in
-            guard let self = self else { return }
-            if success {
-                print("pepino")
-            }
-        }
         
         print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
     }
@@ -208,16 +202,17 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     func loadUserRanking() -> Bool? {
-        var savedUserRanking: Bool = false
-        do {
-            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
-            if let archivedUserRanking = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Bool {
-                savedUserRanking = archivedUserRanking
-            }
-        } catch {
-            print("Couldn't read file: " + error.localizedDescription)
-        }
-        return savedUserRanking
+//        var savedUserRanking: Bool = false
+//        do {
+//            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
+//            if let archivedUserRanking = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Bool {
+//                savedUserRanking = archivedUserRanking
+//            }
+//        } catch {
+//            print("Couldn't read file: " + error.localizedDescription)
+//        }
+//        return savedUserRanking
+        RankingProduct.store.restorePurchases()
     }
     
     private func transformUserReceivedIntoUserSaved(_ data: Data) {

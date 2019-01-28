@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -29,6 +30,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var zambs = [userZamb]()
     var user: Int = 0
     var userRanking: Bool = false
+    var product: [SKProduct] = []
+    
     var span: String = "d"
     var previousSpan: String = "d"
     
@@ -40,6 +43,13 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let zambTableVC = zambTableNC.topViewController as! ZambTableViewController
         userRanking = zambTableVC.userRanking
         user = zambTableVC.user
+        
+        RankingProduct.store.requestProducts{ [weak self] success, products in
+            guard let self = self else { return }
+            if success {
+                self.product = products!
+            }
+        }
         
         setNavBarAndBackground()
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -272,38 +282,40 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc private func paymentHandler() {
-        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
+//        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "POST"
+//
+//        let uploadData: [String:Any] = [
+//            "username"  : "JuanitoGrillo",
+//            "ranking"  : true
+//        ]
+//
+//        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
+//            return
+//        }
+//        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
+//            if let error = error {
+//                print ("updateUser() error: \(error)")
+//                return
+//            }
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode == 200 {
+//                print("User updated correctly")
+//            } else {
+//                print ("Server error in update User")
+//                return
+//            }
+//            if let data = data,
+//                let dataString = String(data: data, encoding: .utf8) {
+//                print ("got data: \(dataString)")
+//                //self.transformUserReceivedIntoUserSaved(data)
+//            }
+//            }.resume()
+//        userRanking = true
+//        ZambTableViewController().saveUserRanking(userRanking)
         
-        let uploadData: [String:Any] = [
-            "username"  : "JuanitoGrillo",
-            "ranking"  : true
-        ]
-        
-        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
-            return
-        }
-        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
-            if let error = error {
-                print ("updateUser() error: \(error)")
-                return
-            }
-            if let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-                print("User updated correctly")
-            } else {
-                print ("Server error in update User")
-                return
-            }
-            if let data = data,
-                let dataString = String(data: data, encoding: .utf8) {
-                print ("got data: \(dataString)")
-                //self.transformUserReceivedIntoUserSaved(data)
-            }
-            }.resume()
-        userRanking = true
-        ZambTableViewController().saveUserRanking(userRanking)
+        RankingProduct.store.buyProduct(product[0])
     }
     
     private func convertStringToDate(date: String) -> Date {
