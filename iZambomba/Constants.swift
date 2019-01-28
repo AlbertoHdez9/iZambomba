@@ -46,4 +46,30 @@ struct Constants {
     static func buildGetRanking() -> String {
         return BASEURL + Zamb.getRanking
     }
+    
+    static func buildDays() -> [String] {
+        var weekDays: [String] = ["","","","","","","", ""]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE"
+        let userCalendar = NSCalendar.current
+        var dayCounter = 7
+        for index in 0...7 {
+            if let someDayAgo = userCalendar.date(byAdding: Calendar.Component.day, value: -dayCounter, to: Date()) {
+                dayCounter = dayCounter - 1
+                weekDays.insert(formatter.string(from: someDayAgo), at: index)
+            }
+        }
+        return weekDays
+    }
+    
+    static func buildMonthDays(_ days: Int) -> [String] {
+        var monthDays = [String]()
+        monthDays.append("")
+        for index in 1...days {
+            monthDays.append("\(index)")
+        }
+        return monthDays
+    }
+    
+    static let months = ["", "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec"]
 }

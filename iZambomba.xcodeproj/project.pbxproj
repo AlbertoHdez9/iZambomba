@@ -10,6 +10,9 @@
 		3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3CD21CD156500C7C9E3 /* ZambTableViewController.swift */; };
 		3A18AA9521E79340007C99D8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A18AA9421E79340007C99D8 /* Charts.framework */; };
 		3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */; };
+		3A336C5421FF38CD00375409 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A336C5321FF38CD00375409 /* StoreKit.framework */; };
+		3A336C5621FF3AE200375409 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A336C5521FF3AE200375409 /* IAPHelper.swift */; };
+		3A336C5821FF3C3F00375409 /* RankingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A336C5721FF3C3F00375409 /* RankingProduct.swift */; };
 		3A712DF121CD36EB00CBE815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712DF021CD36EB00CBE815 /* AppDelegate.swift */; };
 		3AB2784121F085A40035C4B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2784021F085A40035C4B1 /* Constants.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
@@ -18,6 +21,7 @@
 		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3ACD2B1421F723F300D08FF0 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */; };
 		3ACD2B1621F74B0200D08FF0 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */; };
+		3ACEBC4F21FEF13F003C2A56 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEBC4E21FEF13F003C2A56 /* OptionsViewController.swift */; };
 		3AD034C821E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C421E61F3800819003 /* Lato-Bold.ttf */; };
 		3AD034CA21E61F3900819003 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AD034C521E61F3900819003 /* Lato-Black.ttf */; };
@@ -104,6 +108,9 @@
 		354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit Extension/Pods-iZambomba WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		3A18AA9421E79340007C99D8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A336C5321FF38CD00375409 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3A336C5521FF3AE200375409 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		3A336C5721FF3C3F00375409 /* RankingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingProduct.swift; sourceTree = "<group>"; };
 		3A712DF021CD36EB00CBE815 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB2784021F085A40035C4B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +119,7 @@
 		3AC375C921EC882C0040692A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../../../../Pictures/StatsViewController.swift; sourceTree = "<group>"; };
 		3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		3ACEBC4E21FEF13F003C2A56 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		3AD034C421E61F3800819003 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		3AD034C521E61F3900819003 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		3AD034C621E61F3900819003 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 				3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */,
 				3A18AA9521E79340007C99D8 /* Charts.framework in Frameworks */,
 				3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */,
+				3A336C5421FF38CD00375409 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +247,9 @@
 				3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */,
 				3AC375C821EC882B0040692A /* WebKitViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
+				3ACEBC4E21FEF13F003C2A56 /* OptionsViewController.swift */,
+				3A336C5721FF3C3F00375409 /* RankingProduct.swift */,
+				3A336C5521FF3AE200375409 /* IAPHelper.swift */,
 				3AEEB38F21CD150300C7C9E3 /* Main.storyboard */,
 				3AEEB39221CD150300C7C9E3 /* Assets.xcassets */,
 				3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */,
@@ -277,6 +289,7 @@
 		3AEEB3E121CD174F00C7C9E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A336C5321FF38CD00375409 /* StoreKit.framework */,
 				3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */,
 				3A18AA9421E79340007C99D8 /* Charts.framework */,
 				3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */,
@@ -379,6 +392,9 @@
 								enabled = 0;
 							};
 							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -542,7 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A336C5621FF3AE200375409 /* IAPHelper.swift in Sources */,
 				3AEEB3D021CD156500C7C9E3 /* ZambViewController.swift in Sources */,
+				3ACEBC4F21FEF13F003C2A56 /* OptionsViewController.swift in Sources */,
 				3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */,
 				3AEEB3D121CD156500C7C9E3 /* MotionManager.swift in Sources */,
 				3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */,
@@ -554,6 +572,7 @@
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
 				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
 				3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */,
+				3A336C5821FF3C3F00375409 /* RankingProduct.swift in Sources */,
 				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 				3AB2784121F085A40035C4B1 /* Constants.swift in Sources */,
 				3ACD2B1421F723F300D08FF0 /* RankingTableViewCell.swift in Sources */,
@@ -742,14 +761,14 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -766,14 +785,14 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -790,10 +809,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -810,10 +829,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				IBSC_MODULE = iZambomba_WatchKit_Extension;
 				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -830,13 +849,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = iZambomba/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -850,13 +869,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WEL27HMZ9Z;
+				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = iZambomba/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.ent.iZambomba;
+				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

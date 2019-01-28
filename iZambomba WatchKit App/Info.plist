@@ -33,7 +33,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.singularfactory.ent.iZambomba</string>
+	<string>com.singularfactory.izambomba</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

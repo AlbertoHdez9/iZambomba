@@ -69,6 +69,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         updateWeeklyZambs()
         
+        RankingProduct.store.requestProducts{ [weak self] success, products in
+            guard let self = self else { return }
+            if success {
+                print("pepino")
+            }
+        }
+        
         print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
     }
     
@@ -548,6 +555,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             newZambViewController.user = user
+            os_log("Adding a new zamb", log: OSLog.default, type: .debug)
+            
+        case "options":
+            guard let optionsViewController = segue.destination as? OptionsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            optionsViewController.user = user
             os_log("Adding a new zamb", log: OSLog.default, type: .debug)
             
         default:
