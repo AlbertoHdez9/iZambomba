@@ -379,7 +379,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ino-Lu-4qX">
-                                        <rect key="frame" x="34" y="448" width="275" height="52"/>
+                                        <rect key="frame" x="34" y="458" width="275" height="52"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDz-vM-Q4n">
                                                 <rect key="frame" x="46" y="11" width="215" height="30"/>
@@ -406,8 +406,8 @@
                                             <constraint firstItem="TDz-vM-Q4n" firstAttribute="leading" secondItem="fGd-34-Vdd" secondAttribute="trailing" constant="8" id="xg0-1C-7bF"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-iK-tu2">
-                                        <rect key="frame" x="30" y="298" width="283" height="133"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-iK-tu2">
+                                        <rect key="frame" x="30" y="318" width="283" height="123"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="MaT-S9-cXM">
                                                 <rect key="frame" x="0.0" y="0.0" width="283" height="31"/>
@@ -441,7 +441,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-2E-qra">
-                                                <rect key="frame" x="0.0" y="51" width="283" height="31"/>
+                                                <rect key="frame" x="0.0" y="46" width="283" height="31"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyg-on-cBD">
                                                         <rect key="frame" x="0.0" y="0.0" width="164" height="31"/>
@@ -472,7 +472,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Ygk-ga-Lyk">
-                                                <rect key="frame" x="0.0" y="102" width="283" height="31"/>
+                                                <rect key="frame" x="0.0" y="92" width="283" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any help? Other hand?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B07-SV-QxB">
                                                         <rect key="frame" x="0.0" y="0.0" width="164" height="31"/>
@@ -499,7 +499,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vMr-ga-IBv" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="147" width="343" height="116"/>
+                                        <rect key="frame" x="0.0" y="147" width="343" height="136"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-hs-jh6">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
@@ -515,7 +515,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhf-py-nmE">
-                                        <rect key="frame" x="0.0" y="263" width="343" height="1"/>
+                                        <rect key="frame" x="0.0" y="283" width="343" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="8xd-DM-Pei"/>
@@ -533,7 +533,7 @@
                                     <constraint firstItem="vMr-ga-IBv" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" id="EPL-TL-Isi"/>
                                     <constraint firstAttribute="trailing" secondItem="Mhf-py-nmE" secondAttribute="trailing" id="GNu-On-zp6"/>
                                     <constraint firstItem="cbK-7t-UyU" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="15" id="IJm-Kh-Rdk"/>
-                                    <constraint firstItem="Epk-CE-nxV" firstAttribute="top" secondItem="ino-Lu-4qX" secondAttribute="bottom" constant="30" id="NFi-hI-pBl"/>
+                                    <constraint firstItem="Epk-CE-nxV" firstAttribute="top" secondItem="ino-Lu-4qX" secondAttribute="bottom" constant="20" id="NFi-hI-pBl"/>
                                     <constraint firstItem="dnK-sX-uJC" firstAttribute="top" secondItem="q6P-um-0wV" secondAttribute="top" constant="30" id="OCO-AQ-oh8"/>
                                     <constraint firstItem="ino-Lu-4qX" firstAttribute="leading" secondItem="q6P-um-0wV" secondAttribute="leading" constant="34" id="OTE-5k-A5g"/>
                                     <constraint firstAttribute="trailing" secondItem="dnK-sX-uJC" secondAttribute="trailing" constant="44" id="TrE-jg-xEM"/>

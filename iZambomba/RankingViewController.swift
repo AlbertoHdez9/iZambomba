@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 import StoreKit
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -30,6 +31,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var zambs = [userZamb]()
     var user: Int = 0
     var userRanking: Bool = false
+    var viewHasLoaded: Bool = false
     var product: [SKProduct] = []
     
     var span: String = "d"
@@ -43,38 +45,24 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let zambTableVC = zambTableNC.topViewController as! ZambTableViewController
         userRanking = zambTableVC.userRanking
         user = zambTableVC.user
+        product = zambTableVC.product
         
-        RankingProduct.store.requestProducts{ [weak self] success, products in
-            guard let self = self else { return }
-            if success {
-                self.product = products!
-            }
-        }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(RankingViewController.changeVisibleViewAndUpdateRanking), name: .IAPHelperPurchaseNotification, object: nil)
         setNavBarAndBackground()
-        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
         if !userRanking {
             setPaymentSetupScreen()
-        } else {
-            paymentSetupView.isHidden = true
-            setLoadingScreen()
-            loadRankingZambs(span)
-            tableView.reloadData()
         }
-        
-        
+        viewHasLoaded = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if previousSpan != span || userRanking {
-            if !userRanking {
-                setPaymentSetupScreen()
-            } else {
+        if !userRanking {
+            paymentSetupView.isHidden = false
+        } else {
+            if previousSpan != span || viewHasLoaded {
                 paymentSetupView.isHidden = true
                 setLoadingScreen()
                 loadRankingZambs(span)
-                tableView.reloadData()
             }
         }
     }
@@ -85,7 +73,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let url = URL(string: Constants.buildGetRanking() + span)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
-        
+
         dispatchGroup.enter()
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -104,7 +92,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print ("got data: \(dataString)")
                 DispatchQueue.main.async {
                     self.processZambReceived(data)
-                    sleep(1)
                     self.dispatchGroup.leave()
                 }
             }
@@ -282,40 +269,49 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc private func paymentHandler() {
-//        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "POST"
-//
-//        let uploadData: [String:Any] = [
-//            "username"  : "JuanitoGrillo",
-//            "ranking"  : true
-//        ]
-//
-//        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
-//            return
-//        }
-//        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
-//            if let error = error {
-//                print ("updateUser() error: \(error)")
-//                return
-//            }
-//            if let response = response as? HTTPURLResponse,
-//                response.statusCode == 200 {
-//                print("User updated correctly")
-//            } else {
-//                print ("Server error in update User")
-//                return
-//            }
-//            if let data = data,
-//                let dataString = String(data: data, encoding: .utf8) {
-//                print ("got data: \(dataString)")
-//                //self.transformUserReceivedIntoUserSaved(data)
-//            }
-//            }.resume()
-//        userRanking = true
-//        ZambTableViewController().saveUserRanking(userRanking)
+        if IAPHelper.canMakePayments() {
+            //userRanking = true
+            RankingProduct.store.buyProduct(product[0])
+        } else {
+            print("payment chungo")
+        }
         
-        RankingProduct.store.buyProduct(product[0])
+    }
+    
+    @objc private func changeVisibleViewAndUpdateRanking() {
+        paymentSetupView.isHidden = true
+        loadingView.isHidden = false
+        loadRankingZambs(span)
+        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        let uploadData: [String:Any] = [
+            "ranking"  : true
+        ]
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
+            return
+        }
+        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
+            if let error = error {
+                print ("updateUserRanking() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print("UserRanking updated correctly")
+            } else {
+                print ("Server error in update User ranking")
+                return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+            }
+            }.resume()
+        userRanking = true
+        ZambTableViewController().saveUserRanking(userRanking)
     }
     
     private func convertStringToDate(date: String) -> Date {
@@ -337,14 +333,12 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
             previousSpan = span
             if timeSpan.selectedSegmentIndex == 0 {
                 span = "d"
-                loadRankingZambs("d")
             } else if timeSpan.selectedSegmentIndex == 1 {
                 span = "w"
-                loadRankingZambs("w")
             } else {
                 span = "m"
-                loadRankingZambs("m")
             }
+            loadRankingZambs(span)
         }
     }
     
@@ -374,15 +368,25 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+        case "options":
+            guard let optionsViewController = segue.destination as? OptionsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            optionsViewController.user = user
+            os_log("Sending user", log: OSLog.default, type: .debug)
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
     }
-    */
+ 
     
     
 

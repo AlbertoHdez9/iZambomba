@@ -21,16 +21,16 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var modalView: UIView!
     
-    var user: Int?
-    var handChanged = false
-    var selectedHand: String?
+    var user: Int = 0
+    var usernameChanged: Bool = false
+    var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        print(user)
         usernameTextField.delegate = self
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
@@ -73,8 +73,75 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     private func updateAcceptButtonState() {
         // Disable the Save button if the text field is empty.
-        //let text = locationLabel.text ?? ""
-        //acceptButton.isEnabled = !text.isEmpty
+        let text = usernameTextField.text ?? ""
+        acceptButton.isEnabled = !text.isEmpty
+    }
+    
+    private func updateUsername(_ username: String) {
+        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        let uploadData: [String:String] = [
+            "username"  : username
+        ]
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
+            return
+        }
+        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
+            if let error = error {
+                print ("updateUsername() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print("Username updated correctly")
+            } else {
+                print ("Server error in update Username")
+                return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+            }
+            }.resume()
+    }
+    
+    private func resetRanking() {
+        let url = URL(string: Constants.buildUserUpdate() + "\(user)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        let uploadData: [String:Any] = [
+            "ranking"  : false
+        ]
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: uploadData, options: []) else {
+            return
+        }
+        URLSession.shared.uploadTask(with: request, from: data) { (data, response, error) in
+            if let error = error {
+                print ("updateUserRanking() error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print("UserRanking updated correctly")
+            } else {
+                print ("Server error in update User ranking")
+                return
+            }
+            if let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+            }
+            }.resume()
+        if let zambRankVC = self.tabBarController?.viewControllers![2] as? RankingViewController {
+            zambRankVC.userRanking = false
+        }
+        
+        ZambTableViewController().saveUserRanking(false)
     }
     
     //MARK: UITextFieldDelegate
@@ -91,15 +158,14 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //locationLabel.text = textField.text
+        username = textField.text
         updateAcceptButtonState()
-        //locationChanged = true
+        usernameChanged = true
     }
     
     //MARK: Actions
     @IBAction func dismissAction(_ sender: UIButton) {
-        //locationChanged = false
-        handChanged = false
+        usernameChanged = false
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -112,10 +178,11 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+       if(usernameChanged) {updateUsername(username!)}
         
-       // if(locationChanged || handChanged) {updateZamb(id, location!, selectedHand!)}
+        //resetRanking()
         
-        handChanged = false
+        usernameChanged = false
     }
     /*
      // MARK: - Navigation

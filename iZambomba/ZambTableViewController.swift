@@ -10,6 +10,7 @@ import UIKit
 import os.log
 import WatchConnectivity
 import KeychainAccess
+import StoreKit
 
 class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
@@ -25,6 +26,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     var user: Int = 0
     var userRanking: Bool = false
     var zambs = [Zamb]()
+    var product: [SKProduct] = []
     
     let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
@@ -70,6 +72,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             weekDate.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
         }
         updateWeeklyZambs()
+        
+        RankingProduct.store.requestProducts{ [weak self] success, products in
+            guard let self = self else { return }
+            if success {
+                self.product = products!
+            }
+        }
         
         print("isPaired?: \(session.isPaired), isWatchAppInstalled?: \(session.isWatchAppInstalled)")
     }
@@ -603,7 +612,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             optionsViewController.user = user
-            os_log("Adding a new zamb", log: OSLog.default, type: .debug)
+            os_log("Sending user", log: OSLog.default, type: .debug)
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

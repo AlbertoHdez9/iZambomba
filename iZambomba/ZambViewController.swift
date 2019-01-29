@@ -118,6 +118,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         set.lineWidth = 2.0
         set.circleRadius = 1.0
         let data = LineChartData(dataSet: set)
+        data.setValueTextColor(.white)
         
         //View
         chartView.backgroundColor = .darkGray
