@@ -380,6 +380,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             optionsViewController.user = user
+            optionsViewController.userRanking = userRanking
             os_log("Sending user", log: OSLog.default, type: .debug)
             
         default:

@@ -14,6 +14,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var appleIDLabel: UILabel!
+    @IBOutlet weak var associatedID: UILabel!
     
     //Buttons
     @IBOutlet weak var dismissButton: UIButton!
@@ -22,6 +23,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var modalView: UIView!
     
     var user: Int = 0
+    var userRanking: Bool = false
     var usernameChanged: Bool = false
     var username: String?
     
@@ -30,8 +32,9 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        print(user)
+
         usernameTextField.delegate = self
+        associatedID.text = userRanking ? "Yes" : "No"
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
     }
@@ -144,6 +147,21 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         ZambTableViewController().saveUserRanking(false)
     }
     
+    private func presentAlert() {
+        let refreshAlert = UIAlertController(title: "Are you sure?", message: "Your username will be changed", preferredStyle: .alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.updateUsername(self.username!)
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -169,29 +187,27 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func acceptAction(_ sender: UIButton) {
+        if(usernameChanged) {presentAlert()}
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        //resetRanking()
+        usernameChanged = false
+    }
     
+    
+    /*
     //MARK: Navigation
+     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard let button = sender as? UIButton, button === acceptButton else {
             os_log("The accept button was not pressed, aborting", log: OSLog.default, type: .debug)
             return
         }
-        
-       if(usernameChanged) {updateUsername(username!)}
-        
-        //resetRanking()
-        
-        usernameChanged = false
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
      */
     
 }
