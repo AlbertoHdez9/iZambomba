@@ -8,6 +8,7 @@
 
 import Foundation
 import StoreKit
+import KeychainAccess
 
 public typealias ProductIdentifier = String
 public typealias ProductsRequestCompletionHandler = (_ success: Bool, _ products: [SKProduct]?) -> Void
@@ -24,8 +25,8 @@ open class IAPHelper: NSObject  {
     
     public init(productId: Set<ProductIdentifier>) {
         productIdentifier = productId
+        //For each product identifier, you check whether the value is stored in UserDefaults(en nuestro caso api). If it is, then the identifier is inserted into the purchasedProductIdentifiers set. 
         super.init()
-        
         SKPaymentQueue.default().add(self)
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 import WatchConnectivity
+import KeychainAccess
 
 class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
@@ -171,38 +172,73 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     private func saveUser(_ user: Int) {
+//        do {
+//            let data = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
+//            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
+//        } catch {
+//            print("Couldn't write file: " + error.localizedDescription)
+//        }
+        // replace the keychain service name as you like
+        let keychain = Keychain(service: Constants.keychainUserService)
+        
+        // use the in-app product item identifier as key, and set its value to indicate user has purchased it
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
-            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
-        } catch {
-            print("Couldn't write file: " + error.localizedDescription)
+            try keychain.set("\(user)", key: "user")
+        } catch let error {
+            print("setting keychain to purchased failed")
+            print(error)
         }
+
     }
     
     func saveUserRanking(_ ranking: Bool) {
+//        do {
+//            let data = try NSKeyedArchiver.archivedData(withRootObject: ranking, requiringSecureCoding: false)
+//            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
+//        } catch {
+//            print("Couldn't write file: " + error.localizedDescription)
+//        }
+        // replace the keychain service name as you like
+        let keychain = Keychain(service: Constants.keychainRankingService)
+        
+        // use the in-app product item identifier as key, and set its value to indicate user has purchased it
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: ranking, requiringSecureCoding: false)
-            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
-        } catch {
-            print("Couldn't write file: " + error.localizedDescription)
+            try keychain.set("\(ranking)", key: "userRanking")
+        } catch let error {
+            print("Setting keychain to ranking failed")
+            print(error)
         }
     }
     
     func loadUser() -> Int? {
+//        var savedUser: Int = 0
+//        do {
+//            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
+//            if let archivedUser = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Int {
+//                savedUser = archivedUser
+//            }
+//        } catch {
+//            print("Couldn't read file: " + error.localizedDescription)
+//        }
+//        return savedUser
         var savedUser: Int = 0
-        do {
-            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
-            if let archivedUser = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Int {
-                savedUser = archivedUser
+        let keychain = Keychain(service: Constants.keychainUserService)
+        
+        // if there is value correspond to the user key in the keychain
+        if let recoveredUser = try? keychain.get("user"){
+            // there is an user saved in keychain, so we must return it
+            if recoveredUser != nil {
+                savedUser = Int(recoveredUser ?? "pollas")!
             }
-        } catch {
-            print("Couldn't read file: " + error.localizedDescription)
+        } else {
+            // the user has not been found, do nothing
+            print("No user found")
         }
         return savedUser
     }
     
     func loadUserRanking() -> Bool? {
-//        var savedUserRanking: Bool = false
+        var savedUserRanking: Bool = false
 //        do {
 //            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
 //            if let archivedUserRanking = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Bool {
@@ -211,8 +247,18 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
 //        } catch {
 //            print("Couldn't read file: " + error.localizedDescription)
 //        }
-//        return savedUserRanking
-        RankingProduct.store.restorePurchases()
+        let keychain = Keychain(service: Constants.keychainRankingService)
+        
+        // if there is value correspond to the ranking key in the keychain
+        if let recoveredUserRanking = try? keychain.get("userRanking"){
+            // there is an ranking value saved in keychain, so we must return it
+            savedUserRanking = Bool(recoveredUserRanking!)!
+        } else {
+            // the user has not been found, do nothing
+            print("No user found")
+        }
+        return savedUserRanking
+        //RankingProduct.store.restorePurchases()
     }
     
     private func transformUserReceivedIntoUserSaved(_ data: Data) {

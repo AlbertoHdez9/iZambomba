@@ -2,17 +2,21 @@ PODS:
   - Charts (3.2.1):
     - Charts/Core (= 3.2.1)
   - Charts/Core (3.2.1)
+  - KeychainAccess (3.1.2)
 
 DEPENDENCIES:
   - Charts
+  - KeychainAccess
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
+    - KeychainAccess
 
 SPEC CHECKSUMS:
   Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
 
-PODFILE CHECKSUM: 70b9b4f4037671982fe3ee2eafa6cca297579062
+PODFILE CHECKSUM: ec592ed848e1b9d15f54095df0a98e70d4e1eca6
 
 COCOAPODS: 1.5.3

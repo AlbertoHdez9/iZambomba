@@ -1336,12 +1336,62 @@
                                             <constraint firstAttribute="trailing" secondItem="gmQ-ur-3Cs" secondAttribute="trailing" constant="14" id="B5T-fA-RdI"/>
                                             <constraint firstItem="ma9-cs-hCx" firstAttribute="top" secondItem="Xek-k0-csx" secondAttribute="top" constant="11" id="J8w-xk-OZ2"/>
                                             <constraint firstAttribute="bottom" secondItem="gmQ-ur-3Cs" secondAttribute="bottom" constant="11" id="fNm-DD-5VV"/>
+                                            <constraint firstAttribute="height" constant="52" id="fZ8-07-4Hc"/>
                                             <constraint firstAttribute="bottom" secondItem="ma9-cs-hCx" secondAttribute="bottom" constant="11" id="rU1-8k-YFW"/>
                                             <constraint firstItem="ma9-cs-hCx" firstAttribute="leading" secondItem="Xek-k0-csx" secondAttribute="leading" constant="8" id="rdi-hf-Y53"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-fi-TDk">
-                                        <rect key="frame" x="30" y="142" width="283" height="133"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK4-sE-d73">
+                                        <rect key="frame" x="44" y="30" width="255" height="35"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="29"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWg-co-lib">
+                                        <rect key="frame" x="0.0" y="73" width="343" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Associated Apple ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-Ca-LiG">
+                                        <rect key="frame" x="34" y="328" width="162.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-y0-gDm">
+                                        <rect key="frame" x="34" y="358" width="275" height="52"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EbR-km-XRt">
+                                                <rect key="frame" x="8" y="11" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="6r5-9K-Nfr"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Gpr-RD-9tn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRx-B1-l3f">
+                                                <rect key="frame" x="46" y="11" width="44" height="30"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="mRx-B1-l3f" firstAttribute="leading" secondItem="EbR-km-XRt" secondAttribute="trailing" constant="8" symbolic="YES" id="IJw-C4-V5u"/>
+                                            <constraint firstItem="EbR-km-XRt" firstAttribute="centerY" secondItem="Xcd-y0-gDm" secondAttribute="centerY" id="RYI-jc-2b9"/>
+                                            <constraint firstItem="EbR-km-XRt" firstAttribute="leading" secondItem="Xcd-y0-gDm" secondAttribute="leadingMargin" id="YwL-gK-snl"/>
+                                            <constraint firstItem="mRx-B1-l3f" firstAttribute="top" secondItem="Xcd-y0-gDm" secondAttribute="top" constant="11" id="c8E-Sb-AqV"/>
+                                            <constraint firstAttribute="height" constant="52" id="hcL-Bd-pzg"/>
+                                            <constraint firstItem="EbR-km-XRt" firstAttribute="bottom" secondItem="mRx-B1-l3f" secondAttribute="bottom" id="kiT-gC-aNG"/>
+                                            <constraint firstItem="EbR-km-XRt" firstAttribute="top" secondItem="mRx-B1-l3f" secondAttribute="top" id="qOx-tw-l3C"/>
+                                            <constraint firstAttribute="bottom" secondItem="EbR-km-XRt" secondAttribute="bottom" constant="11" id="tSY-tw-oCp"/>
+                                            <constraint firstItem="EbR-km-XRt" firstAttribute="top" secondItem="Xcd-y0-gDm" secondAttribute="top" constant="11" id="wOM-vL-2VV"/>
+                                            <constraint firstAttribute="bottom" secondItem="mRx-B1-l3f" secondAttribute="bottom" constant="11" id="yAN-Ms-FYK"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-fi-TDk">
+                                        <rect key="frame" x="30" y="110" width="283" height="133"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="lJC-fZ-4vX">
                                                 <rect key="frame" x="0.0" y="0.0" width="283" height="31"/>
@@ -1417,74 +1467,28 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK4-sE-d73">
-                                        <rect key="frame" x="44" y="30" width="255" height="35"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="29"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWg-co-lib">
-                                        <rect key="frame" x="0.0" y="73" width="343" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Associated Apple ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-Ca-LiG">
-                                        <rect key="frame" x="25" y="328" width="162.5" height="22"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-y0-gDm">
-                                        <rect key="frame" x="34" y="358" width="275" height="52"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EbR-km-XRt">
-                                                <rect key="frame" x="8" y="11" width="30" height="30"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="6r5-9K-Nfr"/>
-                                                    <constraint firstAttribute="height" constant="30" id="Gpr-RD-9tn"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRx-B1-l3f">
-                                                <rect key="frame" x="46" y="11" width="43.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="mRx-B1-l3f" firstAttribute="leading" secondItem="EbR-km-XRt" secondAttribute="trailing" constant="8" symbolic="YES" id="IJw-C4-V5u"/>
-                                            <constraint firstItem="EbR-km-XRt" firstAttribute="centerY" secondItem="Xcd-y0-gDm" secondAttribute="centerY" id="RYI-jc-2b9"/>
-                                            <constraint firstItem="EbR-km-XRt" firstAttribute="leading" secondItem="Xcd-y0-gDm" secondAttribute="leadingMargin" id="YwL-gK-snl"/>
-                                            <constraint firstItem="EbR-km-XRt" firstAttribute="bottom" secondItem="mRx-B1-l3f" secondAttribute="bottom" id="kiT-gC-aNG"/>
-                                            <constraint firstItem="EbR-km-XRt" firstAttribute="top" secondItem="mRx-B1-l3f" secondAttribute="top" id="qOx-tw-l3C"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="TXv-ae-urI" secondAttribute="trailing" constant="165" id="2qr-Oj-4oq"/>
                                     <constraint firstItem="eWg-co-lib" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" id="5Zr-qx-OyN"/>
-                                    <constraint firstItem="Soi-Ca-LiG" firstAttribute="top" secondItem="tMV-fi-TDk" secondAttribute="bottom" constant="53" id="9IR-G1-OQV"/>
+                                    <constraint firstItem="tMV-fi-TDk" firstAttribute="top" secondItem="eWg-co-lib" secondAttribute="bottom" constant="36" id="6D3-g0-yfm"/>
                                     <constraint firstAttribute="bottom" secondItem="grs-6q-GxX" secondAttribute="bottom" constant="19" id="CPN-LB-9Gf"/>
                                     <constraint firstItem="tK4-sE-d73" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="44" id="EF0-EI-D7u"/>
                                     <constraint firstAttribute="trailing" secondItem="Xek-k0-csx" secondAttribute="trailing" constant="34" id="G2A-58-mpo"/>
                                     <constraint firstItem="TXv-ae-urI" firstAttribute="top" secondItem="Xcd-y0-gDm" secondAttribute="bottom" constant="8" symbolic="YES" id="GXs-RG-GV2"/>
+                                    <constraint firstItem="Xek-k0-csx" firstAttribute="top" secondItem="Xcd-y0-gDm" secondAttribute="bottom" constant="38" id="Ig0-wm-sSl"/>
                                     <constraint firstItem="tK4-sE-d73" firstAttribute="top" secondItem="EvA-Ya-7rQ" secondAttribute="top" constant="30" id="Mow-Hk-qI5"/>
                                     <constraint firstItem="Xek-k0-csx" firstAttribute="top" secondItem="TXv-ae-urI" secondAttribute="bottom" constant="8" id="NFx-yU-oQp"/>
                                     <constraint firstItem="tMV-fi-TDk" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="30" id="NJ0-Gh-3d9"/>
                                     <constraint firstItem="Xek-k0-csx" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="34" id="NQt-gi-dK6"/>
                                     <constraint firstAttribute="trailing" secondItem="NzC-w0-CBo" secondAttribute="trailing" constant="12" id="Qz0-xM-sjc"/>
-                                    <constraint firstAttribute="trailing" secondItem="Soi-Ca-LiG" secondAttribute="trailing" constant="155.5" id="ThG-OS-AdM"/>
+                                    <constraint firstAttribute="trailing" secondItem="grs-6q-GxX" secondAttribute="trailing" constant="51" id="TUJ-ZR-skC"/>
                                     <constraint firstItem="TXv-ae-urI" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="34" id="X3q-da-4ir"/>
                                     <constraint firstItem="Xcd-y0-gDm" firstAttribute="top" secondItem="Soi-Ca-LiG" secondAttribute="bottom" constant="8" symbolic="YES" id="Xd3-qJ-973"/>
                                     <constraint firstItem="grs-6q-GxX" firstAttribute="centerX" secondItem="EvA-Ya-7rQ" secondAttribute="centerX" id="Ygf-eS-T94"/>
                                     <constraint firstItem="NzC-w0-CBo" firstAttribute="top" secondItem="EvA-Ya-7rQ" secondAttribute="top" constant="12" id="cAL-lK-GHM"/>
-                                    <constraint firstItem="Xcd-y0-gDm" firstAttribute="top" secondItem="EvA-Ya-7rQ" secondAttribute="top" constant="358" id="cfd-dC-lUj"/>
                                     <constraint firstItem="Xcd-y0-gDm" firstAttribute="trailing" secondItem="Xek-k0-csx" secondAttribute="trailing" id="dxU-RH-18E"/>
-                                    <constraint firstItem="Soi-Ca-LiG" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="25" id="eWz-vR-XEn"/>
-                                    <constraint firstItem="tMV-fi-TDk" firstAttribute="top" secondItem="eWg-co-lib" secondAttribute="bottom" constant="68" id="eag-HO-jmS"/>
+                                    <constraint firstItem="Soi-Ca-LiG" firstAttribute="leading" secondItem="EvA-Ya-7rQ" secondAttribute="leading" constant="34" id="eWz-vR-XEn"/>
                                     <constraint firstItem="eWg-co-lib" firstAttribute="top" secondItem="tK4-sE-d73" secondAttribute="bottom" constant="8" symbolic="YES" id="guH-ho-pXn"/>
                                     <constraint firstItem="Xcd-y0-gDm" firstAttribute="leading" secondItem="TXv-ae-urI" secondAttribute="leading" id="hGV-Ks-e61"/>
                                     <constraint firstAttribute="trailing" secondItem="tMV-fi-TDk" secondAttribute="trailing" constant="30" id="hmg-I0-5Pk"/>

@@ -7,6 +7,7 @@ target 'iZambomba' do
 
   # Pods for iZambomba
   pod 'Charts'
+  pod 'KeychainAccess'
 
 end
 
