@@ -386,17 +386,18 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     private func setNavBarAndBackground() {
         
-        //Nav bar
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.tintColor = .none
-        
+        //TableView
         let bgView = UIImageView(frame: tableView.bounds)
         bgView.image = UIImage(named: "backgroundImage")
         tableView.backgroundView = bgView
         tableView.backgroundView?.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         tableView.separatorColor = UIColor.white
+        
+        //Nav bar
+        self.navigationController?.navigationBar.setBackgroundImage(bgView.image, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .none
         
         if (zambs.count != 0) {
             updateBottomView()
@@ -507,13 +508,13 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         
         if(zamb.hand == "No hand" && zamb.location == "No location") {
-            
+
             //Change label colors and location icon
-            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.6)
-            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.6)
-            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.6)
-            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.6)
-            
+            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+
         }
         
         if(zamb.hand != "No hand" && zamb.location != "No location") {
@@ -530,6 +531,12 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             cell.viewForImage.addSubview(imageView)
             
             cell.locationIcon.image = UIImage(named: "locationIcon")
+            
+            //Change label colors
+            cell.zambsAmountLabel.textColor = UIColor.white
+            cell.locationLabel.textColor = UIColor.white
+            cell.dateLabel.textColor = UIColor.white
+            cell.sessionTimeLabel.textColor = UIColor.white
         }
         
         cell.separatorInset = .zero
@@ -660,7 +667,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 amount: message["amount"] as! Int,
                 hand: message["hand"] as? String,
                 location: message["location"] as? String,
-                date: message["date"] as! Date,
+                date: convertStringToDate(date: message["date"] as! String),
                 sessionTime: message["sessionTime"] as! Int,
                 frecuencyArray: message["frecuencyArray"] as! [[String : Int]]
                 ) {
@@ -669,6 +676,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
                 saveZambs(zamb)
+                tableView.reloadData()
                 updateBottomView()
             }
             

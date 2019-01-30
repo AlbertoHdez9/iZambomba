@@ -20,7 +20,6 @@ class FirstInterfaceController: WKInterfaceController {
 
         //Check whether is the first time we call this controller or not
         if let contextZambs = context as? [Zamb] {
-            
             // Configure interface objects here.
             zambs = contextZambs
         } else {

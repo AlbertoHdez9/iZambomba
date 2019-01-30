@@ -273,9 +273,19 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
             //userRanking = true
             RankingProduct.store.buyProduct(product[0])
         } else {
-            print("payment chungo")
+            presentAlert()
         }
         
+    }
+    
+    private func presentAlert() {
+        let refreshAlert = UIAlertController(title: "Oops!", message: "Purchase not available at the moment", preferredStyle: .alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     @objc private func changeVisibleViewAndUpdateRanking() {

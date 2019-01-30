@@ -67,15 +67,13 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
 //    }
     
     override func willDisappear() {
-        if (!isGonnaSync) {
-            WKInterfaceController.reloadRootControllers(withNames: ["First Interface Controller"], contexts: [zambs])
-        } else {
-            zambs = []
+        if (isGonnaSync) {
+            zambs.removeAll()
         }
+        WKInterfaceController.reloadRootControllers(withNames: ["First Interface Controller"], contexts: [zambs])
     }
     
     private func loadTableCells() {
-        print(zambs.count)
         tableView.setNumberOfRows(zambs.count, withRowType: "WKZambRowController")
         
         for (index, zamb) in zambs.enumerated() {
@@ -97,7 +95,7 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
         isGonnaSync = true
         print("State: \(session.activationState) isReachable: \(session.isReachable)")
         sendMessage()
-        popToRootController()
+        WKInterfaceController.reloadRootControllers(withNames: ["First Interface Controller"], contexts: [zambs])
     }
     
     func sendMessage() {
@@ -113,7 +111,6 @@ class WKZambListInterfaceController: WKInterfaceController, WCSessionDelegate {
                 
                 session.sendMessage(message, replyHandler: nil, errorHandler: nil)
                 print("Message sent")
-                print(message)
             }
         } else {
             print("Phone is not reachable")

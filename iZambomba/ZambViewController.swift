@@ -28,6 +28,7 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var leftHandSwitch: UISwitch!
     @IBOutlet weak var otherHandSwitch: UISwitch!
     
+    @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var chartView: LineChartView!
     
@@ -46,6 +47,9 @@ class ZambViewController: UIViewController, UITextFieldDelegate {
         locationTextField.delegate = self
         view.backgroundColor = .clear
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        locationView.layer.borderWidth = 1
+        locationView.layer.borderColor = UIColor.white.cgColor
+        locationView.layer.cornerRadius = 2
         
         //Set up views if editing an existing ZAMB
         if let zamb = zamb {
