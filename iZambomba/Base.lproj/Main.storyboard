@@ -86,22 +86,9 @@
                                     <subviews>
                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-7I-4kQ">
                                             <rect key="frame" x="299" y="15" width="60" height="60"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALIDATION REQUIRED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9A-d9-6zP">
-                                                    <rect key="frame" x="-3" y="7.5" width="66" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="LqX-un-b4B"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="11"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="49Y-La-gec"/>
-                                                <constraint firstItem="E9A-d9-6zP" firstAttribute="centerY" secondItem="WVq-7I-4kQ" secondAttribute="centerY" id="DgJ-Lo-jXd"/>
                                                 <constraint firstAttribute="width" secondItem="WVq-7I-4kQ" secondAttribute="height" id="kkA-Nq-7q8"/>
-                                                <constraint firstItem="E9A-d9-6zP" firstAttribute="centerX" secondItem="WVq-7I-4kQ" secondAttribute="centerX" id="zij-ey-4kK"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="waf-5d-o21">
@@ -155,6 +142,15 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALIDATION REQUIRED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9A-d9-6zP">
+                                            <rect key="frame" x="296" y="22" width="66" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="LqX-un-b4B"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="WVq-7I-4kQ" firstAttribute="leading" secondItem="FwB-EX-gb7" secondAttribute="trailing" constant="8" id="2Yu-CH-fua"/>
@@ -163,8 +159,12 @@
                                         <constraint firstItem="waf-5d-o21" firstAttribute="leading" secondItem="6Ug-kI-NI1" secondAttribute="leading" constant="16" id="PHm-yj-TLA"/>
                                         <constraint firstItem="waf-5d-o21" firstAttribute="top" secondItem="6Ug-kI-NI1" secondAttribute="top" constant="14" id="PYP-yy-jwh"/>
                                         <constraint firstAttribute="bottom" secondItem="waf-5d-o21" secondAttribute="bottom" constant="12.5" id="SZc-bI-BcH"/>
+                                        <constraint firstItem="E9A-d9-6zP" firstAttribute="leading" secondItem="FwB-EX-gb7" secondAttribute="trailing" constant="5" id="Sx9-w8-aRL"/>
+                                        <constraint firstAttribute="trailing" secondItem="E9A-d9-6zP" secondAttribute="trailing" constant="13" id="bX5-xM-UMh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="FwB-EX-gb7" secondAttribute="bottom" constant="8" id="dHz-uk-JIJ"/>
                                         <constraint firstItem="WVq-7I-4kQ" firstAttribute="trailing" secondItem="6Ug-kI-NI1" secondAttribute="trailingMargin" id="m6C-4c-eqb"/>
+                                        <constraint firstAttribute="bottom" secondItem="E9A-d9-6zP" secondAttribute="bottom" constant="22.5" id="nuU-za-TST"/>
+                                        <constraint firstItem="E9A-d9-6zP" firstAttribute="top" secondItem="6Ug-kI-NI1" secondAttribute="top" constant="22" id="uh3-xm-BCO"/>
                                         <constraint firstItem="FwB-EX-gb7" firstAttribute="leading" secondItem="waf-5d-o21" secondAttribute="trailing" constant="21" id="yZo-S2-s7j"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -33,7 +33,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     let loadingView = UIView()
     let emptyView = UIView()
-    
+
     @IBOutlet weak var topView: UIView!
     
     @IBOutlet weak var weeklyZambs: UILabel!
@@ -492,7 +492,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         let zamb = zambs[indexPath.row]
         
         //Cell config
-        cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!!"
+        cell.zambsAmountLabel.text = "\(zamb.amount) ZAMBS!!"
         cell.locationLabel.text = zamb.location
         cell.dateLabel.text = zamb.date
         cell.sessionTimeLabel.text = secondsProcessor(inputSeconds: zamb.sessionTime)
@@ -501,27 +501,38 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             topView.isHidden = false
         }
         
-        if zambs.count - 1 == indexPath.row {
-            let separator = UIView(frame: CGRect(x:0, y:83, width: self.view.bounds.width, height: 0.5))
-            separator.backgroundColor = .white
-            cell.contentView.addSubview(separator)
-        }
+//        if zambs.count - 1 == indexPath.row {
+//            let separator = UIView(frame: CGRect(x:0, y:83, width: self.view.bounds.width, height: 0.5))
+//            separator.backgroundColor = .white
+//            cell.contentView.addSubview(separator)
+//        }
         
+        //No validado
         if(zamb.hand == "No hand" && zamb.location == "No location") {
+
+            //Add label
+            cell.validationLabel.isHidden = false
+
+            
+            //Remove image
+            cell.viewForImage.isHidden = true
 
             //Change label colors and location icon
             cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
             cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.5)
             cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.5)
             cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            
+            cell.locationIcon.image = UIImage(named: "locationIconOp")
 
         }
         
+        //Validado
         if(zamb.hand != "No hand" && zamb.location != "No location") {
             
             //Remove previous label
             if (cell.validationLabel != nil) {
-                cell.validationLabel.removeFromSuperview()
+                cell.validationLabel.isHidden = true
             }
             
             //Create image and add it
@@ -529,14 +540,16 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             imageView.frame = CGRect(x: 15, y: 15, width: 30, height: 30)
             imageView.contentMode = .scaleAspectFit
             cell.viewForImage.addSubview(imageView)
-            
-            cell.locationIcon.image = UIImage(named: "locationIcon")
+            cell.viewForImage.isHidden = false
             
             //Change label colors
             cell.zambsAmountLabel.textColor = UIColor.white
             cell.locationLabel.textColor = UIColor.white
             cell.dateLabel.textColor = UIColor.white
             cell.sessionTimeLabel.textColor = UIColor.white
+            
+            cell.locationIcon.image = UIImage(named: "locationIcon")
+            
         }
         
         cell.separatorInset = .zero

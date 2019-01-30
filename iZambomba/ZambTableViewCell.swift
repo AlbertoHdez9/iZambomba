@@ -18,6 +18,7 @@ class ZambTableViewCell: UITableViewCell {
     @IBOutlet weak var viewForImage: UIView!
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var validationLabel: UILabel!
+    @IBOutlet weak var validatedImage: UIImageView!
     
 
     override func awakeFromNib() {
