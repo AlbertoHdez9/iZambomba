@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="qN6-b9-Z1W">
@@ -29,30 +34,32 @@
                                 <rect key="frame" x="93" y="128" width="189" height="48"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iZambombaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="u9q-tI-eX1">
-                                <rect key="frame" x="67" y="337" width="241" height="250"/>
+                                <rect key="frame" x="67" y="283" width="241" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="opA-4C-ct3"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="USk-WD-91E">
-                                <rect key="frame" x="169" y="253" width="37" height="37"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting everything up..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg2-Tv-yCp">
+                                <rect key="frame" x="91" y="558" width="193" height="24"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="CEZ-hu-ggu" firstAttribute="bottom" secondItem="Bg2-Tv-yCp" secondAttribute="bottom" constant="85" id="2kX-r3-Kog"/>
                             <constraint firstItem="4HH-ch-m8j" firstAttribute="top" secondItem="KQg-Je-5QX" secondAttribute="top" id="84U-2D-G8R"/>
                             <constraint firstItem="4HH-ch-m8j" firstAttribute="trailing" secondItem="CEZ-hu-ggu" secondAttribute="trailing" id="Az8-i3-ojs"/>
+                            <constraint firstItem="Bg2-Tv-yCp" firstAttribute="centerX" secondItem="u9q-tI-eX1" secondAttribute="centerX" id="FQH-LS-ZjO"/>
                             <constraint firstItem="u9q-tI-eX1" firstAttribute="width" secondItem="u9q-tI-eX1" secondAttribute="height" multiplier="196:203" id="KD5-Er-Jra"/>
-                            <constraint firstItem="USk-WD-91E" firstAttribute="centerX" secondItem="u9q-tI-eX1" secondAttribute="centerX" id="NZZ-Cl-H11"/>
                             <constraint firstItem="4HH-ch-m8j" firstAttribute="bottom" secondItem="KQg-Je-5QX" secondAttribute="bottom" id="b1V-cJ-VZr"/>
                             <constraint firstItem="4HH-ch-m8j" firstAttribute="leading" secondItem="CEZ-hu-ggu" secondAttribute="leading" id="enE-VO-3Yr"/>
-                            <constraint firstItem="CEZ-hu-ggu" firstAttribute="bottom" secondItem="u9q-tI-eX1" secondAttribute="bottom" constant="80" id="fYw-Jq-uly"/>
                             <constraint firstItem="u9q-tI-eX1" firstAttribute="centerX" secondItem="4HH-ch-m8j" secondAttribute="centerX" id="mhK-bB-MDW"/>
                             <constraint firstItem="h8w-J9-GPO" firstAttribute="top" secondItem="CEZ-hu-ggu" secondAttribute="top" constant="108" id="p0y-C4-mk5"/>
                             <constraint firstItem="h8w-J9-GPO" firstAttribute="centerX" secondItem="4HH-ch-m8j" secondAttribute="centerX" id="vLA-jr-1y5"/>
-                            <constraint firstItem="u9q-tI-eX1" firstAttribute="top" secondItem="USk-WD-91E" secondAttribute="bottom" constant="47" id="w5a-8t-mSq"/>
+                            <constraint firstItem="Bg2-Tv-yCp" firstAttribute="top" secondItem="u9q-tI-eX1" secondAttribute="bottom" constant="25" id="whk-lG-OkT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEZ-hu-ggu"/>
                         <connections>
