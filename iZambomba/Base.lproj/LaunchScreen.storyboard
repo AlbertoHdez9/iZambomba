@@ -1,25 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6IO-ZV-fcC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="qN6-b9-Z1W">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="6IO-ZV-fcC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KQg-Je-5QX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-ch-m8j">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iZambombaTypo" translatesAutoresizingMaskIntoConstraints="NO" id="h8w-J9-GPO">
+                                <rect key="frame" x="93" y="128" width="189" height="48"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iZambombaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="u9q-tI-eX1">
+                                <rect key="frame" x="67" y="337" width="241" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="opA-4C-ct3"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="USk-WD-91E">
+                                <rect key="frame" x="169" y="253" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4HH-ch-m8j" firstAttribute="top" secondItem="KQg-Je-5QX" secondAttribute="top" id="84U-2D-G8R"/>
+                            <constraint firstItem="4HH-ch-m8j" firstAttribute="trailing" secondItem="CEZ-hu-ggu" secondAttribute="trailing" id="Az8-i3-ojs"/>
+                            <constraint firstItem="u9q-tI-eX1" firstAttribute="width" secondItem="u9q-tI-eX1" secondAttribute="height" multiplier="196:203" id="KD5-Er-Jra"/>
+                            <constraint firstItem="USk-WD-91E" firstAttribute="centerX" secondItem="u9q-tI-eX1" secondAttribute="centerX" id="NZZ-Cl-H11"/>
+                            <constraint firstItem="4HH-ch-m8j" firstAttribute="bottom" secondItem="KQg-Je-5QX" secondAttribute="bottom" id="b1V-cJ-VZr"/>
+                            <constraint firstItem="4HH-ch-m8j" firstAttribute="leading" secondItem="CEZ-hu-ggu" secondAttribute="leading" id="enE-VO-3Yr"/>
+                            <constraint firstItem="CEZ-hu-ggu" firstAttribute="bottom" secondItem="u9q-tI-eX1" secondAttribute="bottom" constant="80" id="fYw-Jq-uly"/>
+                            <constraint firstItem="u9q-tI-eX1" firstAttribute="centerX" secondItem="4HH-ch-m8j" secondAttribute="centerX" id="mhK-bB-MDW"/>
+                            <constraint firstItem="h8w-J9-GPO" firstAttribute="top" secondItem="CEZ-hu-ggu" secondAttribute="top" constant="108" id="p0y-C4-mk5"/>
+                            <constraint firstItem="h8w-J9-GPO" firstAttribute="centerX" secondItem="4HH-ch-m8j" secondAttribute="centerX" id="vLA-jr-1y5"/>
+                            <constraint firstItem="u9q-tI-eX1" firstAttribute="top" secondItem="USk-WD-91E" secondAttribute="bottom" constant="47" id="w5a-8t-mSq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CEZ-hu-ggu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="klb-mA-VOg" appends="YES" id="LaP-b5-w7D"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="H3C-np-luU"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhD-rF-lzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="klb-mA-VOg"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-828" y="395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundImage" width="375" height="667"/>
+        <image name="iZambombaLogo" width="196" height="203"/>
+        <image name="iZambombaTypo" width="189" height="48"/>
+    </resources>
 </document>

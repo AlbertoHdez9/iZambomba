@@ -317,7 +317,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     private func loadZambs()  {
-        let url = URL(string: Constants.buildGetStats() + "\(user)/w")
+        let url = URL(string: Constants.buildGetZambs() + "\(user)")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         
@@ -656,9 +656,11 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             
             emptyView.isHidden = true
             //Add a new zamb
-            let newIndexPath = IndexPath(row: zambs.count, section: 0)
-            zambs.append(zamb)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            //let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            zambs.insert(zamb, at: 0)
+            tableView.beginUpdates()
+            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            tableView.endUpdates()
             updateBottomView()
             saveZambs(zamb)
         }
@@ -672,7 +674,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) -> Void {
         if (message["amount"] is Int) {
-            let newIndexPath = IndexPath(row: zambs.count, section: 0)
+            //let newIndexPath = IndexPath(row: zambs.count, section: 0)
             
             if let zamb = Zamb(
                 id: 0,
@@ -684,10 +686,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 sessionTime: message["sessionTime"] as! Int,
                 frecuencyArray: message["frecuencyArray"] as! [[String : Int]]
                 ) {
-                zambs.append(zamb)
+                zambs.insert(zamb, at: 0)
                 weeklyZambCount = weeklyZambCount! + zamb.amount
                 weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                 saveZambs(zamb)
                 tableView.reloadData()
                 updateBottomView()

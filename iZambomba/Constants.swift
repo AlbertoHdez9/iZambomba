@@ -21,6 +21,7 @@ struct Constants {
     struct Zamb {
         static let create = "/zamb"
         static let update = "/zamb/update"
+        static let getZambs = "/getZambs/"
         static let getStats = "/getStats/"
         static let getRanking = "/getRanking/"
     }
@@ -39,6 +40,10 @@ struct Constants {
     
     static func buildZambUpdate() -> String {
         return BASEURL + Zamb.update
+    }
+    
+    static func buildGetZambs() -> String {
+        return BASEURL + Zamb.getZambs
     }
     
     static func buildGetStats() -> String {
