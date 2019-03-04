@@ -24,6 +24,24 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     let paymentSetupView = UIView()
     let emptyView = UIView()
     
+    //Error view and label
+    let errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Apologies, there's a problem with internet connection. Please try again later..."
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Lato-Light", size: 20)
+        label.textColor = .white
+        
+        return label
+    }()
+    let errorMessageView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.isHidden = true
+        return view
+    }()
+    
     struct userZamb {
         let user: String
         let zambs: String
@@ -32,6 +50,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user: Int = 0
     var userRanking: Bool = false
     var viewHasLoaded: Bool = false
+    var connectionError = false
     var product: [SKProduct] = []
     
     var span: String = "d"
@@ -49,6 +68,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         NotificationCenter.default.addObserver(self, selector: #selector(RankingViewController.changeVisibleViewAndUpdateRanking), name: .IAPHelperPurchaseNotification, object: nil)
         setNavBarAndBackground()
+        loadEmptyListView()
+        setErrorMessageScreen()
         if !userRanking {
             setPaymentSetupScreen()
         }
@@ -78,6 +99,10 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print ("getRanking() error: \(error)")
+                DispatchQueue.main.async {
+                    self.connectionError = true
+                    self.dispatchGroup.leave()
+                }
                 return
             }
             if let response = response as? HTTPURLResponse,
@@ -85,6 +110,10 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print("Ranking received correctly")
             } else {
                 print ("Server error in ranking")
+                DispatchQueue.main.async {
+                    self.connectionError = true
+                    self.dispatchGroup.leave()
+                }
                 return
             }
             if let data = data,
@@ -92,6 +121,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print ("got data: \(dataString)")
                 DispatchQueue.main.async {
                     self.processZambReceived(data)
+                    self.connectionError = false
                     self.dispatchGroup.leave()
                 }
             }
@@ -99,11 +129,16 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
             self.activityIndicator.stopAnimating()
-            UIApplication.shared.endIgnoringInteractionEvents()
             self.activityIndicator.isHidden = true
             
             if self.zambs.isEmpty {
-                self.loadEmptyListView()
+                self.tableView.isHidden = true
+                self.loadingView.isHidden = true
+                if self.connectionError {
+                    self.errorMessageView.isHidden = false
+                } else {
+                    self.emptyView.isHidden = false
+                }
             } else {
                 self.tableView.isHidden = false
                 self.loadingView.isHidden = true
@@ -167,11 +202,20 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.rowHeight = 70
     }
     
+    private func setErrorMessageScreen() {
+        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 37
+        errorMessageView.frame = CGRect(x:0, y: topInset, width: self.view.bounds.width, height: tableView.bounds.height)
+        errorMessageLabel.frame = CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 90)
+        errorMessageView.addSubview(errorMessageLabel)
+        self.view.addSubview(errorMessageView)
+        
+    }
+    
     private func loadEmptyListView() {
         tableView.isHidden = true
         loadingView.isHidden = true
         
-        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 35
+        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 37
         emptyView.frame = CGRect(x:0, y: topInset, width: self.view.bounds.width, height: tableView.bounds.height)
         emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
@@ -199,13 +243,15 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func setLoadingScreen() {
         //Loader
         tableView.isHidden = true
+        emptyView.isHidden = true
+        errorMessageView.isHidden = true
         
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = .gray
         activityIndicator.isHidden = false
         
-        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 35
+        let topInset = (UIApplication.shared.keyWindow?.safeAreaInsets.top)! + self.navBar.bounds.height + 37
         loadingView.frame = CGRect(x:0, y: topInset, width: self.view.bounds.width, height: tableView.bounds.height)
         loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
@@ -223,7 +269,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadingView.isHidden = false
         
         activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     private func setPaymentSetupScreen() {

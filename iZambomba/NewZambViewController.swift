@@ -164,6 +164,97 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         zamb = Zamb(id: 0, user: user!, amount: amount, hand: hand, location: location, date: date, sessionTime: sessionTime, frecuencyArray: frecuencyArray)
     }
-    
 
 }
+
+//  MARK:- UIViewControllerRestoration
+/*extension NewZambViewController: UIViewControllerRestoration {
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
+        guard let restoredUser = coder.decodeObject(forKey: "user") as? Int else {
+            print("decoding User")
+            return nil
+        }
+        guard let restoredCurrentZambAmount = coder.decodeObject(forKey: "currentZambAmount") as? Int else {
+            print("decoding current Zamb amount")
+            return nil
+        }
+        guard let restoredStartedZambSession = coder.decodeObject(forKey: "startedZambSession") as? Bool else {
+            print("decoding startedZambSession")
+            return nil
+        }
+        guard let restoredTimer = coder.decodeObject(forKey: "timer") as? Timer else {
+            print("decoding timer")
+            return nil
+        }
+        guard let restoredTimerForFrecuencyArray = coder.decodeObject(forKey: "timerForFrecuencyArray") as? Timer else {
+            print("decoding frecuencyArray")
+            return nil
+        }
+        guard let restoredTimerSeconds = coder.decodeObject(forKey: "timerSeconds") as? Int else {
+            print("decoding timerSeconds")
+            return nil
+        }
+        guard let restoredZamb = coder.decodeObject(forKey: "zamb") as? Zamb else {
+            print("decoding Zamb")
+            return nil
+        }
+        if let storyboard = coder.decodeObject(forKey: UIApplication.stateRestorationViewControllerStoryboardKey) as? UIStoryboard{
+            if let vc = storyboard.instantiateViewController(withIdentifier: "NewZambVC") as? NewZambViewController{
+                vc.user = restoredUser
+                vc.currentZambAmount = restoredCurrentZambAmount
+                vc.zamb = restoredZamb
+                vc.startedZambSession = restoredStartedZambSession
+                vc.timer = restoredTimer
+                vc.timerForFrecuencyArray = restoredTimerForFrecuencyArray
+                vc.timerSeconds = restoredTimerSeconds
+                return vc;
+            }
+        }
+        return nil;
+    }
+
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        // preserve user model object.
+        coder.encode(self.user, forKey: "user")
+        coder.encode(self.currentZambAmount, forKey: "currentZambAmount")
+        coder.encode(self.startedZambSession, forKey: "startedZambSession")
+        coder.encode(self.timer, forKey: "timer")
+        coder.encode(self.timerForFrecuencyArray, forKey: "timerForFrecuencyArray")
+        coder.encode(self.timerSeconds, forKey: "timerSeconds")
+        coder.encode(self.zamb, forKey: "zamb")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        if let obj = coder.decodeObject(forKey: "user") as? Int {
+            self.user = obj
+        }
+        if let obj = coder.decodeObject(forKey: "currentZambAmount") as? Int {
+            self.currentZambAmount = obj
+        }
+        if let obj = coder.decodeObject(forKey: "startedZambSession") as? Bool{
+            self.startedZambSession = obj
+        }
+        if let obj = coder.decodeObject(forKey: "timer") as? Timer{
+            self.timer = obj
+        }
+        if let obj = coder.decodeObject(forKey: "timerForFrecuencyArray") as? Timer{
+            self.timerForFrecuencyArray = obj
+        }
+        if let obj = coder.decodeObject(forKey: "timerSeconds") as? Int{
+            self.timerSeconds = obj
+        }
+        if let obj = coder.decodeObject(forKey: "zamb") as? Zamb{
+            self.zamb = obj
+        }
+    
+    }
+    
+    override func applicationFinishedRestoringState() {
+        print("HomeDetailVC finished restoring")
+//        self.prepareUI()
+//        self.tableView.reloadData()
+        
+    }
+}*/

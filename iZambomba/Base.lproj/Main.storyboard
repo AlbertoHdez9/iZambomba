@@ -32,12 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" id="ckV-DU-RDR">
+                        <view key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" id="ckV-DU-RDR">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXA-Om-4El">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="caT-NQ-OCZ">
                                             <rect key="frame" x="50" y="18" width="275" height="45"/>
@@ -212,7 +212,7 @@
         <!--New Zamb-->
         <scene sceneID="GnK-6a-Gbd">
             <objects>
-                <viewController id="DOs-0y-Ekr" customClass="NewZambViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewZambVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DOs-0y-Ekr" customClass="NewZambViewController" customModule="iZambomba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yoe-6T-CDE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -837,20 +837,20 @@
                                 </accessibility>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-LS-opm">
-                                <rect key="frame" x="42" y="207" width="291" height="266"/>
+                                <rect key="frame" x="42" y="208" width="291" height="274"/>
                                 <string key="text">It consists of a hollow cylinder that can be made of different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod, made of wood or other materials.  This rod, sometimes, is replaced by a rope. By rubbing the rod with one or both hands, the vibration roduced by the rod is transmitted to the leather, producing a serious and special sound.</string>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How is it made?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-jQ-mGP">
-                                <rect key="frame" x="43" y="140" width="289" height="27"/>
+                                <rect key="frame" x="43" y="140" width="289" height="28"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spb-zG-HDU">
-                                <rect key="frame" x="36" y="591" width="303" height="39"/>
+                                <rect key="frame" x="36" y="590" width="303" height="40"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="23"/>
                                 <state key="normal" title="Let's go!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

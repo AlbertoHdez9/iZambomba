@@ -25,14 +25,41 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     //MARK: Properties
     var user: Int = 0
     var userRanking: Bool = false
+    var connectionError = false
     var zambs = [Zamb]()
     var product: [SKProduct] = []
     
     let dispatchGroup = DispatchGroup()
     private var session = WCSession.default
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    var activityIndicator: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView()
+        aiv.color = .black
+        aiv.style = .whiteLarge
+        return aiv
+    }()
     let loadingView = UIView()
-    let emptyView = UIView()
+    let emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        return view
+    }()
+    let errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Apologies, there's a problem with internet connection. Please try again later..."
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Lato-Light", size: 20)
+        label.textColor = .white
+    
+        return label
+    }()
+    let errorMessageView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.isHidden = true
+        return view
+    }()
 
     @IBOutlet weak var topView: UIView!
     
@@ -53,7 +80,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         }
         setNavBarAndBackground()
         setLoadingScreen()
-        
+        setErrorMessageScreen()
         //Load zambs if there are, if not load empty view
         loadZambs()
         
@@ -95,14 +122,23 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         weeklyZambs.textColor = UIColor(red: 255 / 255.0, green: 164 / 255.0, blue: 81 / 255.0, alpha: 1 / 1.0)
     }
     
+    private func setErrorMessageScreen() {
+        let bottomInset = (self.tabBarController?.tabBar.bounds.height)! + self.view.safeAreaInsets.bottom
+        errorMessageView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height - bottomInset)
+        errorMessageLabel.frame = CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 90)
+        errorMessageView.addSubview(errorMessageLabel)
+        self.view.addSubview(errorMessageView)
+
+    }
+    
     private func loadEmptyListView() {
         //Primero eliminamos la vista anterior del superview, para luego recuperarla cuando se añada un zamb
         topView.isHidden = true
         loadingView.isHidden = true
+        errorMessageView.isHidden = true
         
         let bottomInset = (self.tabBarController?.tabBar.bounds.height)! + self.view.safeAreaInsets.bottom
         emptyView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height - bottomInset)
-        emptyView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         //Creamos las labels y mierdas para la nueva vista
         let startNOW = UILabel(frame: CGRect(x: 0, y: emptyView.bounds.height/4, width: self.view.bounds.width, height: 90))
@@ -150,7 +186,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         self.view.addSubview(loadingView)
         
         activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     public func getUser() {
@@ -181,12 +216,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     private func saveUser(_ user: Int) {
-//        do {
-//            let data = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
-//            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
-//        } catch {
-//            print("Couldn't write file: " + error.localizedDescription)
-//        }
         // replace the keychain service name as you like
         let keychain = Keychain(service: Constants.keychainUserService)
         
@@ -201,12 +230,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     func saveUserRanking(_ ranking: Bool) {
-//        do {
-//            let data = try NSKeyedArchiver.archivedData(withRootObject: ranking, requiringSecureCoding: false)
-//            try data.write(to: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
-//        } catch {
-//            print("Couldn't write file: " + error.localizedDescription)
-//        }
         // replace the keychain service name as you like
         let keychain = Keychain(service: Constants.keychainRankingService)
         
@@ -220,15 +243,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     func loadUser() -> Int? {
-//        var savedUser: Int = 0
-//        do {
-//            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("user"))
-//            if let archivedUser = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Int {
-//                savedUser = archivedUser
-//            }
-//        } catch {
-//            print("Couldn't read file: " + error.localizedDescription)
-//        }
 //        return savedUser
         var savedUser: Int = 0
         let keychain = Keychain(service: Constants.keychainUserService)
@@ -248,14 +262,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     
     func loadUserRanking() -> Bool? {
         var savedUserRanking: Bool = false
-//        do {
-//            let rawdata = try Data(contentsOf: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("userRanking"))
-//            if let archivedUserRanking = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(rawdata) as? Bool {
-//                savedUserRanking = archivedUserRanking
-//            }
-//        } catch {
-//            print("Couldn't read file: " + error.localizedDescription)
-//        }
         let keychain = Keychain(service: Constants.keychainRankingService)
         
         // if there is value correspond to the ranking key in the keychain
@@ -325,6 +331,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     print ("getZambs() error: \(error)")
+                    DispatchQueue.main.async {
+                        self.connectionError = true
+                        self.dispatchGroup.leave()
+                    }
                     return
                 }
                 if let response = response as? HTTPURLResponse,
@@ -332,6 +342,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                     print("Zambs got correctly")
                 } else if let response = response as? HTTPURLResponse {
                     print ("Server error \(response.statusCode)")
+                    DispatchQueue.main.async {
+                        self.connectionError = true
+                        self.dispatchGroup.leave()
+                    }
                     return
                 }
                 if let data = data,
@@ -339,6 +353,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                     print ("got data: \(dataString)")
                     DispatchQueue.main.async {
                         self.processZambReceived(data)
+                        self.connectionError = false
                         self.dispatchGroup.leave()
                     }
                     
@@ -347,11 +362,15 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
             self.activityIndicator.stopAnimating()
-            UIApplication.shared.endIgnoringInteractionEvents()
             self.activityIndicator.isHidden = true
             
             if self.zambs.isEmpty {
-                self.loadEmptyListView()
+                if self.connectionError {
+                    self.loadingView.isHidden = true
+                    self.errorMessageView.isHidden = false
+                } else {
+                    self.loadEmptyListView()
+                }
             } else {
                 self.emptyView.isHidden = true
                 self.loadingView.isHidden = true
