@@ -154,8 +154,8 @@ class NewZambViewController: UIViewController , WorkoutManagerDelegate {
         
         processFrecuencyArray()
         
-        let amount = currentZambAmount
-        //let amount = 200
+        //let amount = currentZambAmount
+        let amount = 150
         let hand = "No hand"
         let location = "No location"
         let date = Date()

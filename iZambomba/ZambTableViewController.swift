@@ -137,8 +137,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         loadingView.isHidden = true
         errorMessageView.isHidden = true
         
-        let bottomInset = (self.tabBarController?.tabBar.bounds.height)! + self.view.safeAreaInsets.bottom
-        emptyView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height - bottomInset)
+        emptyView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height)
         
         //Creamos las labels y mierdas para la nueva vista
         let startNOW = UILabel(frame: CGRect(x: 0, y: emptyView.bounds.height/4, width: self.view.bounds.width, height: 90))
@@ -158,7 +157,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         emptyView.addSubview(description)
         emptyView.addSubview(startNOW)
         emptyView.isUserInteractionEnabled = false
-        self.view.addSubview(emptyView)
+        tableView.addSubview(emptyView)
     }
     
     private func setLoadingScreen() {
@@ -520,11 +519,11 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             topView.isHidden = false
         }
         
-//        if zambs.count - 1 == indexPath.row {
-//            let separator = UIView(frame: CGRect(x:0, y:83, width: self.view.bounds.width, height: 0.5))
-//            separator.backgroundColor = .white
-//            cell.contentView.addSubview(separator)
-//        }
+        if zambs.count - 1 == indexPath.row {
+            let separator = UIView(frame: CGRect(x:0, y:83, width: self.view.bounds.width, height: 0.5))
+            separator.backgroundColor = .white
+            cell.contentView.addSubview(separator)
+        }
         
         //No validado
         if(zamb.hand == "No hand" && zamb.location == "No location") {

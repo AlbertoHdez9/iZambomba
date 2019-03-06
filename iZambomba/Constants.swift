@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let BASEURL = "https://izambomba.singularfactory.com"
+    static let BASEURL = "https://app.izambomba.com"
     static let keychainUserService = "com.singularfactory.izambomba.userService"
     static let keychainRankingService = "com.singularfactory.izambomba.rankingService"
     

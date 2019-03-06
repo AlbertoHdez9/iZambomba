@@ -34,9 +34,9 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         //Get user from table VC
-        let zambTableNC = self.tabBarController?.viewControllers![0] as! UINavigationController
-        let zambTableVC = zambTableNC.topViewController as! ZambTableViewController
-        userRanking = zambTableVC.userRanking
+        let zambTableNC = self.tabBarController?.viewControllers![0] as? UINavigationController
+        let zambTableVC = zambTableNC?.topViewController as? ZambTableViewController
+        userRanking = zambTableVC?.userRanking ?? false
         
         usernameTextField.delegate = self
         associatedID.text = userRanking ? "Yes" : "No"

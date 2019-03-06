@@ -116,7 +116,7 @@
                                                     </group>
                                                 </items>
                                             </group>
-                                            <label alignment="left" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
+                                            <label alignment="right" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="2" id="Juz-0U-VIR">
                                                 <fontDescription key="font" name="Lato-Bold" family="Lato" pointSize="13"/>
                                             </label>
                                         </items>
