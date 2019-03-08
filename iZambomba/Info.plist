@@ -53,5 +53,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>In order to register movement, iZambomba needs to access the motion sensors of your phone managed by HealthKit.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>In order to register movement, iZambomba needs to access the motion sensors of your phone managed by HealthKit.</string>
 </dict>
 </plist>

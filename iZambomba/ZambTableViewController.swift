@@ -171,6 +171,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         
         loadingView.frame = CGRect(x:0, y: 0, width: self.view.bounds.width, height: tableView.bounds.height)
         loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        loadingView.isHidden = false
         
         //Creamos las labels y mierdas para la nueva vista
         let description = UILabel(frame: CGRect(x: 0, y: self.view.bounds.height/3, width: self.view.bounds.width, height: 90))
@@ -250,7 +251,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         if let recoveredUser = try? keychain.get("user"){
             // there is an user saved in keychain, so we must return it
             if recoveredUser != nil {
-                savedUser = Int(recoveredUser ?? "pollas")!
+                savedUser = Int(recoveredUser ?? "what")!
             }
         } else {
             // the user has not been found, do nothing
@@ -360,19 +361,16 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 }.resume()
         
         dispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
+            self.loadingView.isHidden = true
             
             if self.zambs.isEmpty {
                 if self.connectionError {
-                    self.loadingView.isHidden = true
                     self.errorMessageView.isHidden = false
                 } else {
                     self.loadEmptyListView()
                 }
             } else {
                 self.emptyView.isHidden = true
-                self.loadingView.isHidden = true
                 self.tableView.reloadData()
                 self.updateBottomView()
                 
@@ -428,24 +426,26 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     private func updateBottomView() {
-        //Contenido de la tabla + nº de filas por su altura
-        var height = topView.bounds.height + CGFloat(90*zambs.count)
-        
-        //Si el contenido es mayor que lo que cabe en la pantalla, no ponemos footer
-        if self.view.bounds.height - height < 0 {
-            height = 0
-            tableView.isScrollEnabled = true;
-        } else {
-            height = tableView.bounds.height - height + 10
-            tableView.isScrollEnabled = false;
+        if (!zambs.isEmpty) {
+            //Contenido de la tabla + nº de filas por su altura
+            var height = topView.bounds.height + CGFloat(90*zambs.count)
+            
+            //Si el contenido es mayor que lo que cabe en la pantalla, no ponemos footer
+            if self.view.bounds.height - height < 0 {
+                height = 0
+                tableView.isScrollEnabled = true;
+            } else {
+                height = tableView.bounds.height - height + 10
+                tableView.isScrollEnabled = false;
+            }
+            let compare = height + 80.0 + CGFloat(90*zambs.count)
+            if (compare < (self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top)) {
+                height = height + ((self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top) - compare)
+            }
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
+            footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+            tableView.tableFooterView = footerView
         }
-        let compare = height + 80.0 + CGFloat(90*zambs.count)
-        if (compare < (self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top)) {
-            height = height + ((self.view.bounds.height + self.view.safeAreaInsets.bottom + self.view.safeAreaInsets.top) - compare)
-        }
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
-        footerView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        tableView.tableFooterView = footerView
     }
     
     private func convertStringToDate(date: String) -> Date {
@@ -519,47 +519,22 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             topView.isHidden = false
         }
         
-        if zambs.count - 1 == indexPath.row {
-            let separator = UIView(frame: CGRect(x:0, y:83, width: self.view.bounds.width, height: 0.5))
-            separator.backgroundColor = .white
-            cell.contentView.addSubview(separator)
-        }
+        cell.validationLabel.isHidden = (zamb.hand != "No hand" && zamb.location != "No location")
         
-        //No validado
-        if(zamb.hand == "No hand" && zamb.location == "No location") {
-
-            //Add label
-            cell.validationLabel.isHidden = false
-
-            
-            //Remove image
-            cell.viewForImage.isHidden = true
-
-            //Change label colors and location icon
-            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-            
-            cell.locationIcon.image = UIImage(named: "locationIconOp")
-
-        }
-        
-        //Validado
-        if(zamb.hand != "No hand" && zamb.location != "No location") {
-            
-            //Remove previous label
-            if (cell.validationLabel != nil) {
-                cell.validationLabel.isHidden = true
-            }
-            
+        if cell.validationLabel.isHidden {
             //Create image and add it
             let imageView = UIImageView(image: UIImage(named: "circleCheck"))
             imageView.frame = CGRect(x: 15, y: 15, width: 30, height: 30)
             imageView.contentMode = .scaleAspectFit
+            imageView.alpha = 0.5
             cell.viewForImage.addSubview(imageView)
             cell.viewForImage.isHidden = false
-            
+        } else {
+            //Remove image
+            cell.viewForImage.isHidden = true
+        }
+        
+        if (zamb.hand != "No hand" && zamb.location != "No location") {
             //Change label colors
             cell.zambsAmountLabel.textColor = UIColor.white
             cell.locationLabel.textColor = UIColor.white
@@ -567,14 +542,21 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             cell.sessionTimeLabel.textColor = UIColor.white
             
             cell.locationIcon.image = UIImage(named: "locationIcon")
+        } else {
+            //Change label colors and location icon
+            cell.zambsAmountLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.locationLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.dateLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+            cell.sessionTimeLabel.textColor = UIColor.white.withAlphaComponent(0.5)
             
+            cell.locationIcon.image = UIImage(named: "locationIconOp")
         }
         
         cell.separatorInset = .zero
         cell.selectionStyle = .none
         
         updateWeeklyZambs()
-
+        
         return cell
     }
     
@@ -709,6 +691,7 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
                 weeklyZambs.text = "\(weeklyZambCount!) ZAMBS!!!"
                 tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                 saveZambs(zamb)
+                print(zamb)
                 tableView.reloadData()
                 updateBottomView()
             }
