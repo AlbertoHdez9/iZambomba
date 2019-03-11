@@ -38,6 +38,8 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         aiv.style = .whiteLarge
         return aiv
     }()
+    
+    
     let loadingView = UIView()
     let emptyView: UIView = {
         let view = UIView()
@@ -522,15 +524,10 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
         cell.validationLabel.isHidden = (zamb.hand != "No hand" && zamb.location != "No location")
         
         if cell.validationLabel.isHidden {
-            //Create image and add it
-            let imageView = UIImageView(image: UIImage(named: "circleCheck"))
-            imageView.frame = CGRect(x: 15, y: 15, width: 30, height: 30)
-            imageView.contentMode = .scaleAspectFit
-            imageView.alpha = 0.5
-            cell.viewForImage.addSubview(imageView)
+            //Unhide image
             cell.viewForImage.isHidden = false
         } else {
-            //Remove image
+            //Hide image
             cell.viewForImage.isHidden = true
         }
         

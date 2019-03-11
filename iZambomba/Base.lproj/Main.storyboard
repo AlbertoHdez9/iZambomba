@@ -86,8 +86,17 @@
                                     <subviews>
                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-7I-4kQ">
                                             <rect key="frame" x="334" y="15" width="60" height="60"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleCheck" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-we-XJv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="49Y-La-gec"/>
+                                                <constraint firstItem="xGh-we-XJv" firstAttribute="leading" secondItem="WVq-7I-4kQ" secondAttribute="leading" id="N22-DX-EZ5"/>
+                                                <constraint firstAttribute="trailing" secondItem="xGh-we-XJv" secondAttribute="trailing" id="SPM-ws-gIf"/>
+                                                <constraint firstAttribute="bottom" secondItem="xGh-we-XJv" secondAttribute="bottom" id="bTU-gT-I6l"/>
+                                                <constraint firstItem="xGh-we-XJv" firstAttribute="top" secondItem="WVq-7I-4kQ" secondAttribute="top" id="hdE-UF-K7I"/>
                                                 <constraint firstAttribute="width" secondItem="WVq-7I-4kQ" secondAttribute="height" id="kkA-Nq-7q8"/>
                                             </constraints>
                                         </view>
@@ -207,7 +216,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzZ-YZ-ylE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544.8000000000002" y="48.125937031484263"/>
+            <point key="canvasLocation" x="2543.4782608695655" y="47.544642857142854"/>
         </scene>
         <!--New Zamb-->
         <scene sceneID="GnK-6a-Gbd">
@@ -838,7 +847,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-LS-opm">
                                 <rect key="frame" x="42" y="231" width="330" height="251"/>
-                                <mutableString key="text">It's made of a hollow cylinder builded  with different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod.  This rod, sometimes, can be replaced by a rope. By rubbing the rod with one or both hands, the vibration produced by the rod is transmitted to the leather, producing a very special sound.</mutableString>
+                                <string key="text">It's made of a hollow cylinder builded  with different materials (ceramic, wood, etc.) with one end closed with a patch and crossed through the center with a rod.  This rod, sometimes, can be replaced by a rope. By rubbing the rod with one or both hands, the vibration produced by the rod is transmitted to the leather, producing a very special sound.</string>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1498,6 +1507,7 @@
         <image name="arrowRight" width="33" height="34"/>
         <image name="backgroundImage" width="375" height="667"/>
         <image name="buttonPrimary" width="315" height="57"/>
+        <image name="circleCheck" width="27" height="27"/>
         <image name="iZambombaLogo" width="196" height="203"/>
         <image name="iZambombaTypo" width="189" height="48"/>
         <image name="link" width="33" height="33"/>
