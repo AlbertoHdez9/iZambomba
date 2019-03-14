@@ -2,14 +2,9 @@
  Copyright (C) 2016 Apple Inc. All Rights Reserved.
  See LICENSE.txt for this sample’s licensing information
  
- Abstract:
- This class manages the HealthKit interactions and provides a delegate
- to indicate changes in data.
  */
 
 import Foundation
-import HealthKit
-
 /**
  `WorkoutManagerDelegate` exists to inform delegates of swing data changes.
  These updates can be used to populate the user interface.
@@ -22,7 +17,6 @@ class WorkoutManager: MotionManagerDelegate {
     
     // MARK: Properties
     let motionManager = MotionManager()
-    let healthStore = HKHealthStore()
     
     weak var delegate: WorkoutManagerDelegate?
     var session: Bool = false
@@ -41,11 +35,6 @@ class WorkoutManager: MotionManagerDelegate {
         if (session == true) {
             return
         }
-        
-        // Configure the workout session.
-        let workoutConfiguration = HKWorkoutConfiguration()
-        workoutConfiguration.activityType = .coreTraining
-        workoutConfiguration.locationType = .indoor
         
         // Start the workout session and device motion updates.
         session = true

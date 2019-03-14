@@ -53,8 +53,6 @@
 		3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */; };
 		3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */; };
 		3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
-		3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */; };
-		3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */; };
 		4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */; };
 		63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
@@ -151,9 +149,7 @@
 		3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstInterfaceController.swift; sourceTree = "<group>"; };
 		3AEEB3E021CD174F00C7C9E3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
-		3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
 		98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,7 +165,6 @@
 			files = (
 				3A18AA9721E793BD007C99D8 /* Pods_iZambomba.framework in Frameworks */,
 				3A18AA9521E79340007C99D8 /* Charts.framework in Frameworks */,
-				3AEEB3E321CD174F00C7C9E3 /* HealthKit.framework in Frameworks */,
 				3A336C5421FF38CD00375409 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,7 +173,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AEEB3E621CD28D800C7C9E3 /* HealthKit.framework in Frameworks */,
 				4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,8 +286,6 @@
 				3A336C5321FF38CD00375409 /* StoreKit.framework */,
 				3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */,
 				3A18AA9421E79340007C99D8 /* Charts.framework */,
-				3AEEB3E521CD28D800C7C9E3 /* HealthKit.framework */,
-				3AEEB3E221CD174F00C7C9E3 /* HealthKit.framework */,
 				C00EDAC236B613078B65424C /* Pods_iZambomba.framework */,
 				98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */,
 				0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */,
@@ -392,7 +384,7 @@
 								enabled = 0;
 							};
 							com.apple.HealthKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -414,7 +406,7 @@
 								enabled = 0;
 							};
 							com.apple.HealthKit.watchos = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -764,7 +756,6 @@
 			baseConfigurationReference = 354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Singular Factory sf (G8VR9EY5RK)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
@@ -790,7 +781,6 @@
 			baseConfigurationReference = DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "iZambomba WatchKit Extension/iZambomba WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Singular Factory (GN88MY24J6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
@@ -860,7 +850,6 @@
 			baseConfigurationReference = 0E8FBF2742DD394390061970 /* Pods-iZambomba.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Singular Factory sf (G8VR9EY5RK)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
@@ -874,7 +863,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba App Prof";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -883,7 +872,6 @@
 			baseConfigurationReference = A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iZambomba/iZambomba.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Singular Factory (GN88MY24J6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
@@ -897,7 +885,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba App PRO";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
