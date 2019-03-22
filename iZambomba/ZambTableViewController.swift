@@ -275,7 +275,6 @@ class ZambTableViewController: UITableViewController, WCSessionDelegate {
             print("No user found")
         }
         return savedUserRanking
-        //RankingProduct.store.restorePurchases()
     }
     
     private func transformUserReceivedIntoUserSaved(_ data: Data) {

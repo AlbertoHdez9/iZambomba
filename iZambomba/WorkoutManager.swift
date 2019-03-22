@@ -28,8 +28,8 @@ class WorkoutManager: MotionManagerDelegate {
     }
     
     // MARK: WorkoutManager
-    //type: 0 -> iPhone
-    //      1 -> iWatch
+    //type: 0 -> iOS
+    //      1 -> watchOS
     func startWorkout(type: Int) {
         // If we have already started the workout, then do nothing.
         if (session == true) {

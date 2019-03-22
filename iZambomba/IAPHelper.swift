@@ -135,7 +135,9 @@ extension IAPHelper: SKPaymentTransactionObserver {
         if let transactionError = transaction.error as NSError?,
             let localizedDescription = transaction.error?.localizedDescription,
             transactionError.code != SKError.paymentCancelled.rawValue {
-            print("Transaction Error: \(localizedDescription)")
+            print("Transaction Error Code: \(transactionError.code)")
+            print("Transaction Error: \(transactionError)")
+            print("Transaction Error description: \(localizedDescription)")
         }
         
         SKPaymentQueue.default().finishTransaction(transaction)

@@ -66,6 +66,13 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         user = zambTableVC.user
         product = zambTableVC.product
         
+//        RankingProduct.store.requestProducts{ [weak self] success, products in
+//            guard let self = self else { return }
+//            if success {
+//                self.product = products!
+//            }
+//        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(RankingViewController.changeVisibleViewAndUpdateRanking), name: .IAPHelperPurchaseNotification, object: nil)
         setNavBarAndBackground()
         loadEmptyListView()
@@ -315,7 +322,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc private func paymentHandler() {
         if IAPHelper.canMakePayments() {
-            //userRanking = true
             RankingProduct.store.buyProduct(product[0])
         } else {
             presentAlert()

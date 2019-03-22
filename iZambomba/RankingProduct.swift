@@ -9,7 +9,7 @@ import Foundation
 
 public struct RankingProduct {
     
-    public static let SwiftShopping = "com.singularfactory.izambomba.rankingaccess"
+    public static let SwiftShopping = "com.singularfactory.izambomba.ranking"
     
     private static let productIdentifier: Set<ProductIdentifier> = [SwiftShopping]
     

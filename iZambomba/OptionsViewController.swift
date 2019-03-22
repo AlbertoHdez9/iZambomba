@@ -19,6 +19,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     //Buttons
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var restorePurchasesButton: UIButton!
     
     @IBOutlet weak var modalView: UIView!
     
@@ -34,14 +35,20 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(OptionsViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         //Get user from table VC
-        let rootTabBarController = UIApplication.shared.keyWindow!.rootViewController as! UITabBarController
-        let rootNavController = rootTabBarController.viewControllers?[0] as! UINavigationController
-        let zambTableVC = rootNavController.topViewController as! ZambTableViewController
-        userRanking = zambTableVC.userRanking
+        if let rootTabBarController = UIApplication.shared.keyWindow!.rootViewController as? UITabBarController {
+            let rootNavController = rootTabBarController.viewControllers?[0] as! UINavigationController
+            let zambTableVC = rootNavController.topViewController as! ZambTableViewController
+            userRanking = zambTableVC.userRanking
+        }
+        
         
         usernameTextField.delegate = self
         associatedID.text = userRanking ? "Yes" : "No"
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
+        restorePurchasesButton.layer.cornerRadius = 5
+        restorePurchasesButton.layer.borderColor = UIColor.white.cgColor
+        restorePurchasesButton.layer.borderWidth = 1
         
     }
     //MARK: Keyboard show
@@ -153,17 +160,21 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         ZambTableViewController().saveUserRanking(false)
     }
     
-    private func presentAlert() {
-        let refreshAlert = UIAlertController(title: "Are you sure?", message: "Your username will be changed", preferredStyle: .alert)
+    private func presentAlert(title: String, message: String) {
+        let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            self.updateUsername(self.username!)
+            if (title == "Are you sure?") {
+                self.updateUsername(self.username!)
+            }
             self.dismiss(animated: true, completion: nil)
         }))
+        if (title == "Are you sure?") {
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+        }
         
-        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-            self.dismiss(animated: true, completion: nil)
-        }))
         
         present(refreshAlert, animated: true, completion: nil)
     }
@@ -194,7 +205,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func acceptAction(_ sender: UIButton) {
-        if(usernameChanged) {presentAlert()}
+        if(usernameChanged) {presentAlert(title: "Are you sure?", message: "Your username will be changed")}
         else {
             self.dismiss(animated: true, completion: nil)
         }
@@ -203,6 +214,13 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
         usernameChanged = false
     }
     
+    @IBAction func restorePurchaseAction(_ sender: UIButton) {
+        if userRanking {
+            RankingProduct.store.restorePurchases()
+        } else {
+            presentAlert(title: "Restoring process stopped", message: "It seems you don't have any purchase to restore")
+        }
+    }
     
     /*
     //MARK: Navigation

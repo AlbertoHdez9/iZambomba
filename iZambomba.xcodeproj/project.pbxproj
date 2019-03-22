@@ -33,10 +33,10 @@
 		3AEEB39121CD150300C7C9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB38F21CD150300C7C9E3 /* Main.storyboard */; };
 		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
 		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
-		3AEEB39B21CD150300C7C9E3 /* iZambomba WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */; };
+		3AEEB39B21CD150300C7C9E3 /* iZambomba W.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */; };
 		3AEEB3A121CD150300C7C9E3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
 		3AEEB3A321CD150400C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */; };
-		3AEEB3AA21CD150400C7C9E3 /* iZambomba WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3AEEB3AA21CD150400C7C9E3 /* iZambomba WExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3AEEB3B121CD150400C7C9E3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */; };
 		3AEEB3B321CD150400C7C9E3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */; };
 		3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */; };
@@ -81,7 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3AEEB3AA21CD150400C7C9E3 /* iZambomba WatchKit Extension.appex in Embed App Extensions */,
+				3AEEB3AA21CD150400C7C9E3 /* iZambomba WExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +92,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				3AEEB39B21CD150300C7C9E3 /* iZambomba WatchKit App.app in Embed Watch Content */,
+				3AEEB39B21CD150300C7C9E3 /* iZambomba W.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,11 +127,11 @@
 		3AEEB39221CD150300C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEEB39521CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AEEB39721CD150300C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iZambomba WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iZambomba W.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB3A021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEEB3A421CD150400C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				3AEEB38821CD150300C7C9E3 /* iZambomba.app */,
-				3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */,
-				3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */,
+				3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */,
+				3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,9 +330,9 @@
 			productReference = 3AEEB38821CD150300C7C9E3 /* iZambomba.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */ = {
+		3AEEB39921CD150300C7C9E3 /* iZambomba W */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */;
+			buildConfigurationList = 3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba W" */;
 			buildPhases = (
 				A32B6AC3D988FC9A1832BAF8 /* [CP] Check Pods Manifest.lock */,
 				3AEEB39821CD150300C7C9E3 /* Resources */,
@@ -344,14 +344,14 @@
 			dependencies = (
 				3AEEB3AC21CD150400C7C9E3 /* PBXTargetDependency */,
 			);
-			name = "iZambomba WatchKit App";
+			name = "iZambomba W";
 			productName = "iZambomba WatchKit App";
-			productReference = 3AEEB39A21CD150300C7C9E3 /* iZambomba WatchKit App.app */;
+			productReference = 3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */ = {
+		3AEEB3A821CD150400C7C9E3 /* iZambomba WExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */;
+			buildConfigurationList = 3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WExtension" */;
 			buildPhases = (
 				2169FC613159AC6462EEA3E4 /* [CP] Check Pods Manifest.lock */,
 				3AEEB3A521CD150400C7C9E3 /* Sources */,
@@ -362,9 +362,9 @@
 			);
 			dependencies = (
 			);
-			name = "iZambomba WatchKit Extension";
+			name = "iZambomba WExtension";
 			productName = "iZambomba WatchKit Extension";
-			productReference = 3AEEB3A921CD150400C7C9E3 /* iZambomba WatchKit Extension.appex */;
+			productReference = 3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -426,8 +426,8 @@
 			projectRoot = "";
 			targets = (
 				3AEEB38721CD150300C7C9E3 /* iZambomba */,
-				3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */,
-				3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */,
+				3AEEB39921CD150300C7C9E3 /* iZambomba W */,
+				3AEEB3A821CD150400C7C9E3 /* iZambomba WExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -594,12 +594,12 @@
 /* Begin PBXTargetDependency section */
 		3AEEB39D21CD150300C7C9E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AEEB39921CD150300C7C9E3 /* iZambomba WatchKit App */;
+			target = 3AEEB39921CD150300C7C9E3 /* iZambomba W */;
 			targetProxy = 3AEEB39C21CD150300C7C9E3 /* PBXContainerItemProxy */;
 		};
 		3AEEB3AC21CD150400C7C9E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AEEB3A821CD150400C7C9E3 /* iZambomba WatchKit Extension */;
+			target = 3AEEB3A821CD150400C7C9E3 /* iZambomba WExtension */;
 			targetProxy = 3AEEB3AB21CD150400C7C9E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -772,7 +772,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -797,7 +797,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -819,7 +819,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -841,7 +841,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -854,7 +854,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = iZambomba/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -876,7 +876,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
 				INFOPLIST_FILE = iZambomba/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -901,7 +901,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit Extension" */ = {
+		3AEEB3BA21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AEEB3BB21CD150500C7C9E3 /* Debug */,
@@ -910,7 +910,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba WatchKit App" */ = {
+		3AEEB3BE21CD150500C7C9E3 /* Build configuration list for PBXNativeTarget "iZambomba W" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AEEB3BF21CD150500C7C9E3 /* Debug */,

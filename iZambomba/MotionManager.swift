@@ -74,8 +74,8 @@ class MotionManager {
     }
     
     // MARK: Motion Processing
-    //type: 0 -> iPhone
-    //      1 -> iWatch
+    //type: 0 -> iOS
+    //      1 -> watchOS
     func processDeviceMotion(_ deviceMotion: CMDeviceMotion, type: Int) {
         if type == 0 {
             if deviceMotion.userAcceleration.x < -1 {
