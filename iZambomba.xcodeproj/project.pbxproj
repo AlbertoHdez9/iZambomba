@@ -17,7 +17,8 @@
 		3AB2784121F085A40035C4B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2784021F085A40035C4B1 /* Constants.swift */; };
 		3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB389E121D4F6BB000D1C4F /* PageViewController.swift */; };
 		3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */; };
-		3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C821EC882B0040692A /* WebKitViewController.swift */; };
+		3AC1A54E225348AD00690011 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
+		3AC1A54F22534DB500690011 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
 		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3ACD2B1421F723F300D08FF0 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */; };
 		3ACD2B1621F74B0200D08FF0 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */; };
@@ -52,7 +53,6 @@
 		3AEEB3DC21CD162500C7C9E3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D821CD162500C7C9E3 /* WKZambListInterfaceController.swift */; };
 		3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */; };
 		3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */; };
-		3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
 		4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */; };
 		63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
@@ -113,7 +113,6 @@
 		3AB2784021F085A40035C4B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AB389E121D4F6BB000D1C4F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
-		3AC375C821EC882B0040692A /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebKitViewController.swift; path = ../../../../Pictures/WebKitViewController.swift; sourceTree = "<group>"; };
 		3AC375C921EC882C0040692A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../../../../Pictures/StatsViewController.swift; sourceTree = "<group>"; };
 		3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
@@ -239,7 +238,6 @@
 				3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */,
 				3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */,
 				3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */,
-				3AC375C821EC882B0040692A /* WebKitViewController.swift */,
 				3AB389E121D4F6BB000D1C4F /* PageViewController.swift */,
 				3ACEBC4E21FEF13F003C2A56 /* OptionsViewController.swift */,
 				3A336C5721FF3C3F00375409 /* RankingProduct.swift */,
@@ -464,6 +462,7 @@
 				3AD034CB21E61F3900819003 /* Lato-Black.ttf in Resources */,
 				3AD034CF21E61F3900819003 /* Lato-Regular.ttf in Resources */,
 				3AD034C921E61F3900819003 /* Lato-Bold.ttf in Resources */,
+				3AC1A54E225348AD00690011 /* Interface.storyboard in Resources */,
 				3AD034CD21E61F3900819003 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,7 +564,6 @@
 				3A17A5F321E61907000D6672 /* ZambTableViewController.swift in Sources */,
 				3AEEB3CF21CD156500C7C9E3 /* NewZambViewController.swift in Sources */,
 				3AB389E221D4F6BB000D1C4F /* PageViewController.swift in Sources */,
-				3AC375CA21EC882C0040692A /* WebKitViewController.swift in Sources */,
 				3A336C5821FF3C3F00375409 /* RankingProduct.swift in Sources */,
 				3AEEB3D321CD156500C7C9E3 /* WorkoutManager.swift in Sources */,
 				3AB2784121F085A40035C4B1 /* Constants.swift in Sources */,
@@ -581,7 +579,7 @@
 				3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */,
 				3AEEB3D721CD158200C7C9E3 /* MotionManager.swift in Sources */,
 				3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */,
-				3AEEB3DF21CD162500C7C9E3 /* FirstInterfaceController.swift in Sources */,
+				3AC1A54F22534DB500690011 /* FirstInterfaceController.swift in Sources */,
 				3AEEB3B121CD150400C7C9E3 /* ExtensionDelegate.swift in Sources */,
 				3AEEB3D621CD157F00C7C9E3 /* WorkoutManager.swift in Sources */,
 				3AEEB3D521CD156800C7C9E3 /* Zamb.swift in Sources */,
@@ -683,14 +681,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -739,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -747,7 +745,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -772,7 +770,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
@@ -797,7 +795,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
@@ -816,10 +814,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba Watch App Prof";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
@@ -838,10 +836,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba WatchApp PRO";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
