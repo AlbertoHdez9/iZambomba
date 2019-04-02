@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_iZambomba_WatchKit_AppVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_iZambomba_WatchKit_AppVersionString[];
+FOUNDATION_EXPORT double Pods_iZambomba_WExtensionVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_iZambomba_WExtensionVersionString[];
 

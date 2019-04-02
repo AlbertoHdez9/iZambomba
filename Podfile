@@ -11,7 +11,7 @@ target 'iZambomba' do
 
 end
 
-target 'iZambomba WatchKit App' do
+target 'iZambomba W' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
@@ -19,7 +19,7 @@ target 'iZambomba WatchKit App' do
 
 end
 
-target 'iZambomba WatchKit Extension' do
+target 'iZambomba WExtension' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "102904E83812C588316ABD424D073B5E"
-               BuildableName = "Pods_iZambomba_WatchKit_App.framework"
-               BlueprintName = "Pods-iZambomba WatchKit App"
+               BlueprintIdentifier = "AD983B40702D8C0F16DB4E09F9F82588"
+               BuildableName = "Pods_iZambomba_WExtension.framework"
+               BlueprintName = "Pods-iZambomba WExtension"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "102904E83812C588316ABD424D073B5E"
-            BuildableName = "Pods_iZambomba_WatchKit_App.framework"
-            BlueprintName = "Pods-iZambomba WatchKit App"
+            BlueprintIdentifier = "AD983B40702D8C0F16DB4E09F9F82588"
+            BuildableName = "Pods_iZambomba_WExtension.framework"
+            BlueprintName = "Pods-iZambomba WExtension"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

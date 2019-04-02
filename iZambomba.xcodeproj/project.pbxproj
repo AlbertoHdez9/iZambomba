@@ -19,6 +19,7 @@
 		3AB3C56421F1FA9B00E84E10 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB3C56321F1FA9B00E84E10 /* RankingViewController.swift */; };
 		3AC1A54E225348AD00690011 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
 		3AC1A54F22534DB500690011 /* FirstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DB21CD162500C7C9E3 /* FirstInterfaceController.swift */; };
+		3AC1A5502253517F00690011 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
 		3AC375CB21EC882C0040692A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC375C921EC882C0040692A /* StatsViewController.swift */; };
 		3ACD2B1421F723F300D08FF0 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1321F723F300D08FF0 /* RankingTableViewCell.swift */; };
 		3ACD2B1621F74B0200D08FF0 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD2B1521F74B0200D08FF0 /* StatsTableViewCell.swift */; };
@@ -35,9 +36,8 @@
 		3AEEB39321CD150300C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39221CD150300C7C9E3 /* Assets.xcassets */; };
 		3AEEB39621CD150300C7C9E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39421CD150300C7C9E3 /* LaunchScreen.storyboard */; };
 		3AEEB39B21CD150300C7C9E3 /* iZambomba W.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */; };
-		3AEEB3A121CD150300C7C9E3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB39F21CD150300C7C9E3 /* Interface.storyboard */; };
 		3AEEB3A321CD150400C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */; };
-		3AEEB3AA21CD150400C7C9E3 /* iZambomba WExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3AEEB3AA21CD150400C7C9E3 /* iZambomba WE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AEEB3A921CD150400C7C9E3 /* iZambomba WE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3AEEB3B121CD150400C7C9E3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */; };
 		3AEEB3B321CD150400C7C9E3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */; };
 		3AEEB3B521CD150500C7C9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */; };
@@ -53,8 +53,8 @@
 		3AEEB3DC21CD162500C7C9E3 /* WKZambListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D821CD162500C7C9E3 /* WKZambListInterfaceController.swift */; };
 		3AEEB3DD21CD162500C7C9E3 /* WKZambRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3D921CD162500C7C9E3 /* WKZambRowController.swift */; };
 		3AEEB3DE21CD162500C7C9E3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEB3DA21CD162500C7C9E3 /* InterfaceController.swift */; };
-		4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */; };
-		63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */; };
+		AE5E34C22A587AC022748A35 /* Pods_iZambomba_W.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6CD7B1497710EECCC06997 /* Pods_iZambomba_W.framework */; };
+		EE18B26656E694CB9CBE9230 /* Pods_iZambomba_WExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4568A815C61BCB1DA2D51D5 /* Pods_iZambomba_WExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3AEEB3AA21CD150400C7C9E3 /* iZambomba WExtension.appex in Embed App Extensions */,
+				3AEEB3AA21CD150400C7C9E3 /* iZambomba WE.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +103,8 @@
 		0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05570EE5C7FF90D580FA41A2 /* Pods-iZambomba WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit App/Pods-iZambomba WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		0E8FBF2742DD394390061970 /* Pods-iZambomba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba.debug.xcconfig"; sourceTree = "<group>"; };
+		119D92DA3127EB0E2EA3E5CC /* Pods-iZambomba W.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba W.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba W/Pods-iZambomba W.release.xcconfig"; sourceTree = "<group>"; };
+		2EAC9DC395CB67D0E6969196 /* Pods-iZambomba W.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba W.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba W/Pods-iZambomba W.debug.xcconfig"; sourceTree = "<group>"; };
 		354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit Extension/Pods-iZambomba WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		3A18AA9421E79340007C99D8 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A18AA9621E793BD007C99D8 /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +132,7 @@
 		3AEEB3A021CD150300C7C9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEEB3A421CD150400C7C9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AEEB3A921CD150400C7C9E3 /* iZambomba WE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iZambomba WE.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEEB3B021CD150400C7C9E3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3AEEB3B221CD150400C7C9E3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3AEEB3B421CD150500C7C9E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,11 +152,15 @@
 		3AEEB3E021CD174F00C7C9E3 /* iZambomba.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iZambomba.entitlements; sourceTree = "<group>"; };
 		3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iZambomba WatchKit App.entitlements"; sourceTree = "<group>"; };
+		4D6CD7B1497710EECCC06997 /* Pods_iZambomba_W.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_W.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D667AA43D42881A16B9576 /* Pods-iZambomba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba/Pods-iZambomba.release.xcconfig"; sourceTree = "<group>"; };
+		BE987618F5888020CE8134CD /* Pods-iZambomba WExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WExtension/Pods-iZambomba WExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C00EDAC236B613078B65424C /* Pods_iZambomba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4568A815C61BCB1DA2D51D5 /* Pods_iZambomba_WExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iZambomba_WExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit App/Pods-iZambomba WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WatchKit Extension/Pods-iZambomba WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		E36444624BF2565CB0DD4377 /* Pods-iZambomba WExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iZambomba WExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iZambomba WExtension/Pods-iZambomba WExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AC9BA50D7BDF1052867594B /* Pods_iZambomba_WatchKit_Extension.framework in Frameworks */,
+				EE18B26656E694CB9CBE9230 /* Pods_iZambomba_WExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63ED6BB597CA015E57B08C9F /* Pods_iZambomba_WatchKit_App.framework in Frameworks */,
+				AE5E34C22A587AC022748A35 /* Pods_iZambomba_W.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +209,8 @@
 			children = (
 				3AD034C321E61EFB00819003 /* Fonts */,
 				3AEEB38A21CD150300C7C9E3 /* iZambomba */,
-				3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */,
-				3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */,
+				3AEEB39E21CD150300C7C9E3 /* iZambomba W */,
+				3AEEB3AD21CD150400C7C9E3 /* iZambomba WExtension */,
 				3AEEB38921CD150300C7C9E3 /* Products */,
 				3AEEB3E121CD174F00C7C9E3 /* Frameworks */,
 				4147B0224E37DCB6A42B219E /* Pods */,
@@ -216,7 +222,7 @@
 			children = (
 				3AEEB38821CD150300C7C9E3 /* iZambomba.app */,
 				3AEEB39A21CD150300C7C9E3 /* iZambomba W.app */,
-				3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */,
+				3AEEB3A921CD150400C7C9E3 /* iZambomba WE.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,7 +256,7 @@
 			path = iZambomba;
 			sourceTree = "<group>";
 		};
-		3AEEB39E21CD150300C7C9E3 /* iZambomba WatchKit App */ = {
+		3AEEB39E21CD150300C7C9E3 /* iZambomba W */ = {
 			isa = PBXGroup;
 			children = (
 				3AEEB3E721CD28EB00C7C9E3 /* iZambomba WatchKit App.entitlements */,
@@ -258,10 +264,10 @@
 				3AEEB3A221CD150400C7C9E3 /* Assets.xcassets */,
 				3AEEB3A421CD150400C7C9E3 /* Info.plist */,
 			);
-			path = "iZambomba WatchKit App";
+			path = "iZambomba W";
 			sourceTree = "<group>";
 		};
-		3AEEB3AD21CD150400C7C9E3 /* iZambomba WatchKit Extension */ = {
+		3AEEB3AD21CD150400C7C9E3 /* iZambomba WExtension */ = {
 			isa = PBXGroup;
 			children = (
 				3AEEB3E421CD28D200C7C9E3 /* iZambomba WatchKit Extension.entitlements */,
@@ -275,7 +281,7 @@
 				3AEEB3B621CD150500C7C9E3 /* Info.plist */,
 				3AEEB3B721CD150500C7C9E3 /* PushNotificationPayload.apns */,
 			);
-			path = "iZambomba WatchKit Extension";
+			path = "iZambomba WExtension";
 			sourceTree = "<group>";
 		};
 		3AEEB3E121CD174F00C7C9E3 /* Frameworks */ = {
@@ -287,6 +293,8 @@
 				C00EDAC236B613078B65424C /* Pods_iZambomba.framework */,
 				98FF27488A343A32FD30A350 /* Pods_iZambomba_WatchKit_App.framework */,
 				0213E02F05FFFA6D6743F5B5 /* Pods_iZambomba_WatchKit_Extension.framework */,
+				4D6CD7B1497710EECCC06997 /* Pods_iZambomba_W.framework */,
+				D4568A815C61BCB1DA2D51D5 /* Pods_iZambomba_WExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -300,6 +308,10 @@
 				D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */,
 				354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */,
 				DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */,
+				2EAC9DC395CB67D0E6969196 /* Pods-iZambomba W.debug.xcconfig */,
+				119D92DA3127EB0E2EA3E5CC /* Pods-iZambomba W.release.xcconfig */,
+				BE987618F5888020CE8134CD /* Pods-iZambomba WExtension.debug.xcconfig */,
+				E36444624BF2565CB0DD4377 /* Pods-iZambomba WExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -362,7 +374,7 @@
 			);
 			name = "iZambomba WExtension";
 			productName = "iZambomba WatchKit Extension";
-			productReference = 3AEEB3A921CD150400C7C9E3 /* iZambomba WExtension.appex */;
+			productReference = 3AEEB3A921CD150400C7C9E3 /* iZambomba WE.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -449,8 +461,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC1A5502253517F00690011 /* Interface.storyboard in Resources */,
 				3AEEB3A321CD150400C7C9E3 /* Assets.xcassets in Resources */,
-				3AEEB3A121CD150300C7C9E3 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +513,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iZambomba WatchKit Extension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iZambomba WExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -537,7 +549,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iZambomba WatchKit App-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iZambomba W-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -686,6 +698,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
@@ -742,6 +755,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -751,95 +765,95 @@
 		};
 		3AEEB3BB21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 354D3F5D91E409E685F0302D /* Pods-iZambomba WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = BE987618F5888020CE8134CD /* Pods-iZambomba WExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Singular Factory sf (G8VR9EY5RK)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
-				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "iZambomba WExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit.extension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "iZambomba WE";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba Watch Ext Prof";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
 		3AEEB3BC21CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD8FDC696499AE598E564B30 /* Pods-iZambomba WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = E36444624BF2565CB0DD4377 /* Pods-iZambomba WExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Singular Factory (GN88MY24J6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
-				INFOPLIST_FILE = "iZambomba WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "iZambomba WExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit.extension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "iZambomba WE";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba WatchExt PRO";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
 		3AEEB3BF21CD150500C7C9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05570EE5C7FF90D580FA41A2 /* Pods-iZambomba WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = 2EAC9DC395CB67D0E6969196 /* Pods-iZambomba W.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Singular Factory sf (G8VR9EY5RK)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
-				IBSC_MODULE = iZambomba_WatchKit_Extension;
-				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
+				IBSC_MODULE = iZambomba_WExtension;
+				INFOPLIST_FILE = "iZambomba W/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba Watch App Prof";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
 		3AEEB3C021CD150500C7C9E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8CCBFAC3577AF3E352B5A95 /* Pods-iZambomba WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 119D92DA3127EB0E2EA3E5CC /* Pods-iZambomba W.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Singular Factory (GN88MY24J6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GN88MY24J6;
-				IBSC_MODULE = iZambomba_WatchKit_Extension;
-				INFOPLIST_FILE = "iZambomba WatchKit App/Info.plist";
+				IBSC_MODULE = iZambomba_WExtension;
+				INFOPLIST_FILE = "iZambomba W/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.singularfactory.izambomba.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iZambomba WatchApp PRO";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
